@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>GEOSTAR INGENIERÍA S.A.S. · Geomática, Catastro, Infraestructura y Tecnología</title>
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #fafbfc;
             color: #1e2a41;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .container {
             width: 90%;
@@ -39,7 +39,7 @@
             flex-wrap: wrap;
         }
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #0a2e5a;
             letter-spacing: -0.5px;
@@ -47,15 +47,19 @@
         .logo span {
             color: #00a67e;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             display: block;
             margin-top: 0.2rem;
         }
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
         nav a {
-            margin-left: 2rem;
             text-decoration: none;
             color: #1e2a41;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
         nav a:hover {
@@ -65,11 +69,11 @@
             display: inline-block;
             background: #00a67e;
             color: white;
-            padding: 0.9rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.2s;
             border: none;
             cursor: pointer;
@@ -78,7 +82,6 @@
         .btn:hover {
             background: #008c68;
             transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(0,166,126,0.3);
         }
         .btn-outline {
             background: transparent;
@@ -98,98 +101,109 @@
             background: #20b859;
         }
         .hero {
-            padding: 4rem 0;
+            padding: 2.5rem 0;
             background: linear-gradient(145deg, #ffffff 0%, #f3f6fa 100%);
-            border-radius: 0 0 50px 50px;
-            margin-bottom: 2rem;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 1rem;
         }
         .hero-grid {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
         .hero-text {
-            flex: 1 1 400px;
+            flex: 1 1 300px;
         }
         .hero-text h2 {
-            font-size: 2.6rem;
+            font-size: 2rem;
             font-weight: 800;
             line-height: 1.2;
             color: #0a2e5a;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #4a5a72;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .hero-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
+        .hero-image {
+            flex: 1 1 250px;
+            text-align: center;
+        }
+        .img-responsive {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
         section {
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
         .section-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #0a2e5a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             position: relative;
         }
         .section-title::after {
             content: '';
             display: block;
-            width: 70px;
+            width: 60px;
             height: 4px;
             background: #00a67e;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
             border-radius: 4px;
         }
         .subhead {
             color: #5a6a7e;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
         .card {
             background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 24px;
+            padding: 1.8rem 1.2rem;
+            border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.04);
             transition: all 0.3s;
             border: 1px solid rgba(0,0,0,0.02);
         }
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            border-color: #00a67e20;
         }
         .card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #00a67e;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .card p {
             color: #4a5a72;
+            font-size: 0.95rem;
         }
         .equipment {
             background: #0a2e5a;
             color: white;
-            border-radius: 40px;
-            padding: 3rem 2rem;
+            border-radius: 30px;
+            padding: 2.5rem 1.5rem;
         }
         .equipment .section-title {
             color: white;
@@ -199,13 +213,11 @@
         }
         .equipment-grid {
             display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
         .equipment-item {
-            flex: 1 1 200px;
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -213,23 +225,42 @@
         .equipment-item i {
             font-size: 2rem;
             color: #00e6b0;
+            width: 40px;
+            text-align: center;
+        }
+        .equipment-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        .equipment-item p {
+            color: #cbd5e0;
+            font-size: 0.9rem;
         }
         .work-with-us {
             background: white;
             border-radius: 30px;
-            padding: 3rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border: 1px solid #eaeef2;
         }
+        .work-with-us h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2e5a;
+        }
+        .work-with-us p {
+            font-size: 1rem;
+            color: #4a5a72;
+        }
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 2rem;
         }
         .contact-info {
-            flex: 1 1 300px;
+            flex: 1 1 280px;
         }
         .contact-detail {
             display: flex;
@@ -242,37 +273,147 @@
             color: #00a67e;
             width: 2rem;
         }
+        .contact-detail h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .contact-detail p {
+            font-size: 0.95rem;
+        }
+        .contact-detail a {
+            text-decoration: none;
+            color: inherit;
+        }
         .map-placeholder {
             background: #e9ecf0;
             border-radius: 20px;
-            padding: 3rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             color: #5a6a7e;
-            flex: 1 1 300px;
+            flex: 1 1 280px;
         }
         footer {
             background: #0a1a2e;
             color: white;
             padding: 2rem 0;
-            margin-top: 3rem;
+            margin-top: 2rem;
             border-radius: 30px 30px 0 0;
         }
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
+            text-align: center;
+            gap: 1.5rem;
         }
+        .footer-content div {
+            text-align: center;
+        }
+        .footer-nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* ========== VERSIÓN MÓVIL MEJORADA ========== */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.5rem;
+            }
+            .logo h1 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+            .logo span {
+                text-align: center;
+            }
+            nav {
+                gap: 1.2rem;
             }
             nav a {
-                margin: 0 1rem;
+                font-size: 0.85rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
             }
             .hero-text h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image {
+                width: 100%;
+            }
+            .img-responsive {
+                max-width: 240px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .equipment-grid {
+                flex-direction: column;
+            }
+            .work-with-us h2 {
+                font-size: 1.4rem;
+            }
+            .contact-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .contact-info {
+                width: 100%;
+            }
+            .contact-detail {
+                flex-wrap: wrap;
+            }
+            .map-placeholder {
+                width: 100%;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            .hero-text h2 {
+                font-size: 1.4rem;
+            }
+            .btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .img-responsive {
+                max-width: 200px;
+            }
+            .card {
+                padding: 1.5rem 1rem;
+            }
+            .equipment {
+                padding: 2rem 1rem;
+            }
+            .equipment-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .work-with-us {
+                padding: 1.5rem 1rem;
             }
         }
     </style>
@@ -293,24 +434,24 @@
     </header>
 
     <main>
-<!-- HERO CON FOTO REAL -->
-<section id="inicio" class="hero">
-    <div class="container hero-grid">
-        <div class="hero-text">
-            <h2>Soluciones integrales en geomática, catastro, infraestructura y tecnología</h2>
-            <p>Ejecutamos proyectos de topografía de precisión, catastro multipropósito, interventoría, APP, desarrollo de software SIG y consultoría especializada.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Cotizar proyecto</a>
-                <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20página%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20y%20quiero%20solicitar%20información%20sobre%20sus%20servicios%20de%20topografía%2C%20catastro%20o%20consultoría." class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <!-- HERO CON FOTO RESPONSIVE -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h2>Soluciones integrales en geomática, catastro, infraestructura y tecnología</h2>
+                    <p>Ejecutamos proyectos de topografía de precisión, catastro multipropósito, interventoría, APP, desarrollo de software SIG y consultoría especializada.</p>
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Cotizar proyecto</a>
+                        <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20página%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20y%20quiero%20solicitar%20información%20sobre%20sus%20servicios%20de%20topografía%2C%20catastro%20o%20consultoría." class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/SCT6_Fieldshot_1.JPG" 
+                         alt="Levantamiento GNSS con equipo geodésico en campo" 
+                         class="img-responsive">
+                </div>
             </div>
-        </div>
-        <div style="flex: 1 1 300px; text-align: center;">
-            <img src="img/SCT6_Fieldshot_1.JPG" 
-                 alt="Levantamiento GNSS con equipo geodésico en campo" 
-                 style="width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 20px 30px rgba(0,0,0,0.1);">
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- PILAR 1: GEOMÁTICA -->
         <section id="servicios">
@@ -344,22 +485,22 @@
         <section style="background: #f3f6fa;">
             <div class="container">
                 <h2 class="section-title">2. Catastro multipropósito y gestión predial</h2>
-                <p class="subhead">Apoyamos la formalización, el ordenamiento territorial y la estructuración predial para entidades públicas y privadas.</p>
+                <p class="subhead">Apoyamos la formalización, el ordenamiento territorial y la estructuración predial.</p>
                 <div class="cards-grid">
                     <div class="card">
                         <i class="fas fa-landmark"></i>
                         <h3>Catastro multipropósito</h3>
-                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos catastrales.</p>
+                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-file-signature"></i>
                         <h3>Avalúos y estudios prediales</h3>
-                        <p>Avalúos comerciales y catastrales, estudios de mercado inmobiliario, adquisición predial, servidumbres y expropiaciones.</p>
+                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres y expropiaciones.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-gavel"></i>
                         <h3>Saneamiento y formalización</h3>
-                        <p>Estudios jurídicos prediales, saneamiento inmobiliario, formalización de la propiedad, apoyo en procesos institucionales.</p>
+                        <p>Estudios jurídicos prediales, saneamiento inmobiliario, formalización de la propiedad.</p>
                     </div>
                 </div>
                 <div style="text-align: right; margin-top: 1rem;">
@@ -377,22 +518,22 @@
                     <div class="card">
                         <i class="fas fa-hard-hat"></i>
                         <h3>Consultoría e interventoría</h3>
-                        <p>Supervisión técnica, auditoría, gerencia integral de proyectos. Estudios de suelos, geotecnia, hidrología, ambiental.</p>
+                        <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, ambiental.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-road"></i>
                         <h3>Infraestructura vial y urbana</h3>
-                        <p>Estudios y diseños de vías, puentes, espacio público, redes hidráulicas, eléctricas y de telecomunicaciones.</p>
+                        <p>Estudios y diseños de vías, puentes, espacio público, redes hidráulicas, eléctricas.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-chart-line"></i>
                         <h3>APP, concesiones y EPC</h3>
-                        <p>Estructuración, financiación y operación de proyectos bajo APP, BOT, BOOT, contratos llave en mano.</p>
+                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-solar-panel"></i>
                         <h3>Energía y minería</h3>
-                        <p>Ingeniería eléctrica, energías renovables, petróleos y gas, minería, exploración superficial, sismología.</p>
+                        <p>Ingeniería eléctrica, energías renovables, petróleos, gas, minería, exploración sísmica.</p>
                     </div>
                 </div>
                 <div style="text-align: right; margin-top: 1rem;">
@@ -405,12 +546,12 @@
         <section style="background: #f3f6fa;">
             <div class="container">
                 <h2 class="section-title">4. Tecnología, SIG y desarrollo de software</h2>
-                <p class="subhead">Creamos soluciones tecnológicas para el análisis territorial y la administración de información.</p>
+                <p class="subhead">Creamos soluciones tecnológicas para el análisis territorial.</p>
                 <div class="cards-grid">
                     <div class="card">
                         <i class="fas fa-map"></i>
                         <h3>Sistemas de Información Geográfica</h3>
-                        <p>Implementación de SIG, plataformas web geoespaciales, analítica de datos territoriales, dashboards.</p>
+                        <p>Implementación de SIG, plataformas web geoespaciales, analítica de datos, dashboards.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-code"></i>
@@ -420,11 +561,11 @@
                     <div class="card">
                         <i class="fas fa-cogs"></i>
                         <h3>Comercialización de equipos</h3>
-                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, instrumentación técnica y maquinaria.</p>
+                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos y maquinaria.</p>
                     </div>
                 </div>
                 <div style="text-align: right; margin-top: 1rem;">
-                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Conocer soluciones tecnológicas →</a>
+                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Conocer soluciones →</a>
                 </div>
             </div>
         </section>
@@ -438,28 +579,28 @@
                         <i class="fas fa-satellite"></i>
                         <div>
                             <h4>GNSS doble frecuencia</h4>
-                            <p style="color: #cbd5e0;">±5mm + 1ppm · RTK</p>
+                            <p>±5mm + 1ppm · RTK</p>
                         </div>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-robot"></i>
                         <div>
                             <h4>Estación total robótica</h4>
-                            <p style="color: #cbd5e0;">Medición sin prisma 1000m</p>
+                            <p>Medición sin prisma 1000m</p>
                         </div>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-drone"></i>
                         <div>
                             <h4>Dron RTK</h4>
-                            <p style="color: #cbd5e0;">Fotogrametría de alta precisión</p>
+                            <p>Fotogrametría de alta precisión</p>
                         </div>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-certificate"></i>
                         <div>
                             <h4>Licencia CPNT vigente</h4>
-                            <p style="color: #cbd5e0;">Ingenieros catastrales y topógrafos</p>
+                            <p>Ingenieros catastrales y topógrafos</p>
                         </div>
                     </div>
                 </div>
@@ -469,19 +610,17 @@
         <!-- CONTRATACIÓN PÚBLICA Y ALIANZAS -->
         <section>
             <div class="container work-with-us">
-                <i class="fas fa-handshake" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
-                <h2 style="font-size: 2rem; font-weight: 700; color: #0a2e5a;">Contratación pública y alianzas estratégicas</h2>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto; color: #4a5a72;">
-                    GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales. Nuestro objeto social nos permite ejecutar contratos de obra, consultoría, interventoría, concesión y tecnología.
-                </p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <i class="fas fa-handshake" style="font-size: 2.5rem; color: #00a67e; margin-bottom: 1rem;"></i>
+                <h2>Contratación pública y alianzas estratégicas</h2>
+                <p>GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="#contacto" class="btn">Ser nuestro aliado</a>
                     <a href="https://wa.me/573124033751?text=Hola%2C%20quiero%20conocer%20la%20capacidad%20instalada%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20para%20contratación%20pública%20y%20alianzas%20estratégicas." class="btn btn-outline" target="_blank">Capacidad instalada</a>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACTO (ACTUALIZADO CON NUEVO NÚMERO) -->
+        <!-- CONTACTO -->
         <section id="contacto">
             <div class="container">
                 <h2 class="section-title">Contacto y oficina principal</h2>
@@ -499,29 +638,29 @@
                             <i class="fas fa-mobile-alt"></i>
                             <div>
                                 <h4>Celular / WhatsApp</h4>
-                                <p><a href="tel:+573124033751" style="text-decoration: none; color: inherit;">+57 312 4033751</a></p>
+                                <p><a href="tel:+573124033751">+57 312 4033751</a></p>
                             </div>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Correo</h4>
-                                <p><a href="mailto:geostar.ingenieria@gmail.com" style="text-decoration: none; color: inherit;">geostar.ingenieria@gmail.com</a></p>
-                                <p style="font-size: 0.9rem; color: #00a67e;"><i class="fas fa-star"></i> Próximamente: @geostaringenieria.com.co</p>
+                                <p><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></p>
+                                <p style="font-size: 0.8rem; color: #00a67e;"><i class="fas fa-star"></i> Próximamente: @geostaringenieria.com.co</p>
                             </div>
                         </div>
-                        <div style="margin-top: 2rem;">
-                            <a href="https://wa.me/573124033751?text=Hola%2C%20me%20comunico%20desde%20la%20página%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20Me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20topograf%C3%ADa%2C%20catastro%20o%20consultor%C3%ADa." class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank">
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://wa.me/573124033751?text=Hola%2C%20me%20comunico%20desde%20la%20página%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20Me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios." class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank">
                                 <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
                             </a>
                         </div>
                     </div>
                     <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #a0b3c5; margin-bottom: 1rem;"></i>
+                        <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: #a0b3c5; margin-bottom: 1rem;"></i>
                         <h4>Oficina 304</h4>
                         <p>Edificio Carrera 38 #59-20<br>Barrio La Soledad, Chapinero</p>
-                        <div style="background: white; border-radius: 16px; padding: 1rem; margin-top: 1.5rem;">
-                            <i class="fas fa-clock"></i> Atención: L-V 8:00 a 18:00
+                        <div style="background: white; border-radius: 16px; padding: 0.8rem; margin-top: 1.5rem;">
+                            <i class="fas fa-clock"></i> L-V 8:00 a 18:00
                         </div>
                     </div>
                 </div>
@@ -532,19 +671,19 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <h3 style="font-size: 1.5rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
-                <p style="color: #b0c4ce; margin-top: 0.5rem;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
-                <p style="color: #b0c4ce; font-size: 0.9rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+                <h3 style="font-size: 1.3rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
+                <p style="color: #b0c4ce; margin-top: 0.3rem;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
+                <p style="color: #b0c4ce; font-size: 0.8rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
             </div>
-            <div style="display: flex; gap: 2rem;">
-                <a href="#inicio" style="color: white; text-decoration: none;">Inicio</a>
-                <a href="#servicios" style="color: white; text-decoration: none;">Servicios</a>
-                <a href="#contacto" style="color: white; text-decoration: none;">Contacto</a>
+            <div class="footer-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </div>
-        <div class="container" style="text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #1e3a5a;">
-            <p style="color: #8e9fb1;">© 2026 GEOSTAR INGENIERÍA S.A.S. Todos los derechos reservados</p>
-            <p style="color: #6e85a0; font-size: 0.85rem; margin-top: 0.5rem;">* Capacidad legal para contratar con el Estado, APP, consorcios y uniones temporales. Personal con tarjeta profesional CPNT.</p>
+        <div class="container" style="text-align: center; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid #1e3a5a;">
+            <p style="color: #8e9fb1; font-size: 0.85rem;">© 2026 GEOSTAR INGENIERÍA S.A.S. Todos los derechos reservados</p>
+            <p style="color: #6e85a0; font-size: 0.75rem; margin-top: 0.5rem;">* Capacidad legal para contratar con el Estado, APP, consorcios y uniones temporales.</p>
         </div>
     </footer>
 </body>
