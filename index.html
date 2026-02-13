@@ -26,7 +26,7 @@
             margin: 0 auto;
         }
         
-        /* ===== HEADER CON TEXTO GRANDE ===== */
+        /* ===== HEADER CON LOGO GRANDE ===== */
         header {
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
@@ -45,21 +45,21 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 25px;
         }
         .logo img {
-            height: 55px;
+            height: 90px;
             width: auto;
             display: block;
             filter: brightness(1.2);
         }
         .brand-text {
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 600;
             color: white;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             border-left: 2px solid rgba(255,255,255,0.3);
-            padding-left: 18px;
+            padding-left: 25px;
             line-height: 1.2;
         }
         nav {
@@ -191,60 +191,7 @@
             max-width: 600px;
         }
         
-        /* ===== SOBRE NOSOTROS ===== */
-        .about-grid {
-            display: flex;
-            gap: 6rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .about-text {
-            flex: 1 1 400px;
-        }
-        .about-text h3 {
-            font-size: 2rem;
-            font-weight: 500;
-            color: white;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-        .about-text p {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            font-weight: 300;
-        }
-        .about-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        .stat-item {
-            text-align: left;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: white;
-            margin-bottom: 0.3rem;
-        }
-        .stat-label {
-            color: rgba(255,255,255,0.5);
-            font-weight: 300;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .about-image {
-            flex: 1 1 400px;
-        }
-        .about-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        
-        /* ===== GRID ASIMÉTRICO (ESTILO DJI) ===== */
+        /* ===== GRID ASIMÉTRICO (SERVICIOS) ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -316,6 +263,59 @@
             color: rgba(255,255,255,0.5);
             font-size: 0.8rem;
             font-weight: 300;
+        }
+        
+        /* ===== SOBRE NOSOTROS ===== */
+        .about-grid {
+            display: flex;
+            gap: 6rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1 1 400px;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .about-text p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+        .about-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            text-align: left;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+        .stat-label {
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .about-image {
+            flex: 1 1 400px;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
         }
         
         /* ===== ALIANZAS ===== */
@@ -414,7 +414,7 @@
             margin-bottom: 3rem;
         }
         .footer-logo img {
-            height: 40px;
+            height: 70px;
             width: auto;
             margin-bottom: 1rem;
             filter: brightness(1.2);
@@ -460,13 +460,13 @@
             }
             .brand {
                 flex-direction: column;
-                gap: 8px;
+                gap: 10px;
             }
             .logo img {
-                height: 50px;
+                height: 70px;
             }
             .brand-text {
-                font-size: 1.2rem !important;
+                font-size: 1.4rem !important;
                 border-left: none !important;
                 padding-left: 0 !important;
                 text-align: center;
@@ -537,7 +537,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- HEADER CON TEXTO GRANDE GEOSTAR INGENIERÍA -->
+    <!-- HEADER CON LOGO GRANDE -->
     <header>
         <div class="container header-content">
             <div class="brand">
@@ -548,206 +548,206 @@
             </div>
             <nav>
                 <a href="#inicio">Inicio</a>
-                <a href="#sobre">Sobre</a>
                 <a href="#servicios">Servicios</a>
+                <a href="#sobre">Sobre</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-<main>
-    <!-- 1️⃣ HERO PANORÁMICO -->
-    <section id="inicio" class="hero">
-        <div class="hero-background">
-            <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo">
-        </div>
-        <div class="hero-content">
-            <h1>Geomática, catastro<br>e infraestructura</h1>
-            <p>Soluciones técnicas de precisión para proyectos públicos y privados. Tecnología GNSS, drones RTK, consultoría especializada y desarrollo SIG.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary">Cotizar proyecto</a>
-                <a href="#sobre" class="btn">Conócenos</a>
+    <main>
+        <!-- 1️⃣ HERO PANORÁMICO -->
+        <section id="inicio" class="hero">
+            <div class="hero-background">
+                <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo">
             </div>
-        </div>
-    </section>
-
-    <!-- 2️⃣ LÍNEAS DE NEGOCIO -->
-    <section id="servicios">
-        <div class="container">
-            <h2 class="section-title">Líneas de negocio</h2>
-            <p class="section-subhead">Cuatro áreas especializadas con tecnología de última generación y respaldo legal.</p>
-            
-            <div class="services-grid">
-                <!-- Geomática (destacada) -->
-                <div class="service-card featured">
-                    <i class="fas fa-satellite-dish"></i>
-                    <h3>Geomática y geodesia</h3>
-                    <p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS. Fotogrametría con drones RTK, MDT, ortofotomosaicos, volumetrías.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-drone"></i>
-                    <h3>Drones RTK</h3>
-                    <p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos, inspecciones técnicas y seguimiento de obras.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-landmark"></i>
-                    <h3>Catastro multipropósito</h3>
-                    <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos geoespaciales.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-file-signature"></i>
-                    <h3>Avalúos y predios</h3>
-                    <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres, expropiaciones, saneamiento inmobiliario y formalización.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Consultoría e interventoría</h3>
-                    <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, hidrología y estudios ambientales.</p>
-                </div>
-                
-                <div class="service-card featured">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>APP y concesiones</h3>
-                    <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano. Capacidad legal para asociaciones público-privadas.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-map"></i>
-                    <h3>SIG y software</h3>
-                    <p>Implementación de Sistemas de Información Geográfica, plataformas web geoespaciales, analítica de datos, dashboards personalizados.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Equipos especializados</h3>
-                    <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, estaciones totales, GNSS y maquinaria.</p>
+            <div class="hero-content">
+                <h1>Geomática, catastro<br>e infraestructura</h1>
+                <p>Soluciones técnicas de precisión para proyectos públicos y privados. Tecnología GNSS, drones RTK, consultoría especializada y desarrollo SIG.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Cotizar proyecto</a>
+                    <a href="#sobre" class="btn">Conócenos</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3️⃣ EQUIPOS Y CERTIFICACIONES -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Equipos y certificaciones</h2>
-            <p class="section-subhead">Tecnología de precisión con respaldo legal y personal acreditado.</p>
-            
-            <div class="equipment-grid">
-                <div class="equipment-item">
-                    <i class="fas fa-satellite"></i>
-                    <h4>GNSS doble frecuencia</h4>
-                    <p>±5mm + 1ppm · RTK</p>
-                </div>
-                <div class="equipment-item">
-                    <i class="fas fa-robot"></i>
-                    <h4>Estación total robótica</h4>
-                    <p>Medición sin prisma 1000m</p>
-                </div>
-                <div class="equipment-item">
-                    <i class="fas fa-drone"></i>
-                    <h4>Dron RTK</h4>
-                    <p>Fotogrametría de alta precisión</p>
-                </div>
-                <div class="equipment-item">
-                    <i class="fas fa-certificate"></i>
-                    <h4>Licencia CPNT vigente</h4>
-                    <p>Ingenieros catastrales y topógrafos</p>
+        <!-- 2️⃣ LÍNEAS DE NEGOCIO -->
+        <section id="servicios">
+            <div class="container">
+                <h2 class="section-title">Líneas de negocio</h2>
+                <p class="section-subhead">Cuatro áreas especializadas con tecnología de última generación y respaldo legal.</p>
+                
+                <div class="services-grid">
+                    <!-- Geomática (destacada) -->
+                    <div class="service-card featured">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h3>Geomática y geodesia</h3>
+                        <p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS. Fotogrametría con drones RTK, MDT, ortofotomosaicos, volumetrías.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-drone"></i>
+                        <h3>Drones RTK</h3>
+                        <p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos, inspecciones técnicas y seguimiento de obras.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Catastro multipropósito</h3>
+                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos geoespaciales.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Avalúos y predios</h3>
+                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres, expropiaciones, saneamiento inmobiliario y formalización.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Consultoría e interventoría</h3>
+                        <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, hidrología y estudios ambientales.</p>
+                    </div>
+                    
+                    <div class="service-card featured">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>APP y concesiones</h3>
+                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano. Capacidad legal para asociaciones público-privadas.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-map"></i>
+                        <h3>SIG y software</h3>
+                        <p>Implementación de Sistemas de Información Geográfica, plataformas web geoespaciales, analítica de datos, dashboards personalizados.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Equipos especializados</h3>
+                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, estaciones totales, GNSS y maquinaria.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 4️⃣ SOBRE NOSOTROS (Precisión y cumplimiento normativo) -->
-    <section id="sobre">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Precisión y cumplimiento normativo</h3>
-                    <p><strong>GEOSTAR INGENIERÍA S.A.S.</strong> fue constituida el 11 de febrero de 2026 bajo la Ley 1258 de 2008. Nacemos con la misión de ofrecer soluciones técnicas de alto nivel en geomática, catastro, infraestructura y tecnología.</p>
-                    <p>Nuestro equipo cuenta con ingenieros catastrales y topógrafos con tarjeta profesional CPNT vigente, equipos GNSS de doble frecuencia, estación total robótica y drones RTK. Estamos legalmente facultados para contratar con el Estado, participar en APP, consorcios y uniones temporales.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">+15</div>
-                            <div class="stat-label">Proyectos ejecutados</div>
+        <!-- 3️⃣ EQUIPOS Y CERTIFICACIONES -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Equipos y certificaciones</h2>
+                <p class="section-subhead">Tecnología de precisión con respaldo legal y personal acreditado.</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <i class="fas fa-satellite"></i>
+                        <h4>GNSS doble frecuencia</h4>
+                        <p>±5mm + 1ppm · RTK</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-robot"></i>
+                        <h4>Estación total robótica</h4>
+                        <p>Medición sin prisma 1000m</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-drone"></i>
+                        <h4>Dron RTK</h4>
+                        <p>Fotogrametría de alta precisión</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Licencia CPNT vigente</h4>
+                        <p>Ingenieros catastrales y topógrafos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4️⃣ SOBRE NOSOTROS -->
+        <section id="sobre">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Precisión y cumplimiento normativo</h3>
+                        <p><strong>GEOSTAR INGENIERÍA S.A.S.</strong> fue constituida el 11 de febrero de 2026 bajo la Ley 1258 de 2008. Nacemos con la misión de ofrecer soluciones técnicas de alto nivel en geomática, catastro, infraestructura y tecnología.</p>
+                        <p>Nuestro equipo cuenta con ingenieros catastrales y topógrafos con tarjeta profesional CPNT vigente, equipos GNSS de doble frecuencia, estación total robótica y drones RTK. Estamos legalmente facultados para contratar con el Estado, participar en APP, consorcios y uniones temporales.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">+15</div>
+                                <div class="stat-label">Proyectos ejecutados</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2026</div>
+                                <div class="stat-label">Constitución</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Líneas de negocio</div>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2026</div>
-                            <div class="stat-label">Constitución</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">4</div>
-                            <div class="stat-label">Líneas de negocio</div>
-                        </div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo">
+                    <div class="about-image">
+                        <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5️⃣ CONTRATACIÓN PÚBLICA Y ALIANZAS -->
-    <section>
-        <div class="container alliances">
-            <i class="fas fa-handshake" style="font-size: 2.5rem; color: white; opacity: 0.8; margin-bottom: 1.5rem;"></i>
-            <h2>Contratación pública y alianzas</h2>
-            <p>GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales. Nuestro objeto social nos permite ejecutar contratos de obra, consultoría, interventoría, concesión y tecnología.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#contacto" class="btn btn-primary">Ser nuestro aliado</a>
-                <a href="https://wa.me/573124033751?text=Hola%2C%20quiero%20conocer%20la%20capacidad%20instalada%20de%20GEOSTAR%20INGENIERÍA%20para%20contratación%20pública%20y%20alianzas%20estratégicas." class="btn" target="_blank">Capacidad instalada</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6️⃣ CONTACTO -->
-    <section id="contacto">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-subhead">Bogotá D.C. · Cobertura nacional</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Dirección</h4>
-                        <p>Carrera 38 No. 59-20 Oficina 304</p>
-                        <p>Bogotá D.C., Colombia</p>
-                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem;">Barrio La Soledad, Chapinero</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h4>Celular / WhatsApp</h4>
-                        <p><a href="tel:+573124033751">+57 312 4033751</a></p>
-                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Disponible 24/7</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Correo electrónico</h4>
-                        <p><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></p>
-                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Próximamente: @geostaringenieria.com.co</p>
-                    </div>
+        <!-- 5️⃣ CONTRATACIÓN PÚBLICA Y ALIANZAS -->
+        <section>
+            <div class="container alliances">
+                <i class="fas fa-handshake" style="font-size: 2.5rem; color: white; opacity: 0.8; margin-bottom: 1.5rem;"></i>
+                <h2>Contratación pública y alianzas</h2>
+                <p>GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales. Nuestro objeto social nos permite ejecutar contratos de obra, consultoría, interventoría, concesión y tecnología.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contacto" class="btn btn-primary">Ser nuestro aliado</a>
+                    <a href="https://wa.me/573124033751?text=Hola%2C%20quiero%20conocer%20la%20capacidad%20instalada%20de%20GEOSTAR%20INGENIERÍA%20para%20contratación%20pública%20y%20alianzas%20estratégicas." class="btn" target="_blank">Capacidad instalada</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- 6️⃣ CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subhead">Bogotá D.C. · Cobertura nacional</p>
                 
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem;"></i>
-                    <h4 style="color: white; font-weight: 400; margin-bottom: 0.5rem;">Oficina 304</h4>
-                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Edificio Carrera 38 #59-20</p>
-                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;">Barrio La Soledad, Chapinero</p>
-                    <div style="border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.5rem; display: inline-block;">
-                        <i class="fas fa-clock"></i> L-V: 8:00 - 18:00
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Dirección</h4>
+                            <p>Carrera 38 No. 59-20 Oficina 304</p>
+                            <p>Bogotá D.C., Colombia</p>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem;">Barrio La Soledad, Chapinero</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Celular / WhatsApp</h4>
+                            <p><a href="tel:+573124033751">+57 312 4033751</a></p>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Disponible 24/7</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Correo electrónico</h4>
+                            <p><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></p>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Próximamente: @geostaringenieria.com.co</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem;"></i>
+                        <h4 style="color: white; font-weight: 400; margin-bottom: 0.5rem;">Oficina 304</h4>
+                        <p style="color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Edificio Carrera 38 #59-20</p>
+                        <p style="color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;">Barrio La Soledad, Chapinero</p>
+                        <div style="border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.5rem; display: inline-block;">
+                            <i class="fas fa-clock"></i> L-V: 8:00 - 18:00
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
-    <!-- FOOTER MINIMALISTA -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -760,8 +760,8 @@
                 </div>
                 <div class="footer-nav">
                     <a href="#inicio">Inicio</a>
-                    <a href="#sobre">Sobre</a>
                     <a href="#servicios">Servicios</a>
+                    <a href="#sobre">Sobre</a>
                     <a href="#contacto">Contacto</a>
                 </div>
             </div>
