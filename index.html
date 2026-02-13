@@ -38,28 +38,20 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #0a2e5a;
-            letter-spacing: -0.5px;
-        }
-        .logo span {
-            color: #00a67e;
-            font-weight: 600;
-            font-size: 0.75rem;
+        .logo img {
+            height: 70px;
+            width: auto;
             display: block;
-            margin-top: 0.2rem;
         }
         nav {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         nav a {
             text-decoration: none;
             color: #1e2a41;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: color 0.2s;
         }
         nav a:hover {
@@ -306,9 +298,6 @@
             text-align: center;
             gap: 1.5rem;
         }
-        .footer-content div {
-            text-align: center;
-        }
         .footer-nav {
             display: flex;
             gap: 1.5rem;
@@ -325,14 +314,11 @@
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.8rem;
             }
-            .logo h1 {
-                font-size: 1.3rem;
-                text-align: center;
-            }
-            .logo span {
-                text-align: center;
+            .logo img {
+                height: 60px;
+                margin: 0 auto;
             }
             nav {
                 gap: 1.2rem;
@@ -363,34 +349,17 @@
             .cards-grid {
                 grid-template-columns: 1fr;
             }
-            .equipment-grid {
-                flex-direction: column;
-            }
-            .work-with-us h2 {
-                font-size: 1.4rem;
-            }
             .contact-grid {
                 flex-direction: column;
-                gap: 1.5rem;
-            }
-            .contact-info {
-                width: 100%;
-            }
-            .contact-detail {
-                flex-wrap: wrap;
-            }
-            .map-placeholder {
-                width: 100%;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
             .container {
                 width: 95%;
+            }
+            .logo img {
+                height: 50px;
             }
             .hero-text h2 {
                 font-size: 1.4rem;
@@ -402,19 +371,6 @@
             .img-responsive {
                 max-width: 200px;
             }
-            .card {
-                padding: 1.5rem 1rem;
-            }
-            .equipment {
-                padding: 2rem 1rem;
-            }
-            .equipment-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .work-with-us {
-                padding: 1.5rem 1rem;
-            }
         }
     </style>
 </head>
@@ -422,8 +378,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>GEOSTAR INGENIERÍA S.A.S.</h1>
-                <span>NIT: 928.100-6 (tramitando) · Constituida 2026</span>
+                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S. - Logo oficial">
             </div>
             <nav>
                 <a href="#inicio">Inicio</a>
@@ -434,7 +389,7 @@
     </header>
 
     <main>
-        <!-- HERO CON FOTO RESPONSIVE -->
+        <!-- HERO -->
         <section id="inicio" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
@@ -671,7 +626,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <h3 style="font-size: 1.3rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
+                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S." style="height: 50px; width: auto; margin-bottom: 0.5rem;">
                 <p style="color: #b0c4ce; margin-top: 0.3rem;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
                 <p style="color: #b0c4ce; font-size: 0.8rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
             </div>
