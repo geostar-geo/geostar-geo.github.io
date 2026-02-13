@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>GEOSTAR INGENIERÍA S.A.S. · Geomática, Catastro, Infraestructura y Tecnología</title>
-    <!-- Google Fonts + Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>GEOSTAR INGENIERÍA · Geomática, Catastro, Infraestructura</title>
+    <!-- Google Fonts: Poppins + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,25 +14,27 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1e2a41;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
         .container {
-            width: 90%;
-            max-width: 1280px;
+            width: 92%;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
-        /* ===== HEADER ===== */
+        /* ===== HEADER MINIMALISTA ===== */
         header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            padding: 1rem 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .header-content {
             display: flex;
@@ -40,152 +42,145 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
         .logo img {
-            height: 90px;
+            height: 50px;
             width: auto;
             display: block;
-        }
-        .logo span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #00a67e;
-            margin-top: 5px;
-            letter-spacing: 1px;
+            filter: brightness(1.2);
         }
         nav {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         nav a {
             text-decoration: none;
-            color: #1e2a41;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+            opacity: 0.8;
+            letter-spacing: 1px;
         }
         nav a:hover {
-            color: #00a67e;
+            opacity: 1;
         }
         
-        /* ===== HERO CON IMAGEN DE FONDO ===== */
+        /* ===== HERO PANORÁMICO (ESTILO DJI) ===== */
         .hero {
             position: relative;
-            background: url('img/SCT6_Fieldshot_1.JPG') no-repeat center center/cover;
             height: 90vh;
-            min-height: 600px;
+            min-height: 700px;
             display: flex;
             align-items: center;
             color: white;
+            overflow: hidden;
         }
-        .hero::before {
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            opacity: 0.6;
+        }
+        .hero::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(10,46,90,0.9) 0%, rgba(10,46,90,0.7) 50%, rgba(0,166,126,0.6) 100%);
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+            z-index: 1;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            width: 90%;
-            max-width: 1280px;
+            width: 92%;
+            max-width: 1400px;
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            max-width: 800px;
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+            max-width: 900px;
+            letter-spacing: -1px;
         }
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            max-width: 700px;
-            opacity: 0.95;
+            max-width: 600px;
+            font-weight: 300;
+            opacity: 0.9;
         }
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
         
-        /* ===== BOTONES ===== */
+        /* ===== BOTONES MINIMALISTAS ===== */
         .btn {
             display: inline-block;
-            background: #00a67e;
-            color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            box-shadow: 0 8px 16px rgba(0,166,126,0.3);
-        }
-        .btn:hover {
-            background: #008c68;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,166,126,0.4);
-        }
-        .btn-outline-light {
             background: transparent;
             color: white;
-            border: 2px solid white;
-            box-shadow: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 0px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            letter-spacing: 2px;
         }
-        .btn-outline-light:hover {
+        .btn:hover {
             background: white;
-            color: #0a2e5a;
+            color: black;
             border-color: white;
         }
-        .btn-wa {
-            background: #25D366;
-            box-shadow: 0 8px 16px rgba(37,211,102,0.3);
+        .btn-primary {
+            background: white;
+            color: black;
+            border: 1.5px solid white;
         }
-        .btn-wa:hover {
-            background: #20b859;
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
         }
         
-        /* ===== SECCIONES ===== */
+        /* ===== SECCIONES CON AIRE ===== */
         section {
-            padding: 5rem 0;
+            padding: 7rem 0;
         }
         .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0a2e5a;
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: white;
             margin-bottom: 1rem;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #00a67e;
-            margin-top: 0.8rem;
-            border-radius: 4px;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
         .section-subhead {
-            color: #5a6a7e;
+            color: rgba(255,255,255,0.6);
             font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
+            font-weight: 300;
+            margin-bottom: 4rem;
+            max-width: 600px;
         }
         
-        /* ===== SOBRE NOSOTROS ===== */
+        /* ===== SOBRE NOSOTROS (MINIMAL) ===== */
         .about-grid {
             display: flex;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -193,291 +188,292 @@
             flex: 1 1 400px;
         }
         .about-text h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0a2e5a;
+            font-size: 2rem;
+            font-weight: 500;
+            color: white;
             margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
         .about-text p {
-            color: #4a5a72;
-            margin-bottom: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.5rem;
             font-size: 1.05rem;
+            font-weight: 300;
         }
         .about-stats {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 2rem;
         }
         .stat-item {
-            text-align: center;
+            text-align: left;
         }
         .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #00a67e;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 0.3rem;
         }
         .stat-label {
-            color: #1e2a41;
-            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         .about-image {
-            flex: 1 1 300px;
-            text-align: center;
+            flex: 1 1 400px;
         }
         .about-image img {
             width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            height: auto;
+            object-fit: cover;
         }
         
-        /* ===== TARJETAS DE SERVICIOS ===== */
-        .cards-grid {
+        /* ===== GRID ASIMÉTRICO (ESTILO DJI) ===== */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: rgba(255,255,255,0.05);
             margin-top: 2rem;
         }
-        .card {
-            background: white;
-            padding: 2.5rem 1.8rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #f0f2f5;
+        .service-card {
+            background: #000;
+            padding: 3rem 2rem;
+            transition: all 0.4s;
+            border: 1px solid transparent;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,166,126,0.1);
-            border-color: #00a67e30;
+        .service-card:hover {
+            background: #0a0a0a;
+            border-color: rgba(255,255,255,0.1);
         }
-        .card i {
-            font-size: 2.8rem;
-            color: #00a67e;
+        .service-card i {
+            font-size: 2rem;
+            color: white;
             margin-bottom: 1.5rem;
+            opacity: 0.8;
         }
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
             margin-bottom: 1rem;
-            color: #0a2e5a;
+            color: white;
         }
-        .card p {
-            color: #4a5a72;
-            font-size: 0.95rem;
+        .service-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.6;
         }
         
-        /* ===== EQUIPOS ===== */
-        .equipment {
-            background: linear-gradient(145deg, #0a2e5a 0%, #0e3a6b 100%);
-            color: white;
-            border-radius: 30px;
-            padding: 3rem;
+        /* Tarjetas destacadas (ocupan más espacio) */
+        .service-card.featured {
+            grid-column: span 2;
+            grid-row: span 1;
         }
-        .equipment .section-title {
-            color: white;
-        }
-        .equipment .section-title::after {
-            background: white;
-        }
+        
+        /* ===== EQUIPOS (ESTILO GALERÍA) ===== */
         .equipment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
             margin-top: 2rem;
+            background: rgba(255,255,255,0.05);
         }
         .equipment-item {
+            background: #000;
+            padding: 2.5rem 2rem;
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
+            flex-direction: column;
+            align-items: flex-start;
         }
         .equipment-item i {
-            font-size: 2.5rem;
-            color: #00e6b0;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 1.2rem;
+            opacity: 0.7;
         }
         .equipment-item h4 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             margin-bottom: 0.3rem;
+            color: white;
         }
         .equipment-item p {
-            color: #cbd5e0;
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            font-weight: 300;
         }
         
         /* ===== ALIANZAS ===== */
         .alliances {
-            background: #f8fafc;
-            border-radius: 30px;
-            padding: 3rem;
+            background: #0a0a0a;
+            padding: 5rem;
             text-align: center;
         }
         .alliances h2 {
-            font-size: 2rem;
-            color: #0a2e5a;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: white;
             margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
         .alliances p {
             font-size: 1.1rem;
-            color: #4a5a72;
-            max-width: 800px;
+            color: rgba(255,255,255,0.6);
+            max-width: 700px;
             margin: 0 auto 2rem;
+            font-weight: 300;
         }
         
-        /* ===== CONTACTO ===== */
+        /* ===== CONTACTO MINIMAL ===== */
         .contact-grid {
             display: flex;
-            gap: 3rem;
+            gap: 4rem;
             flex-wrap: wrap;
         }
         .contact-info {
-            flex: 1 1 350px;
+            flex: 1 1 400px;
         }
         .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
             margin-bottom: 2rem;
         }
         .contact-item i {
-            font-size: 1.8rem;
-            color: #00a67e;
-            width: 40px;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.8rem;
+            opacity: 0.7;
         }
         .contact-item h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            font-weight: 500;
             margin-bottom: 0.3rem;
-            color: #0a2e5a;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         .contact-item p, .contact-item a {
-            color: #4a5a72;
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-        }
-        .map-container {
-            flex: 1 1 400px;
-            background: #e9ecf0;
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
+            font-weight: 300;
         }
         .map-placeholder {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            flex: 1 1 400px;
+            background: #0a0a0a;
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         
-        /* ===== WHATSAPP FLOTANTE ===== */
+        /* ===== WHATSAPP FLOTANTE (DISCRETO) ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #25D366;
+            background: rgba(255,255,255,0.1);
             color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 0;
             text-align: center;
-            font-size: 35px;
-            line-height: 65px;
-            box-shadow: 0 8px 20px rgba(37,211,102,0.4);
-            z-index: 100;
+            font-size: 24px;
+            line-height: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s;
+            z-index: 100;
         }
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 28px rgba(37,211,102,0.6);
+            background: white;
+            color: black;
         }
         
         /* ===== FOOTER ===== */
         footer {
-            background: #0a1a2e;
-            color: white;
-            padding: 3rem 0 1.5rem;
-            margin-top: 3rem;
+            background: #000;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
         .footer-content {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         .footer-logo img {
-            height: 70px;
+            height: 40px;
             width: auto;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            filter: brightness(1.2);
         }
         .footer-logo p {
-            color: #b0c4ce;
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            font-weight: 300;
         }
         .footer-nav {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
         }
         .footer-nav a {
-            color: white;
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: opacity 0.2s;
         }
         .footer-nav a:hover {
-            color: #00a67e;
+            opacity: 1;
         }
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #1e3a5a;
-            color: #8e9fb1;
-            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+            font-weight: 300;
         }
         
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .services-grid, .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
             nav {
-                gap: 1.2rem;
+                gap: 1.5rem;
             }
             .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
+                font-size: 2.8rem;
             }
             .hero {
-                height: 80vh;
-                min-height: 500px;
+                min-height: 600px;
+            }
+            .services-grid, .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card.featured {
+                grid-column: span 1;
             }
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             .about-grid {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .equipment {
-                padding: 2rem;
+                gap: 3rem;
             }
             .alliances {
-                padding: 2rem;
-            }
-            .footer-content {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            .footer-nav {
-                gap: 1.5rem;
+                padding: 3rem 2rem;
             }
         }
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             .hero-buttons {
                 flex-direction: column;
@@ -486,33 +482,24 @@
                 width: 100%;
                 text-align: center;
             }
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                font-size: 30px;
-                line-height: 55px;
-                bottom: 20px;
-                right: 20px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20nuevo%20sitio%20web%20de%20GEOSTAR%20INGENIER%C3%8DA%20S.A.S.%20y%20quiero%20solicitar%20informaci%C3%B3n." class="whatsapp-float" target="_blank">
+    <!-- WHATSAPP FLOTANTE (DJI STYLE) -->
+    <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20sitio%20web%20de%20GEOSTAR%20y%20quiero%20solicitar%20informaci%C3%B3n." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- HEADER -->
+    <!-- HEADER MINIMALISTA -->
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S.">
-                <span>PRECISIÓN Y CUMPLIMIENTO NORMATIVO</span>
+                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA">
             </div>
             <nav>
                 <a href="#inicio">Inicio</a>
-                <a href="#sobre-nosotros">Sobre nosotros</a>
+                <a href="#sobre">Sobre</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#contacto">Contacto</a>
             </nav>
@@ -520,30 +507,33 @@
     </header>
 
     <main>
-        <!-- HERO CON IMAGEN DE FONDO -->
+        <!-- HERO PANORÁMICO (ESTILO DJI) -->
         <section id="inicio" class="hero">
+            <div class="hero-background">
+                <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS">
+            </div>
             <div class="hero-content">
-                <h1>Soluciones integrales en geomática, catastro, infraestructura y tecnología</h1>
-                <p>Ejecutamos proyectos de topografía de precisión, catastro multipropósito, interventoría, APP, desarrollo de software SIG y consultoría especializada.</p>
+                <h1>Geomática, catastro<br>e infraestructura</h1>
+                <p>Soluciones técnicas de precisión para proyectos públicos y privados. Tecnología GNSS, drones RTK y desarrollo SIG.</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Cotizar proyecto</a>
-                    <a href="#sobre-nosotros" class="btn btn-outline-light">Conócenos</a>
+                    <a href="#contacto" class="btn btn-primary">Cotizar proyecto</a>
+                    <a href="#sobre" class="btn">Conócenos</a>
                 </div>
             </div>
         </section>
 
-        <!-- SOBRE NOSOTROS -->
-        <section id="sobre-nosotros">
+        <!-- SOBRE NOSOTROS (MINIMAL) -->
+        <section id="sobre">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h3>Más que una empresa de topografía</h3>
-                        <p><strong>GEOSTAR INGENIERÍA S.A.S.</strong> fue constituida el 11 de febrero de 2026 bajo la Ley 1258 de 2008. Nacemos con la misión de ofrecer soluciones técnicas de alto nivel en geomática, catastro, infraestructura y tecnología.</p>
-                        <p>Nuestro equipo cuenta con ingenieros catastrales y topógrafos con tarjeta profesional CPNT vigente, equipos GNSS de doble frecuencia, estación total robótica y drones RTK. Estamos legalmente facultados para contratar con el Estado, participar en APP, consorcios y uniones temporales.</p>
+                        <h3>Precisión y cumplimiento normativo</h3>
+                        <p><strong>GEOSTAR INGENIERÍA S.A.S.</strong> constituida en 2026 bajo la Ley 1258 de 2008. Especialistas en geomática, catastro multipropósito, infraestructura y tecnología.</p>
+                        <p>Equipos GNSS doble frecuencia, estación total robótica, drones RTK. Personal con licencia CPNT. Facultad para contratación estatal, APP y consorcios.</p>
                         <div class="about-stats">
                             <div class="stat-item">
                                 <div class="stat-number">+15</div>
-                                <div class="stat-label">Proyectos ejecutados</div>
+                                <div class="stat-label">Proyectos</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">2026</div>
@@ -551,157 +541,115 @@
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">4</div>
-                                <div class="stat-label">Líneas de negocio</div>
+                                <div class="stat-label">Líneas</div>
                             </div>
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo">
+                        <img src="img/SCT6_Fieldshot_1.JPG" alt="Equipo GNSS en campo">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICIOS - PILARES -->
-        <section id="servicios" style="background: #f8fafc;">
+        <!-- SERVICIOS (GRID ASIMÉTRICO) -->
+        <section id="servicios">
             <div class="container">
-                <h2 class="section-title">Nuestras líneas de negocio</h2>
-                <p class="section-subhead">Ofrecemos soluciones especializadas en cuatro grandes áreas, respaldadas por tecnología de precisión y personal certificado.</p>
+                <h2 class="section-title">Líneas de negocio</h2>
+                <p class="section-subhead">Cuatro áreas especializadas con tecnología de última generación.</p>
                 
-                <!-- PILAR 1: GEOMÁTICA -->
-                <h3 style="color: #0a2e5a; margin: 2rem 0 1rem; font-size: 1.6rem;">1. Geomática, topografía y geodesia</h3>
-                <div class="cards-grid">
-                    <div class="card">
+                <div class="services-grid">
+                    <!-- Geomática (destacada) -->
+                    <div class="service-card featured">
                         <i class="fas fa-satellite-dish"></i>
-                        <h3>GNSS y geodesia</h3>
-                        <p>Redes de apoyo geodésico, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS.</p>
+                        <h3>Geomática y geodesia</h3>
+                        <p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS. Fotogrametría con drones RTK, MDT, ortofotomosaicos, volumetrías.</p>
                     </div>
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-drone"></i>
-                        <h3>Fotogrametría con drones</h3>
-                        <p>Modelos digitales del terreno (MDT), ortofotomosaicos, nubes de puntos, mediciones volumétricas.</p>
+                        <h3>Drones RTK</h3>
+                        <p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos, inspecciones técnicas.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-draw-polygon"></i>
-                        <h3>Planimetría y altimetría</h3>
-                        <p>Levantamientos para vías, urbanismo, minería, infraestructura hidráulica y eléctrica.</p>
-                    </div>
-                </div>
-
-                <!-- PILAR 2: CATASTRO -->
-                <h3 style="color: #0a2e5a; margin: 3rem 0 1rem; font-size: 1.6rem;">2. Catastro multipropósito y gestión predial</h3>
-                <div class="cards-grid">
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-landmark"></i>
                         <h3>Catastro multipropósito</h3>
-                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales.</p>
+                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos.</p>
                     </div>
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-file-signature"></i>
-                        <h3>Avalúos y estudios prediales</h3>
-                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres y expropiaciones.</p>
+                        <h3>Avalúos y predios</h3>
+                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres, expropiaciones, saneamiento inmobiliario.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-gavel"></i>
-                        <h3>Saneamiento y formalización</h3>
-                        <p>Estudios jurídicos prediales, saneamiento inmobiliario, formalización de la propiedad.</p>
-                    </div>
-                </div>
-
-                <!-- PILAR 3: INGENIERÍA Y APP -->
-                <h3 style="color: #0a2e5a; margin: 3rem 0 1rem; font-size: 1.6rem;">3. Ingeniería, infraestructura y APP</h3>
-                <div class="cards-grid">
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-hard-hat"></i>
                         <h3>Consultoría e interventoría</h3>
                         <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, ambiental.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-road"></i>
-                        <h3>Infraestructura vial y urbana</h3>
-                        <p>Estudios y diseños de vías, puentes, espacio público, redes hidráulicas, eléctricas.</p>
-                    </div>
-                    <div class="card">
+                    
+                    <div class="service-card featured">
                         <i class="fas fa-chart-line"></i>
-                        <h3>APP, concesiones y EPC</h3>
-                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano.</p>
+                        <h3>APP y concesiones</h3>
+                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano. Capacidad legal para asociaciones público-privadas.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-solar-panel"></i>
-                        <h3>Energía y minería</h3>
-                        <p>Ingeniería eléctrica, energías renovables, petróleos, gas, minería, exploración sísmica.</p>
-                    </div>
-                </div>
-
-                <!-- PILAR 4: TECNOLOGÍA -->
-                <h3 style="color: #0a2e5a; margin: 3rem 0 1rem; font-size: 1.6rem;">4. Tecnología, SIG y software</h3>
-                <div class="cards-grid">
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-map"></i>
-                        <h3>Sistemas de Información Geográfica</h3>
-                        <p>Implementación de SIG, plataformas web geoespaciales, analítica de datos, dashboards.</p>
+                        <h3>SIG y software</h3>
+                        <p>Implementación de Sistemas de Información Geográfica, plataformas web geoespaciales, analítica de datos, dashboards.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-code"></i>
-                        <h3>Desarrollo de software</h3>
-                        <p>Aplicaciones empresariales, sistemas de administración de información, soluciones a la medida.</p>
-                    </div>
-                    <div class="card">
+                    
+                    <div class="service-card">
                         <i class="fas fa-cogs"></i>
-                        <h3>Comercialización de equipos</h3>
+                        <h3>Equipos especializados</h3>
                         <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos y maquinaria.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EQUIPOS Y CERTIFICACIONES -->
+        <!-- EQUIPOS (GALERÍA) -->
         <section>
-            <div class="container equipment">
-                <h2 class="section-title">Equipos y respaldo legal</h2>
-                <p style="color: #cbd5e0; margin-bottom: 2rem;">Trabajamos con tecnología de última generación y personal acreditado por el CPNT.</p>
+            <div class="container">
+                <h2 class="section-title">Equipos y certificaciones</h2>
+                <p class="section-subhead">Tecnología de precisión con respaldo legal.</p>
+                
                 <div class="equipment-grid">
                     <div class="equipment-item">
                         <i class="fas fa-satellite"></i>
-                        <div>
-                            <h4>GNSS doble frecuencia</h4>
-                            <p>±5mm + 1ppm · RTK</p>
-                        </div>
+                        <h4>GNSS doble frecuencia</h4>
+                        <p>±5mm + 1ppm · RTK</p>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-robot"></i>
-                        <div>
-                            <h4>Estación total robótica</h4>
-                            <p>Medición sin prisma 1000m</p>
-                        </div>
+                        <h4>Estación total robótica</h4>
+                        <p>Medición sin prisma 1000m</p>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-drone"></i>
-                        <div>
-                            <h4>Dron RTK</h4>
-                            <p>Fotogrametría de alta precisión</p>
-                        </div>
+                        <h4>Dron RTK</h4>
+                        <p>Fotogrametría de alta precisión</p>
                     </div>
                     <div class="equipment-item">
                         <i class="fas fa-certificate"></i>
-                        <div>
-                            <h4>Licencia CPNT vigente</h4>
-                            <p>Ingenieros catastrales y topógrafos</p>
-                        </div>
+                        <h4>Licencia CPNT vigente</h4>
+                        <p>Ingenieros catastrales y topógrafos</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTRATACIÓN PÚBLICA Y ALIANZAS -->
+        <!-- ALIANZAS -->
         <section>
             <div class="container alliances">
-                <i class="fas fa-handshake" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
-                <h2>Contratación pública y alianzas estratégicas</h2>
-                <p>GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales. Nuestro objeto social nos permite ejecutar contratos de obra, consultoría, interventoría, concesión y tecnología.</p>
+                <h2>Contratación pública</h2>
+                <p>Facultad legal para participar en licitaciones, APP, consorcios y uniones temporales. Objeto social habilitado para obra, consultoría, interventoría, concesión y tecnología.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#contacto" class="btn">Ser nuestro aliado</a>
-                    <a href="https://wa.me/573124033751?text=Hola%2C%20quiero%20conocer%20la%20capacidad%20instalada%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20para%20contratación%20pública%20y%20alianzas%20estratégicas." class="btn btn-outline" style="border-color: #0a2e5a; color: #0a2e5a;" target="_blank">Capacidad instalada</a>
+                    <a href="#contacto" class="btn btn-primary">Ser aliado</a>
+                    <a href="https://wa.me/573124033751?text=Hola%2C%20quiero%20conocer%20capacidad%20instalada%20GEOSTAR" class="btn" target="_blank">Capacidad instalada</a>
                 </div>
             </div>
         </section>
@@ -709,52 +657,37 @@
         <!-- CONTACTO -->
         <section id="contacto">
             <div class="container">
-                <h2 class="section-title">Contacto y oficina principal</h2>
-                <p class="section-subhead">Atención en Bogotá D.C. y cobertura nacional. Escríbenos o visítanos.</p>
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subhead">Bogotá D.C. · Cobertura nacional</p>
+                
                 <div class="contact-grid">
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Dirección</h4>
-                                <p>Carrera 38 No. 59-20 Oficina 304<br>Bogotá D.C., Colombia</p>
-                                <p style="font-size: 0.9rem; color: #6e85a0;">Barrio La Soledad, Chapinero</p>
-                            </div>
+                            <h4>Dirección</h4>
+                            <p>Carrera 38 No. 59-20 Oficina 304<br>Bogotá, Colombia</p>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Barrio La Soledad, Chapinero</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <h4>Celular / WhatsApp</h4>
-                                <p><a href="tel:+573124033751">+57 312 4033751</a></p>
-                                <p style="font-size: 0.9rem; color: #00a67e;">Disponible 24/7</p>
-                            </div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="tel:+573124033751">+57 312 4033751</a></p>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Disponible 24/7</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Correo electrónico</h4>
-                                <p><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></p>
-                                <p style="font-size: 0.9rem; color: #00a67e;">Próximamente: @geostaringenieria.com.co</p>
-                            </div>
-                        </div>
-                        <div style="margin-top: 2rem;">
-                            <a href="https://wa.me/573124033751?text=Hola%2C%20me%20comunico%20desde%20el%20nuevo%20sitio%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20Me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n." class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp ahora
-                            </a>
+                            <h4>Correo</h4>
+                            <p><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></p>
                         </div>
                     </div>
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
-                            <h4 style="color: #0a2e5a; margin-bottom: 0.5rem;">Oficina 304</h4>
-                            <p style="margin-bottom: 0.5rem;">Edificio Carrera 38 #59-20</p>
-                            <p style="margin-bottom: 1rem;">Barrio La Soledad, Chapinero</p>
-                            <div style="background: #f0f2f5; border-radius: 50px; padding: 0.8rem; display: inline-block;">
-                                <i class="fas fa-clock"></i> L-V: 8:00 - 18:00
-                            </div>
-                            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #5a6a7e;">
-                                <i class="fas fa-car"></i> Parqueadero cercano
-                            </p>
+                    
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem;"></i>
+                        <h4 style="color: white; font-weight: 400; margin-bottom: 0.5rem;">Oficina 304</h4>
+                        <p style="color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Edificio Carrera 38 #59-20</p>
+                        <p style="color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;">La Soledad, Chapinero</p>
+                        <div style="border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.5rem; display: inline-block;">
+                            <i class="fas fa-clock"></i> L-V 8:00 - 18:00
                         </div>
                     </div>
                 </div>
@@ -762,26 +695,26 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER MINIMAL -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S.">
-                    <p style="font-weight: 700; color: white; margin-top: 0.5rem;">GEOSTAR INGENIERÍA S.A.S.</p>
-                    <p>NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
-                    <p style="font-size: 0.8rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+                    <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA">
+                    <p>GEOSTAR INGENIERÍA S.A.S.</p>
+                    <p>NIT: 928.100-6 · Constitución 2026</p>
+                    <p style="margin-top: 0.5rem;">Ley 1258 de 2008</p>
                 </div>
                 <div class="footer-nav">
                     <a href="#inicio">Inicio</a>
-                    <a href="#sobre-nosotros">Sobre nosotros</a>
+                    <a href="#sobre">Sobre</a>
                     <a href="#servicios">Servicios</a>
                     <a href="#contacto">Contacto</a>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2026 GEOSTAR INGENIERÍA S.A.S. Todos los derechos reservados.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.75rem;">* Capacidad legal para contratar con el Estado, APP, consorcios y uniones temporales.</p>
+                <p>© 2026 GEOSTAR INGENIERÍA S.A.S.</p>
+                <p style="margin-top: 0.3rem;">Capacidad legal para contratación estatal, APP y consorcios</p>
             </div>
         </div>
     </footer>
