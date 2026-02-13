@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>GEOSTAR INGENIERÍA · Topografía de precisión en Bogotá</title>
+    <title>GEOSTAR INGENIERÍA S.A.S. · Geomática, Catastro, Infraestructura y Tecnología</title>
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -48,7 +48,7 @@
         .logo span {
             color: #00a67e;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             display: block;
             margin-top: 0.2rem;
         }
@@ -62,7 +62,6 @@
         nav a:hover {
             color: #00a67e;
         }
-        /* Botones CTA */
         .btn {
             display: inline-block;
             background: #00a67e;
@@ -116,7 +115,7 @@
             flex: 1 1 400px;
         }
         .hero-text h2 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 800;
             line-height: 1.2;
             color: #0a2e5a;
@@ -132,7 +131,6 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
-        /* Secciones */
         section {
             padding: 4rem 0;
         }
@@ -157,7 +155,6 @@
             font-size: 1.1rem;
             margin-bottom: 3rem;
         }
-        /* Tarjetas de servicios */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -190,62 +187,22 @@
         .card p {
             color: #4a5a72;
         }
-        /* Portafolio (proyectos) */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .pillars {
+            background: #f3f6fa;
+            border-radius: 40px;
+            padding: 3rem 2rem;
         }
-        .project-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            transition: 0.3s;
-        }
-        .project-item:hover {
-            box-shadow: 0 20px 30px rgba(0,0,0,0.06);
-        }
-        .project-img {
-            background: #e9ecf0;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8b9aad;
-            font-size: 3rem;
-        }
-        .project-info {
-            padding: 1.5rem;
-        }
-        .project-info h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .project-tag {
-            display: inline-block;
-            background: #e0f0ec;
-            color: #00a67e;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            margin: 0.5rem 0;
-        }
-        /* Equipos y certificaciones */
         .equipment {
             background: #0a2e5a;
             color: white;
             border-radius: 40px;
             padding: 3rem 2rem;
         }
-        .equipment h2, .equipment .section-title::after {
-            background: white;
-        }
         .equipment .section-title {
             color: white;
+        }
+        .equipment .section-title::after {
+            background: white;
         }
         .equipment-grid {
             display: flex;
@@ -264,7 +221,6 @@
             font-size: 2rem;
             color: #00e6b0;
         }
-        /* Trabaja con nosotros */
         .work-with-us {
             background: white;
             border-radius: 30px;
@@ -273,7 +229,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border: 1px solid #eaeef2;
         }
-        /* Contacto */
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
@@ -333,115 +288,170 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>GEOSTAR INGENIERÍA</h1>
-                <span>S.A.S. · Precisión y cumplimiento normativo</span>
+                <h1>GEOSTAR INGENIERÍA S.A.S.</h1>
+                <span>NIT: Próximamente · Constituida 2026</span>
             </div>
             <nav>
                 <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#proyectos">Proyectos</a>
+                <a href="#servicios">Líneas de negocio</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- HERO: mensaje especializado + CTA -->
+        <!-- HERO: Posicionamiento de GRUPO empresarial -->
         <section id="inicio" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <h2>Topografía de precisión para infraestructura urbana y consultoría catastral en Bogotá</h2>
-                    <p>Ejecutamos levantamientos GNSS, planimetría, altimetría y procesamiento geoespacial con equipos de alta precisión (±5mm) y personal certificado por el CPNT.</p>
+                    <h2>Soluciones integrales en geomática, catastro, infraestructura y tecnología</h2>
+                    <p>Ejecutamos proyectos de topografía de precisión, catastro multipropósito, interventoría, APP, desarrollo de software SIG y consultoría especializada. Respaldados por la Ley 1258 de 2008 y con capacidad legal para contratar con el Estado y la gran empresa privada.</p>
                     <div class="hero-buttons">
-                        <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Solicitar cotización</a>
-                        <a href="https://wa.me/5714779010?text=Hola%2C%20vi%20su%20página%20web%20y%20quiero%20solicitar%20información%20sobre%20servicios%20de%20topografía" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Cotizar proyecto</a>
+                        <a href="https://wa.me/5714779010?text=Hola%2C%20vi%20su%20página%20web%20y%20quiero%20información%20sobre%20servicios%20de%20ingeniería" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
                 <div style="flex: 1 1 300px; text-align: center;">
-                    <!-- Icono representativo -->
-                    <i class="fas fa-draw-polygon" style="font-size: 8rem; color: #0a2e5a20;"></i>
+                    <i class="fas fa-globe-americas" style="font-size: 8rem; color: #0a2e5a20;"></i>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICIOS (ELIMINADO TRANSPORTE) -->
+        <!-- ========================================= -->
+        <!-- PILAR 1: GEOMÁTICA Y TOPOGRAFÍA          -->
+        <!-- ========================================= -->
         <section id="servicios">
             <div class="container">
-                <h2 class="section-title">Servicios especializados</h2>
-                <p class="subhead">Ingeniería de precisión para proyectos públicos y privados.</p>
+                <h2 class="section-title">1. Geomática, topografía y geodesia</h2>
+                <p class="subhead">Levantamientos de alta precisión con GNSS, estación total robótica y drones RTK.</p>
                 <div class="cards-grid">
                     <div class="card">
-                        <i class="fas fa-hard-hat"></i>
-                        <h3>Ingeniería y Consultoría</h3>
-                        <p>Diseño, análisis y asesoría técnica en infraestructura, obras civiles y desarrollo territorial.</p>
+                        <i class="fas fa-satellite-dish"></i>
+                        <h3>GNSS y geodesia</h3>
+                        <p>Redes de apoyo geodésico, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS.</p>
                     </div>
                     <div class="card">
-                        <i class="fas fa-satellite-dish"></i>
-                        <h3>Topografía y Georreferenciación</h3>
-                        <p>Levantamientos GNSS (RTK), estación total, planimetría, altimetría y nubes de puntos.</p>
+                        <i class="fas fa-drone"></i>
+                        <h3>Fotogrametría con drones</h3>
+                        <p>Modelos digitales del terreno (MDT), ortofotomosaicos, nubes de puntos, mediciones volumétricas.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-draw-polygon"></i>
+                        <h3>Planimetría y altimetría</h3>
+                        <p>Levantamientos para vías, urbanismo, minería, infraestructura hidráulica y eléctrica.</p>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Solicitar estudio →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PILAR 2: CATASTRO Y GESTIÓN PREDIAL      -->
+        <!-- ========================================= -->
+        <section style="background: #f3f6fa;">
+            <div class="container">
+                <h2 class="section-title">2. Catastro multipropósito y gestión predial</h2>
+                <p class="subhead">Apoyamos la formalización, el ordenamiento territorial y la estructuración predial para entidades públicas y privadas.</p>
+                <div class="cards-grid">
+                    <div class="card">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Catastro multipropósito</h3>
+                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos catastrales.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-file-signature"></i>
-                        <h3>Estudios Técnicos</h3>
-                        <p>Apoyo para procesos prediales, catastrales, avalúos y proyectos de inversión.</p>
+                        <h3>Avalúos y estudios prediales</h3>
+                        <p>Avalúos comerciales y catastrales, estudios de mercado inmobiliario, adquisición predial, servidumbres y expropiaciones.</p>
                     </div>
+                    <div class="card">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Saneamiento y formalización</h3>
+                        <p>Estudios jurídicos prediales, saneamiento inmobiliario, formalización de la propiedad, apoyo en procesos institucionales.</p>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Consultar procesos catastrales →</a>
                 </div>
             </div>
         </section>
 
-        <!-- PORTAFOLIO (PROYECTOS) -->
-        <section id="proyectos" style="background: #f3f6fa;">
+        <!-- ========================================= -->
+        <!-- PILAR 3: INGENIERÍA, CONSULTORÍA, APP    -->
+        <!-- ========================================= -->
+        <section>
             <div class="container">
-                <h2 class="section-title">Proyectos recientes</h2>
-                <p class="subhead">Casos de éxito que respaldan nuestra experiencia.</p>
-                <div class="projects-grid">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <i class="fas fa-map"></i>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-tag">Bogotá D.C.</span>
-                            <h4>Levantamiento topográrico para interventoría IDU</h4>
-                            <p>Control geométrico en obra de espacio público y BRT. Entrega de planos con precisión 1:500.</p>
-                        </div>
+                <h2 class="section-title">3. Ingeniería, infraestructura y asociaciones público-privadas</h2>
+                <p class="subhead">Diseño, interventoría, estructuración y ejecución de proyectos de alta complejidad.</p>
+                <div class="cards-grid">
+                    <div class="card">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Consultoría e interventoría</h3>
+                        <p>Supervisión técnica, auditoría, gerencia integral de proyectos. Estudios de suelos, geotecnia, hidrología, ambiental.</p>
                     </div>
-                    <div class="project-item">
-                        <div class="project-img">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-tag">Cundinamarca</span>
-                            <h4>Georreferenciación de predio minero</h4>
-                            <p>Levantamiento con GNSS y drone RTK, ajuste por mínimos cuadrados y certificación MAGNA-SIRGAS.</p>
-                        </div>
+                    <div class="card">
+                        <i class="fas fa-road"></i>
+                        <h3>Infraestructura vial y urbana</h3>
+                        <p>Estudios y diseños de vías, puentes, espacio público, redes hidráulicas, eléctricas y de telecomunicaciones.</p>
                     </div>
-                    <div class="project-item">
-                        <div class="project-img">
-                            <i class="fas fa-city"></i>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-tag">Barrancabermeja</span>
-                            <h4>Apoyo topográfico a CYG Ingeniería</h4>
-                            <p>Replanteo y control de obra en construcción de infraestructura institucional.</p>
-                        </div>
+                    <div class="card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>APP, concesiones y EPC</h3>
+                        <p>Estructuración, financiación y operación de proyectos bajo APP, BOT, BOOT, contratos llave en mano.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-solar-panel"></i>
+                        <h3>Energía y minería</h3>
+                        <p>Ingeniería eléctrica, energías renovables, petróleos y gas, minería, exploración superficial, sismología.</p>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#contacto" class="btn-outline btn" style="margin-right: 0.5rem;">Ver más proyectos</a>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Estructurar proyecto →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PILAR 4: SOFTWARE, SIG Y TECNOLOGÍA      -->
+        <!-- ========================================= -->
+        <section style="background: #f3f6fa;">
+            <div class="container">
+                <h2 class="section-title">4. Tecnología, SIG y desarrollo de software</h2>
+                <p class="subhead">Creamos soluciones tecnológicas para el análisis territorial y la administración de información.</p>
+                <div class="cards-grid">
+                    <div class="card">
+                        <i class="fas fa-map"></i>
+                        <h3>Sistemas de Información Geográfica</h3>
+                        <p>Implementación de SIG, plataformas web geoespaciales, analítica de datos territoriales, dashboards.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-code"></i>
+                        <h3>Desarrollo de software</h3>
+                        <p>Aplicaciones empresariales, sistemas de administración de información, soluciones a la medida.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Comercialización de equipos</h3>
+                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, instrumentación técnica y maquinaria.</p>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <a href="#contacto" style="color: #00a67e; font-weight: 600;">Conocer soluciones tecnológicas →</a>
                 </div>
             </div>
         </section>
 
         <!-- EQUIPOS Y CERTIFICACIONES -->
-        <section style="padding: 2rem 0 4rem;">
+        <section>
             <div class="container equipment">
-                <h2 class="section-title">Equipos y certificaciones</h2>
+                <h2 class="section-title">Equipos y respaldo legal</h2>
                 <div class="equipment-grid">
                     <div class="equipment-item">
                         <i class="fas fa-satellite"></i>
                         <div>
                             <h4>GNSS doble frecuencia</h4>
-                            <p style="color: #cbd5e0;">Precisión ±5mm + 1ppm</p>
+                            <p style="color: #cbd5e0;">±5mm + 1ppm · RTK</p>
                         </div>
                     </div>
                     <div class="equipment-item">
@@ -469,23 +479,26 @@
             </div>
         </section>
 
-        <!-- TRABAJA CON NOSOTROS (capacidad instalada) -->
+        <!-- CAPACIDAD DE CONTRATACIÓN ESTATAL Y ALIANZAS -->
         <section>
             <div class="container work-with-us">
-                <i class="fas fa-users" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
-                <h2 style="font-size: 2rem; font-weight: 700; color: #0a2e5a;">¿Eres contratista o consultor?</h2>
-                <p style="font-size: 1.2rem; max-width: 700px; margin: 1rem auto; color: #4a5a72;">GEOSTAR INGENIERÍA cuenta con capacidad instalada para ejecutar proyectos de topografía e ingeniería. Podemos ser tu aliado estratégico en licitaciones y obras.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="https://wa.me/5714779010?text=Hola%2C%20quiero%20conocer%20su%20capacidad%20instalada%20para%20contratos%20de%20topografía" class="btn btn-outline" target="_blank">Conoce nuestro equipo</a>
+                <i class="fas fa-handshake" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #0a2e5a;">Contratación pública y alianzas estratégicas</h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto; color: #4a5a72;">
+                    GEOSTAR INGENIERÍA S.A.S. está legalmente facultada para participar en licitaciones públicas, concursos de méritos, APP, y para integrar consorcios o uniones temporales. Nuestro objeto social nos permite ejecutar contratos de obra, consultoría, interventoría, concesión y tecnología.
+                </p>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contacto" class="btn">Ser nuestro aliado</a>
+                    <a href="https://wa.me/5714779010?text=Hola%2C%20quiero%20conocer%20la%20capacidad%20de%20GEOSTAR%20para%20contratación%20pública" class="btn btn-outline" target="_blank">Capacidad instalada</a>
                 </div>
             </div>
         </section>
 
         <!-- CONTACTO -->
-        <section id="contacto" style="background: white;">
+        <section id="contacto">
             <div class="container">
-                <h2 class="section-title">Contacto</h2>
-                <p class="subhead">Oficina en Bogotá. Atención inmediata.</p>
+                <h2 class="section-title">Contacto y oficina principal</h2>
+                <p class="subhead">Atención en Bogotá D.C. y cobertura nacional.</p>
                 <div class="contact-grid">
                     <div class="contact-info">
                         <div class="contact-detail">
@@ -511,7 +524,7 @@
                             </div>
                         </div>
                         <div style="margin-top: 2rem;">
-                            <a href="https://wa.me/5714779010?text=Hola%2C%20me%20comunico%20desde%20la%20página%20web%20para%20solicitar%20una%20cotización" class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+                            <a href="https://wa.me/5714779010?text=Hola%2C%20me%20comunico%20desde%20la%20página%20web%20de%20GEOSTAR%20INGENIERÍA%20S.A.S.%20para%20solicitar%20información" class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
                         </div>
                     </div>
                     <div class="map-placeholder">
@@ -529,5 +542,23 @@
 
     <footer>
         <div class="container footer-content">
+            <div>
+                <h3 style="font-size: 1.5rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
+                <p style="color: #b0c4ce; margin-top: 0.5rem;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
+                <p style="color: #b0c4ce; font-size: 0.9rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#inicio" style="color: white; text-decoration: none;">Inicio</a>
+                <a href="#servicios" style="color: white; text-decoration: none;">Servicios</a>
+                <a href="#contacto" style="color: white; text-decoration: none;">Contacto</a>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #1e3a5a;">
+            <p style="color: #8e9fb1;">© 2026 GEOSTAR INGENIERÍA S.A.S. · Representante Legal: EYSON FERNANDO ZAMBRANO PEREZ · Todos los derechos reservados</p>
+            <p style="color: #6e85a0; font-size: 0.85rem; margin-top: 0.5rem;">* Capacidad legal para contratar con el Estado, APP, consorcios y uniones temporales. Personal con tarjeta profesional CPNT.</p>
+        </div>
+    </footer>
+</body>
+</html>
             <div>
                 <h3 style="font-size: 1.5rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
