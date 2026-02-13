@@ -2,111 +2,532 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEOSTAR INGENIERÍA S.A.S.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>GEOSTAR INGENIERÍA · Topografía de precisión en Bogotá</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
-
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafbfc;
+            color: #1e2a41;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        /* Header */
         header {
-            background-color: #0a1f44;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0a2e5a;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #00a67e;
+            font-weight: 600;
+            font-size: 1rem;
+            display: block;
+            margin-top: 0.2rem;
+        }
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #1e2a41;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00a67e;
+        }
+        /* Botones CTA */
+        .btn {
+            display: inline-block;
+            background: #00a67e;
             color: white;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,166,126,0.2);
         }
-
+        .btn:hover {
+            background: #008c68;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(0,166,126,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #0a2e5a;
+            border: 2px solid #0a2e5a;
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: #0a2e5a;
+            color: white;
+        }
+        .btn-wa {
+            background: #25D366;
+            box-shadow: 0 8px 16px rgba(37,211,102,0.2);
+        }
+        .btn-wa:hover {
+            background: #20b859;
+        }
+        /* Hero */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f3f6fa 100%);
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 2rem;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0a2e5a;
+            margin-bottom: 1.5rem;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #4a5a72;
+            margin-bottom: 2rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        /* Secciones */
         section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
+            padding: 4rem 0;
         }
-
-        h2 {
-            color: #0a1f44;
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2e5a;
+            margin-bottom: 1rem;
+            position: relative;
         }
-
-        .services {
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #00a67e;
+            margin-top: 0.5rem;
+            border-radius: 4px;
+        }
+        .subhead {
+            color: #5a6a7e;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        /* Tarjetas de servicios */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-
         .card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
         }
-
-        footer {
-            background-color: #0a1f44;
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border-color: #00a67e20;
+        }
+        .card i {
+            font-size: 2.5rem;
+            color: #00a67e;
+            margin-bottom: 1.2rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .card p {
+            color: #4a5a72;
+        }
+        /* Portafolio (proyectos) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+        .project-item:hover {
+            box-shadow: 0 20px 30px rgba(0,0,0,0.06);
+        }
+        .project-img {
+            background: #e9ecf0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b9aad;
+            font-size: 3rem;
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .project-info h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .project-tag {
+            display: inline-block;
+            background: #e0f0ec;
+            color: #00a67e;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin: 0.5rem 0;
+        }
+        /* Equipos y certificaciones */
+        .equipment {
+            background: #0a2e5a;
             color: white;
-            text-align: center;
-            padding: 20px;
+            border-radius: 40px;
+            padding: 3rem 2rem;
         }
-
-        a {
-            color: #0a1f44;
-            text-decoration: none;
-            font-weight: bold;
+        .equipment h2, .equipment .section-title::after {
+            background: white;
+        }
+        .equipment .section-title {
+            color: white;
+        }
+        .equipment-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .equipment-item {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .equipment-item i {
+            font-size: 2rem;
+            color: #00e6b0;
+        }
+        /* Trabaja con nosotros */
+        .work-with-us {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #eaeef2;
+        }
+        /* Contacto */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .contact-info {
+            flex: 1 1 300px;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: #00a67e;
+            width: 2rem;
+        }
+        .map-placeholder {
+            background: #e9ecf0;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            color: #5a6a7e;
+            flex: 1 1 300px;
+        }
+        footer {
+            background: #0a1a2e;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-radius: 30px 30px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav a {
+                margin: 0 1rem;
+            }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>GEOSTAR INGENIERÍA S.A.S.</h1>
-    <p>Soluciones técnicas en ingeniería, topografía y consultoría especializada</p>
-</header>
-
-<section>
-    <h2>Quiénes Somos</h2>
-    <p>
-        GEOSTAR INGENIERÍA S.A.S. es una empresa especializada en servicios de ingeniería,
-        levantamientos topográficos, consultoría técnica y soluciones geoespaciales.
-        Trabajamos con altos estándares técnicos y cumplimiento normativo.
-    </p>
-</section>
-
-<section>
-    <h2>Servicios</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Ingeniería y Consultoría</h3>
-            <p>Diseño, análisis y asesoría técnica en proyectos de infraestructura y desarrollo territorial.</p>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>GEOSTAR INGENIERÍA</h1>
+                <span>S.A.S. · Precisión y cumplimiento normativo</span>
+            </div>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="card">
-            <h3>Topografía y Georreferenciación</h3>
-            <p>Levantamientos GNSS, planimetría, altimetría y procesamiento geoespacial.</p>
-        </div>
+    <main>
+        <!-- HERO: mensaje especializado + CTA -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h2>Topografía de precisión para infraestructura urbana y consultoría catastral en Bogotá</h2>
+                    <p>Ejecutamos levantamientos GNSS, planimetría, altimetría y procesamiento geoespacial con equipos de alta precisión (±5mm) y personal certificado por el CPNT.</p>
+                    <div class="hero-buttons">
+                        <a href="#contacto" class="btn"><i class="fas fa-file-invoice"></i> Solicitar cotización</a>
+                        <a href="https://wa.me/5714779010?text=Hola%2C%20vi%20su%20página%20web%20y%20quiero%20solicitar%20información%20sobre%20servicios%20de%20topografía" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div style="flex: 1 1 300px; text-align: center;">
+                    <!-- Icono representativo -->
+                    <i class="fas fa-draw-polygon" style="font-size: 8rem; color: #0a2e5a20;"></i>
+                </div>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>Estudios Técnicos</h3>
-            <p>Apoyo técnico para procesos prediales, catastrales y proyectos de inversión.</p>
-        </div>
+        <!-- SERVICIOS (ELIMINADO TRANSPORTE) -->
+        <section id="servicios">
+            <div class="container">
+                <h2 class="section-title">Servicios especializados</h2>
+                <p class="subhead">Ingeniería de precisión para proyectos públicos y privados.</p>
+                <div class="cards-grid">
+                    <div class="card">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Ingeniería y Consultoría</h3>
+                        <p>Diseño, análisis y asesoría técnica en infraestructura, obras civiles y desarrollo territorial.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h3>Topografía y Georreferenciación</h3>
+                        <p>Levantamientos GNSS (RTK), estación total, planimetría, altimetría y nubes de puntos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Estudios Técnicos</h3>
+                        <p>Apoyo para procesos prediales, catastrales, avalúos y proyectos de inversión.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>Transporte de Materiales</h3>
-            <p>Logística y transporte de carga para proyectos de infraestructura.</p>
-        </div>
-    </div>
-</section>
+        <!-- PORTAFOLIO (PROYECTOS) -->
+        <section id="proyectos" style="background: #f3f6fa;">
+            <div class="container">
+                <h2 class="section-title">Proyectos recientes</h2>
+                <p class="subhead">Casos de éxito que respaldan nuestra experiencia.</p>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Bogotá D.C.</span>
+                            <h4>Levantamiento topográrico para interventoría IDU</h4>
+                            <p>Control geométrico en obra de espacio público y BRT. Entrega de planos con precisión 1:500.</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-img">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Cundinamarca</span>
+                            <h4>Georreferenciación de predio minero</h4>
+                            <p>Levantamiento con GNSS y drone RTK, ajuste por mínimos cuadrados y certificación MAGNA-SIRGAS.</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-img">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Barrancabermeja</span>
+                            <h4>Apoyo topográfico a CYG Ingeniería</h4>
+                            <p>Replanteo y control de obra en construcción de infraestructura institucional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contacto" class="btn-outline btn" style="margin-right: 0.5rem;">Ver más proyectos</a>
+                </div>
+            </div>
+        </section>
 
-<section>
-    <h2>Contacto</h2>
-    <p><strong>Dirección:</strong> Carrera 38 No. 59-20 Oficina 304, Bogotá D.C.</p>
-    <p><strong>Correo:</strong> geostar.ingenieria@gmail.com</p>
-    <p><strong>Teléfono:</strong> 4779010</p>
-</section>
+        <!-- EQUIPOS Y CERTIFICACIONES -->
+        <section style="padding: 2rem 0 4rem;">
+            <div class="container equipment">
+                <h2 class="section-title">Equipos y certificaciones</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <i class="fas fa-satellite"></i>
+                        <div>
+                            <h4>GNSS doble frecuencia</h4>
+                            <p style="color: #cbd5e0;">Precisión ±5mm + 1ppm</p>
+                        </div>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-robot"></i>
+                        <div>
+                            <h4>Estación total robótica</h4>
+                            <p style="color: #cbd5e0;">Medición sin prisma 1000m</p>
+                        </div>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-drone"></i>
+                        <div>
+                            <h4>Dron RTK</h4>
+                            <p style="color: #cbd5e0;">Fotogrametría de alta precisión</p>
+                        </div>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>Licencia CPNT vigente</h4>
+                            <p style="color: #cbd5e0;">Ingenieros catastrales y topógrafos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <p>© 2026 GEOSTAR INGENIERÍA S.A.S. | Todos los derechos reservados</p>
-</footer>
+        <!-- TRABAJA CON NOSOTROS (capacidad instalada) -->
+        <section>
+            <div class="container work-with-us">
+                <i class="fas fa-users" style="font-size: 3rem; color: #00a67e; margin-bottom: 1rem;"></i>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #0a2e5a;">¿Eres contratista o consultor?</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 1rem auto; color: #4a5a72;">GEOSTAR INGENIERÍA cuenta con capacidad instalada para ejecutar proyectos de topografía e ingeniería. Podemos ser tu aliado estratégico en licitaciones y obras.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="https://wa.me/5714779010?text=Hola%2C%20quiero%20conocer%20su%20capacidad%20instalada%20para%20contratos%20de%20topografía" class="btn btn-outline" target="_blank">Conoce nuestro equipo</a>
+                </div>
+            </div>
+        </section>
 
-</body>
-</html>
+        <!-- CONTACTO -->
+        <section id="contacto" style="background: white;">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <p class="subhead">Oficina en Bogotá. Atención inmediata.</p>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Carrera 38 No. 59-20 Oficina 304<br>Bogotá D.C., Colombia</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p><a href="tel:6014779010" style="text-decoration: none; color: inherit;">(601) 477 9010</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Correo</h4>
+                                <p><a href="mailto:geostar.ingenieria@gmail.com" style="text-decoration: none; color: inherit;">geostar.ingenieria@gmail.com</a></p>
+                                <p style="font-size: 0.9rem; color: #00a67e;"><i class="fas fa-star"></i> Próximamente: @geostaringenieria.com.co</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <a href="https://wa.me/5714779010?text=Hola%2C%20me%20comunico%20desde%20la%20página%20web%20para%20solicitar%20una%20cotización" class="btn btn-wa" style="width: 100%; text-align: center;" target="_blank"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #a0b3c5; margin-bottom: 1rem;"></i>
+                        <h4>Oficina 304</h4>
+                        <p>Edificio Carrera 38 #59-20<br>Barrio La Soledad, Chapinero</p>
+                        <div style="background: white; border-radius: 16px; padding: 1rem; margin-top: 1.5rem;">
+                            <i class="fas fa-clock"></i> Atención: L-V 8:00 a 18:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3 style="font-size: 1.5rem; font-weight: 700;">GEOSTAR INGENIERÍA S.A.S.</h3>
