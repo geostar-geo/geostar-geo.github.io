@@ -38,10 +38,23 @@
             align-items: center;
             flex-wrap: wrap;
         }
+        .logo {
+            text-align: center;
+        }
         .logo img {
-            height: 70px;
+            height: 100px;
             width: auto;
             display: block;
+            margin: 0 auto;
+        }
+        .logo span {
+            display: block;
+            margin-top: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0a2e5a;
+            letter-spacing: 1px;
+            text-align: center;
         }
         nav {
             display: flex;
@@ -298,6 +311,17 @@
             text-align: center;
             gap: 1.5rem;
         }
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 0.8rem;
+        }
+        .footer-logo p {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
         .footer-nav {
             display: flex;
             gap: 1.5rem;
@@ -317,8 +341,10 @@
                 gap: 0.8rem;
             }
             .logo img {
-                height: 60px;
-                margin: 0 auto;
+                height: 70px !important;
+            }
+            .logo span {
+                font-size: 0.9rem !important;
             }
             nav {
                 gap: 1.2rem;
@@ -352,6 +378,12 @@
             .contact-grid {
                 flex-direction: column;
             }
+            .footer-logo img {
+                height: 60px !important;
+            }
+            .footer-logo p {
+                font-size: 0.9rem !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -359,7 +391,10 @@
                 width: 95%;
             }
             .logo img {
-                height: 50px;
+                height: 60px !important;
+            }
+            .logo span {
+                font-size: 0.8rem !important;
             }
             .hero-text h2 {
                 font-size: 1.4rem;
@@ -371,6 +406,12 @@
             .img-responsive {
                 max-width: 200px;
             }
+            .footer-logo img {
+                height: 50px !important;
+            }
+            .footer-logo p {
+                font-size: 0.8rem !important;
+            }
         }
     </style>
 </head>
@@ -378,7 +419,8 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S. - Logo oficial">
+                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S.">
+                <span>GEOSTAR INGENIERÍA S.A.S.</span>
             </div>
             <nav>
                 <a href="#inicio">Inicio</a>
@@ -625,10 +667,11 @@
 
     <footer>
         <div class="container footer-content">
-            <div>
-                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S." style="height: 50px; width: auto; margin-bottom: 0.5rem;">
-                <p style="color: #b0c4ce; margin-top: 0.3rem;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
-                <p style="color: #b0c4ce; font-size: 0.8rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+            <div class="footer-logo">
+                <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA S.A.S.">
+                <p>GEOSTAR INGENIERÍA S.A.S.</p>
+                <p style="color: #b0c4ce; margin-top: 0.3rem; font-size: 0.9rem; font-weight: normal;">NIT: 928.100-6 (tramitando) · Constitución: 11/02/2026</p>
+                <p style="color: #b0c4ce; font-size: 0.8rem; font-weight: normal;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
             </div>
             <div class="footer-nav">
                 <a href="#inicio">Inicio</a>
