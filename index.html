@@ -171,9 +171,9 @@
             color: white;
         }
         
-        /* ===== SECCIONES ===== */
+        /* ===== SECCIONES (ESPACIADO REDUCIDO) ===== */
         section {
-            padding: 7rem 0;
+            padding: 5rem 0;
         }
         .section-title {
             font-size: 2.8rem;
@@ -187,7 +187,7 @@
             color: rgba(255,255,255,0.6);
             font-size: 1.1rem;
             font-weight: 300;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             max-width: 600px;
         }
         
@@ -340,7 +340,7 @@
         /* ===== ALIANZAS ===== */
         .alliances {
             background: #0a0a0a;
-            padding: 5rem;
+            padding: 4rem;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.05);
         }
@@ -397,74 +397,117 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
         
-        /* ===== WHATSAPP FLOTANTE ===== */
+        /* ===== WHATSAPP FLOTANTE (VERDE + GRANDE) ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: rgba(255,255,255,0.1);
+            background: #25D366;
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             text-align: center;
-            font-size: 24px;
-            line-height: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 32px;
+            line-height: 60px;
+            box-shadow: 0 8px 20px rgba(37,211,102,0.4);
             transition: all 0.3s;
             z-index: 100;
+            border: none;
         }
         .whatsapp-float:hover {
-            background: white;
-            color: black;
+            background: #20b859;
+            transform: scale(1.1);
+            box-shadow: 0 12px 28px rgba(37,211,102,0.6);
         }
         
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER PROFESIONAL REDISEÑADO ===== */
         footer {
             background: #000;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
         .footer-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .footer-logo img {
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-brand img {
             height: 70px;
             width: auto;
-            margin-bottom: 1rem;
             filter: brightness(1.2);
         }
-        .footer-logo p {
+        .footer-brand-info h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+        .footer-brand-info p {
             color: rgba(255,255,255,0.5);
             font-size: 0.85rem;
             font-weight: 300;
         }
-        .footer-nav {
+        .footer-info {
             display: flex;
             gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .footer-info-item {
+            text-align: right;
+        }
+        .footer-info-item .label {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+        .footer-info-item .value {
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+        .footer-info-item .value a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .footer-info-item .value a:hover {
+            opacity: 0.8;
+        }
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
         .footer-nav a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 300;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
         .footer-nav a:hover {
-            opacity: 1;
+            color: #25D366;
         }
         .copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
             color: rgba(255,255,255,0.3);
             font-size: 0.8rem;
             font-weight: 300;
+            margin-top: 1.5rem;
         }
         
         /* ===== RESPONSIVE ===== */
@@ -477,6 +520,9 @@
             }
         }
         @media (max-width: 768px) {
+            section {
+                padding: 3rem 0;
+            }
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
@@ -520,12 +566,15 @@
             .section-title {
                 font-size: 2.2rem;
             }
+            .section-subhead {
+                margin-bottom: 2rem;
+            }
             .about-grid {
                 gap: 3rem;
                 flex-direction: column;
             }
             .alliances {
-                padding: 3rem 2rem;
+                padding: 2.5rem 1.5rem;
             }
             .alliances h2 {
                 font-size: 2rem;
@@ -537,11 +586,17 @@
             .footer-content {
                 flex-direction: column;
                 gap: 2rem;
-                align-items: center;
                 text-align: center;
             }
-            .footer-nav {
-                gap: 2rem;
+            .footer-brand {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-info {
+                justify-content: center;
+            }
+            .footer-info-item {
+                text-align: center;
             }
         }
         @media (max-width: 480px) {
@@ -559,10 +614,10 @@
                 font-size: 1.8rem;
             }
             .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                font-size: 22px;
-                line-height: 45px;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                line-height: 50px;
                 bottom: 20px;
                 right: 20px;
             }
@@ -817,27 +872,42 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER PROFESIONAL -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
+                <div class="footer-brand">
                     <img src="img/geostar_logo.png" alt="GEOSTAR INGENIERÍA">
-                    <p style="font-weight: 500; color: white; margin-bottom: 0.3rem;">GEOSTAR INGENIERÍA S.A.S.</p>
-                    <p>NIT: 928.100-6 (tramitando)</p>
-                    <p>Constitución: 11/02/2026</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+                    <div class="footer-brand-info">
+                        <h4>GEOSTAR INGENIERÍA S.A.S.</h4>
+                        <p>NIT: 902.035.038-2 · Constitución: 11/02/2026</p>
+                        <p style="font-size: 0.75rem;">Sociedad por Acciones Simplificada · Ley 1258 de 2008</p>
+                    </div>
                 </div>
-                <div class="footer-nav">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicios">Servicios</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#contacto">Contacto</a>
+                <div class="footer-info">
+                    <div class="footer-info-item">
+                        <div class="label">Teléfono</div>
+                        <div class="value"><a href="tel:+573124033751">+57 312 4033751</a></div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="label">Correo</div>
+                        <div class="value"><a href="mailto:geostar.ingenieria@gmail.com">geostar.ingenieria@gmail.com</a></div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="label">Dirección</div>
+                        <div class="value">Cra 38 #59-20 Of 304</div>
+                        <div class="value" style="font-size: 0.8rem;">Bogotá D.C.</div>
+                    </div>
                 </div>
             </div>
+            <div class="footer-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre">Sobre nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
             <div class="copyright">
-                <p>© 2026 GEOSTAR INGENIERÍA S.A.S. Todos los derechos reservados.</p>
-                <p style="margin-top: 0.3rem;">* Capacidad legal para contratar con el Estado, APP, consorcios y uniones temporales.</p>
+                <p>© 2026 GEOSTAR INGENIERÍA S.A.S. · Capacidad legal para contratación estatal, APP y consorcios</p>
             </div>
         </div>
     </footer>
