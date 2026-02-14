@@ -191,29 +191,42 @@
             max-width: 600px;
         }
         
-        /* ===== GRID ASIMÉTRICO (SERVICIOS) ===== */
+        /* ===== GRID DE SERVICIOS (ESTILO DJI) ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            background: rgba(255,255,255,0.05);
+            gap: 0px; /* Sin gap, usamos bordes como divisores */
+            background: rgba(255,255,255,0.02);
             margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-left: 1px solid rgba(255,255,255,0.05);
         }
         .service-card {
             background: #000;
-            padding: 3rem 2rem;
-            transition: all 0.4s;
-            border: 1px solid transparent;
+            padding: 2.5rem 2rem;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
         }
         .service-card:hover {
-            background: #0a0a0a;
-            border-color: rgba(255,255,255,0.1);
+            background: #030303;
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            z-index: 2;
         }
         .service-card i {
-            font-size: 2rem;
+            font-size: 2.4rem;
             color: white;
             margin-bottom: 1.5rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .service-card:hover i {
+            opacity: 1;
         }
         .service-card h3 {
             font-size: 1.3rem;
@@ -226,6 +239,7 @@
             font-size: 0.9rem;
             font-weight: 300;
             line-height: 1.6;
+            flex: 1;
         }
         .service-card.featured {
             grid-column: span 2;
@@ -236,9 +250,11 @@
         .equipment-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
+            gap: 0px;
             margin-top: 2rem;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-left: 1px solid rgba(255,255,255,0.05);
         }
         .equipment-item {
             background: #000;
@@ -246,12 +262,20 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            border-right: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            min-height: 180px;
+        }
+        .equipment-item:hover {
+            background: #030303;
+            border-color: rgba(255,255,255,0.15);
         }
         .equipment-item i {
             font-size: 2.2rem;
             color: white;
             margin-bottom: 1.2rem;
-            opacity: 0.7;
+            opacity: 0.8;
         }
         .equipment-item h4 {
             font-size: 1.1rem;
@@ -571,67 +595,74 @@
             </div>
         </section>
 
-        <!-- 2️⃣ LÍNEAS DE NEGOCIO -->
+        <!-- 2️⃣ NUESTROS SERVICIOS -->
         <section id="servicios">
-            <div class="container">                
+            <div class="container">
                 <h2 class="section-title">Nuestros servicios</h2>
-                <p class="section-subhead">Cuatro áreas especializadas con tecnología de última generación y respaldo legal.</p>
+                <p class="section-subhead">Áreas especializadas con tecnología de última generación y respaldo legal.</p>
                 
                 <div class="services-grid">
-                    <!-- Topografía y levantamientos (ahora primero) -->
+                    <!-- Topografía y levantamientos -->
                     <div class="service-card featured">
                         <i class="fas fa-mountain"></i>
                         <h3>Topografía y levantamientos</h3>
                         <p>Levantamientos topográficos de alta precisión, planimetría, altimetría, replanteo de obras, control geométrico y modelos digitales del terreno para proyectos de infraestructura, minería y construcción.</p>
                     </div>
                     
-                    <!-- Geomática y geodesia (segundo) -->
+                    <!-- Geomática y geodesia -->
                     <div class="service-card">
-                        <i class="fas fa-satellite-dish"></i>
+                        <i class="fas fa-globe-americas"></i>
                         <h3>Geomática y geodesia</h3>
                         <p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados, georreferenciación MAGNA-SIRGAS. Fotogrametría con drones RTK, MDT, ortofotomosaicos, volumetrías.</p>
                     </div>
                     
+                    <!-- Drones RTK (nuevo pictograma) -->
                     <div class="service-card">
-                        <i class="fas fa-drone"></i>
+                        <i class="fas fa-helicopter"></i>
                         <h3>Drones RTK</h3>
-                        <p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos, inspecciones técnicas y seguimiento de obras.</p>
+                        <p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos, inspecciones técnicas y seguimiento de obras con tecnología dron de última generación.</p>
                     </div>
                     
+                    <!-- Catastro multipropósito -->
                     <div class="service-card">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-draw-polygon"></i>
                         <h3>Catastro multipropósito</h3>
-                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos geoespaciales.</p>
+                        <p>Formación, actualización y conservación catastral. Barridos prediales, inventarios territoriales, bases de datos geoespaciales y gestión territorial integral.</p>
                     </div>
                     
+                    <!-- Avalúos y predios -->
                     <div class="service-card">
-                        <i class="fas fa-file-signature"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                         <h3>Avalúos y predios</h3>
-                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres, expropiaciones, saneamiento inmobiliario y formalización.</p>
+                        <p>Avalúos comerciales y catastrales, adquisición predial, servidumbres, expropiaciones, saneamiento inmobiliario y formalización de la propiedad.</p>
                     </div>
                     
+                    <!-- Consultoría e interventoría -->
                     <div class="service-card">
                         <i class="fas fa-hard-hat"></i>
                         <h3>Consultoría e interventoría</h3>
-                        <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, hidrología y estudios ambientales.</p>
+                        <p>Supervisión técnica, auditoría, gerencia integral. Estudios de suelos, geotecnia, hidrología y estudios ambientales para proyectos públicos y privados.</p>
                     </div>
                     
+                    <!-- APP y concesiones -->
                     <div class="service-card featured">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-handshake"></i>
                         <h3>APP y concesiones</h3>
-                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano. Capacidad legal para asociaciones público-privadas.</p>
+                        <p>Estructuración, financiación y operación bajo APP, BOT, BOOT, contratos llave en mano. Capacidad legal para asociaciones público-privadas y grandes proyectos.</p>
                     </div>
                     
+                    <!-- SIG y software -->
                     <div class="service-card">
                         <i class="fas fa-map"></i>
                         <h3>SIG y software</h3>
-                        <p>Implementación de Sistemas de Información Geográfica, plataformas web geoespaciales, analítica de datos, dashboards personalizados.</p>
+                        <p>Implementación de Sistemas de Información Geográfica, plataformas web geoespaciales, analítica de datos, dashboards personalizados y desarrollo de aplicaciones.</p>
                     </div>
                     
+                    <!-- Equipos especializados -->
                     <div class="service-card">
                         <i class="fas fa-cogs"></i>
                         <h3>Equipos especializados</h3>
-                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, estaciones totales, GNSS y maquinaria.</p>
+                        <p>Importación, venta, arriendo y mantenimiento de equipos topográficos, geodésicos, estaciones totales, GNSS, drones y maquinaria para ingeniería.</p>
                     </div>
                 </div>
             </div>
@@ -655,7 +686,7 @@
                         <p>Medición sin prisma 1000m</p>
                     </div>
                     <div class="equipment-item">
-                        <i class="fas fa-drone"></i>
+                        <i class="fas fa-helicopter"></i>
                         <h4>Dron RTK</h4>
                         <p>Fotogrametría de alta precisión</p>
                     </div>
