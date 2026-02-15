@@ -359,6 +359,37 @@
             font-weight: 300;
         }
         
+        /* ===== VIDEO DESTACADO ===== */
+        .video-container {
+            margin: 4rem auto;
+            max-width: 1000px;
+            padding: 0 1rem;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-caption {
+            text-align: center;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
         /* ===== CONTACTO ===== */
         .contact-grid {
             display: flex;
@@ -394,6 +425,8 @@
             flex: 1 1 400px;
             background: #0a0a0a;
             padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         
         /* ===== WHATSAPP FLOTANTE (VERDE + GRANDE) ===== */
@@ -548,6 +581,9 @@
             }
             .alliances h2 {
                 font-size: 2rem;
+            }
+            .video-container {
+                margin: 2rem auto;
             }
             .contact-grid {
                 flex-direction: column;
@@ -718,6 +754,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- 🎥 VIDEO DESTACADO: Modelo 3D para mediciones con drone -->
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/7BR49PZePKI?rel=0&showinfo=0" 
+                        title="Modelo 3D para mediciones de stockpile con drone" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-caption">
+                Ejemplo de levantamiento con drone y generación de modelo 3D para cálculos volumétricos precisos.
+            </div>
+        </div>
 
         <!-- 3️⃣ EQUIPOS Y CERTIFICACIONES -->
         <section>
