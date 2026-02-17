@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEOSTAR INGENIERÍA · Brochure Digital</title>
-    <!-- Google Fonts + Font Awesome -->
+    <!-- Google Fonts + Font Awesome + QR Code -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -121,12 +122,7 @@
             font-weight: 400;
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
-        }
-        .service-tag:hover {
-            background: #00a67e;
-            color: #000;
-            border-color: #00a67e;
-            transform: translateY(-2px);
+            cursor: default;
         }
         .service-tag i {
             margin-right: 0.5rem;
@@ -208,27 +204,38 @@
         .contact-text p {
             font-weight: 500;
         }
+        
+        /* QR Section */
         .qr-section {
             display: flex;
-            justify-content: center;
-            margin-top: 1rem;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
-        .qr-box {
+        .qr-title {
+            color: #00a67e;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        #qrcode {
             background: white;
             padding: 1rem;
             border-radius: 20px;
             display: inline-block;
+            margin-bottom: 1rem;
         }
-        .qr-placeholder {
-            width: 100px;
-            height: 100px;
-            background: #000;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00a67e;
-            font-size: 3rem;
+        .qr-whatsapp-text {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .qr-whatsapp-text i {
+            color: #25D366;
+            margin-right: 0.3rem;
         }
         
         /* Footer */
@@ -256,6 +263,7 @@
             justify-content: center;
             color: white;
             transition: all 0.3s;
+            text-decoration: none;
         }
         .social-links a:hover {
             background: #00a67e;
@@ -273,6 +281,9 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
         }
         .download-btn:hover {
             background: #008c68;
@@ -397,15 +408,14 @@
                         SOBREVUELO DEMO
                     </div>
                     <div class="video-placeholder">
-                        <!-- Aquí va tu video -->
-                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                        <video autoplay muted loop playsinline>
                             <source src="videos/SobreVuelo.mp4" type="video/mp4">
                             Tu navegador no soporta video.
                         </video>
                     </div>
                 </div>
 
-                <!-- Contacto -->
+                <!-- Contacto con QR -->
                 <div>
                     <div class="section-title">
                         <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
@@ -434,15 +444,16 @@
                                 <p style="font-size:0.8rem;">Bogotá D.C., Colombia</p>
                             </div>
                         </div>
+                        
+                        <!-- QR Code de WhatsApp -->
                         <div class="qr-section">
-                            <a href="https://wa.me/573124033751" target="_blank" style="text-decoration: none;">
-                                <div class="qr-box">
-                                    <div class="qr-placeholder">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </div>
-                                    <p style="color:#000; margin-top:0.5rem; font-size:0.7rem;">Escanea y escribe</p>
-                                </div>
-                            </a>
+                            <div class="qr-title">
+                                <i class="fab fa-whatsapp"></i> ESCANEA Y CONTACTA
+                            </div>
+                            <div id="qrcode"></div>
+                            <div class="qr-whatsapp-text">
+                                <i class="fab fa-whatsapp"></i> +57 312 4033751
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -452,7 +463,7 @@
         <!-- FOOTER -->
         <div class="brochure-footer">
             <div class="social-links">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/573124033751" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -460,10 +471,24 @@
             <div>
                 <span style="color: rgba(255,255,255,0.5);">NIT: 902.035.038-2 · Ley 1258 de 2008</span>
             </div>
-            <a href="#" class="download-btn" onclick="window.print()">
+            <button class="download-btn" onclick="window.print()">
                 <i class="fas fa-download"></i> Guardar PDF
-            </a>
+            </button>
         </div>
     </div>
+
+    <!-- Script para generar QR -->
+    <script>
+        // Generar QR de WhatsApp
+        var whatsappUrl = "https://wa.me/573124033751?text=Hola%2C%20vi%20su%20brochure%20digital%20de%20GEOSTAR%20INGENIER%C3%8DA%20y%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios.";
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: whatsappUrl,
+            width: 150,
+            height: 150,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
 </body>
 </html>
