@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOSTAR INGENIERÍA · Brochure Digital</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .brochure {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(20,20,20,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        /* Header del Brochure */
+        .brochure-header {
+            padding: 2.5rem;
+            background: linear-gradient(90deg, #000000 0%, #0a2e5a 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #00a67e;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .title-area h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00a67e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .title-area p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .badge {
+            margin-left: auto;
+            background: rgba(0,166,126,0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(0,166,126,0.3);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Grid principal */
+        .brochure-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2.5rem;
+        }
+        
+        /* Columna izquierda */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #00a67e;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .service-tag {
+            background: rgba(255,255,255,0.05);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        .service-tag:hover {
+            background: #00a67e;
+            color: #000;
+            border-color: #00a67e;
+            transform: translateY(-2px);
+        }
+        .service-tag i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00a67e;
+            margin-bottom: 0.3rem;
+        }
+        .stat-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Columna derecha */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .video-placeholder {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-placeholder video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .contact-info {
+            background: rgba(255,255,255,0.02);
+            padding: 1.8rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0,166,126,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00a67e;
+        }
+        .contact-text h4 {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.2rem;
+        }
+        .contact-text p {
+            font-weight: 500;
+        }
+        .qr-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .qr-box {
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00a67e;
+            font-size: 3rem;
+        }
+        
+        /* Footer */
+        .brochure-footer {
+            padding: 1.5rem 2.5rem;
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: #00a67e;
+            color: #000;
+            transform: translateY(-2px);
+        }
+        .download-btn {
+            background: #00a67e;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: #008c68;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,166,126,0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .brochure-grid { grid-template-columns: 1fr; }
+            .brochure-header { flex-direction: column; text-align: center; }
+            .logo-area { flex-direction: column; }
+            .badge { margin: 0; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- HEADER -->
+        <div class="brochure-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-draw-polygon"></i>
+                </div>
+                <div class="title-area">
+                    <h1>GEOSTAR INGENIERÍA</h1>
+                    <p>S.A.S. · Precisión y cumplimiento normativo</p>
+                </div>
+            </div>
+            <div class="badge">
+                <i class="fas fa-star" style="color: #00a67e; margin-right: 0.5rem;"></i>
+                +15 AÑOS DE EXPERIENCIA
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="brochure-grid">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="left-column">
+                <!-- Sobre nosotros -->
+                <div>
+                    <div class="section-title">
+                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+                        QUIÉNES SOMOS
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
+                        Empresa especializada en soluciones técnicas de alto nivel en geomática, 
+                        catastro, infraestructura y tecnología. Con más de 15 años de experiencia 
+                        y equipos de última generación.
+                    </p>
+                </div>
+
+                <!-- Servicios -->
+                <div>
+                    <div class="section-title">
+                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+                        SERVICIOS ESPECIALIZADOS
+                    </div>
+                    <div class="service-tags">
+                        <span class="service-tag"><i class="fas fa-mountain"></i>Topografía</span>
+                        <span class="service-tag"><i class="fas fa-globe-americas"></i>Geomática</span>
+                        <span class="service-tag"><i class="fas fa-helicopter"></i>Drones RTK</span>
+                        <span class="service-tag"><i class="fas fa-draw-polygon"></i>Catastro</span>
+                        <span class="service-tag"><i class="fas fa-file-invoice-dollar"></i>Avalúos</span>
+                        <span class="service-tag"><i class="fas fa-hard-hat"></i>Consultoría</span>
+                        <span class="service-tag"><i class="fas fa-handshake"></i>APP</span>
+                        <span class="service-tag"><i class="fas fa-map"></i>SIG</span>
+                        <span class="service-tag"><i class="fas fa-cogs"></i>Equipos</span>
+                    </div>
+                </div>
+
+                <!-- Estadísticas -->
+                <div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">+15</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">GNSS</div>
+                            <div class="stat-label">Tecnología de punta</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">CPNT</div>
+                            <div class="stat-label">Licencia vigente</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">APP</div>
+                            <div class="stat-label">Contratación estatal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipos destacados -->
+                <div>
+                    <div class="section-title">
+                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+                        TECNOLOGÍA
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
+                            <i class="fas fa-satellite"></i> GNSS RTK
+                        </span>
+                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
+                            <i class="fas fa-robot"></i> Estación total
+                        </span>
+                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
+                            <i class="fas fa-helicopter"></i> Dron RTK
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="right-column">
+                <!-- Video -->
+                <div>
+                    <div class="section-title">
+                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+                        SOBREVUELO DEMO
+                    </div>
+                    <div class="video-placeholder">
+                        <!-- Aquí va tu video -->
+                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                            <source src="videos/SobreVuelo.mp4" type="video/mp4">
+                            Tu navegador no soporta video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <div class="section-title">
+                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+                        CONTACTO DIRECTO
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-text">
+                                <h4>TELÉFONO</h4>
+                                <p>+57 312 4033751</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>CORREO</h4>
+                                <p>geostar.ingenieria@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>OFICINA</h4>
+                                <p>Cra 38 #59-20 Of 304</p>
+                                <p style="font-size:0.8rem;">Bogotá D.C., Colombia</p>
+                            </div>
+                        </div>
+                        <div class="qr-section">
+                            <a href="https://wa.me/573124033751" target="_blank" style="text-decoration: none;">
+                                <div class="qr-box">
+                                    <div class="qr-placeholder">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <p style="color:#000; margin-top:0.5rem; font-size:0.7rem;">Escanea y escribe</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="brochure-footer">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>
+                <span style="color: rgba(255,255,255,0.5);">NIT: 902.035.038-2 · Ley 1258 de 2008</span>
+            </div>
+            <a href="#" class="download-btn" onclick="window.print()">
+                <i class="fas fa-download"></i> Guardar PDF
+            </a>
+        </div>
+    </div>
+</body>
+</html>
