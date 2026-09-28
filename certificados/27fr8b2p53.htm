@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificado No. 55 — GEOSTAR</title>
+  <style>
+    *{
+      font-family: "Times New Roman", Times, serif;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: "Times New Roman", Times, serif;
+      color:#000;
+      background:#fff;
+      margin:0;
+      font-size:12pt;
+      line-height:1.5;
+    }
+    .page{
+      max-width:820px;
+      margin:30px auto;
+      padding:50px 60px;
+      background:#fff;
+      border:1px solid #999;
+    }
+
+    /* MEMBRETE */
+    .membrete{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:30px;
+      padding-bottom:12px;
+      border-bottom:2px solid #000;
+      margin-bottom:6px;
+    }
+    .membrete .izquierda{
+      flex:1;
+    }
+    .membrete .izquierda .empresa{
+      font-size:15pt;
+      font-weight:bold;
+      letter-spacing:1.2px;
+      margin:0;
+      text-transform:uppercase;
+    }
+    .membrete .derecha{
+      text-align:right;
+      font-size:8.5pt;
+      line-height:1.45;
+      min-width:280px;
+    }
+    .membrete .derecha p{
+      margin:0;
+    }
+    .membrete .derecha .etiqueta{
+      font-weight:bold;
+    }
+
+    /* TÍTULO */
+    .titulo-doc{
+      text-align:center;
+      margin:22px 0 24px 0;
+    }
+    .titulo-doc h1{
+      font-size:13pt;
+      font-weight:bold;
+      margin:0;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .titulo-doc .subtitulo{
+      font-size:10.5pt;
+      font-style:italic;
+      margin-top:4px;
+    }
+    .titulo-doc .num{
+      font-size:11pt;
+      margin-top:8px;
+    }
+
+    /* CUERPO */
+    p{
+      margin:8px 0;
+    }
+    .linea-dato{
+      margin:4px 0;
+    }
+    .linea-dato .etiqueta{
+      font-weight:bold;
+    }
+
+    h2.clausula{
+      font-size:11.5pt;
+      font-weight:bold;
+      margin:22px 0 8px 0;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    h3.subclausula{
+      font-size:11pt;
+      font-weight:bold;
+      margin:14px 0 6px 0;
+    }
+
+    /* ACTIVIDADES NUMERADAS */
+    .actividades{
+      margin:8px 0;
+    }
+    .actividades .item{
+      margin-bottom:10px;
+    }
+    .actividades .item .titulo{
+      font-weight:bold;
+    }
+
+    /* TABLAS */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:8px 0 14px 0;
+      font-size:10.5pt;
+    }
+    table th, table td{
+      border:1px solid #000;
+      padding:5px 8px;
+      text-align:left;
+      vertical-align:top;
+    }
+    table th{
+      font-weight:bold;
+      background:#f2f2f2;
+    }
+    table.datos-sin-borde th,
+    table.datos-sin-borde td{
+      border:none;
+      padding:2px 0;
+      font-size:12pt;
+    }
+    table.datos-sin-borde th{
+      background:none;
+      width:38%;
+      font-weight:bold;
+      vertical-align:top;
+    }
+
+    /* FIRMA */
+    .firmas{
+      margin-top:70px;
+      display:flex;
+      justify-content:space-between;
+      gap:60px;
+    }
+    .firma{
+      flex:1;
+      text-align:center;
+    }
+    .firma .linea{
+      border-top:1px solid #000;
+      margin-bottom:6px;
+    }
+    .firma .nombre{
+      font-size:10.5pt;
+      font-weight:bold;
+      margin:0;
+    }
+    .firma .cargo{
+      font-size:10pt;
+      font-style:italic;
+      margin:2px 0 0 0;
+    }
+    .firma .dato{
+      font-size:9.5pt;
+      margin:2px 0 0 0;
+    }
+
+    /* PIE */
+    .pie-doc{
+      margin-top:40px;
+      border-top:1px solid #000;
+      padding-top:8px;
+      font-size:9pt;
+      text-align:center;
+    }
+    .pie-doc p{
+      margin:2px 0;
+    }
+
+    /* BLOQUE DE VERIFICACIÓN */
+    .verificacion{
+      margin-top:22px;
+      border:1px solid #000;
+      padding:10px 14px;
+      font-size:10pt;
+      text-align:center;
+      background:#fafafa;
+    }
+    .verificacion p{
+      margin:2px 0;
+    }
+    .verificacion strong{
+      font-weight:bold;
+    }
+
+    /* IMPRESIÓN */
+    @page{
+      size: A4;
+      margin: 15mm;
+    }
+    @media print{
+      body{background:#fff;font-size:11pt;}
+      .page{max-width:none;margin:0;padding:0;border:none;box-shadow:none;}
+      *{
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      h2.clausula{page-break-after:avoid;break-after:avoid;}
+      h3.subclausula{page-break-after:avoid;break-after:avoid;}
+      tr{page-break-inside:avoid;break-inside:avoid;}
+      .firmas{page-break-inside:avoid;break-inside:avoid;}
+      .membrete{page-break-after:avoid;break-after:avoid;}
+      .titulo-doc{page-break-after:avoid;break-after:avoid;}
+      .actividades .item{page-break-inside:avoid;break-inside:avoid;}
+      .verificacion{page-break-inside:avoid;break-inside:avoid;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- MEMBRETE -->
+    <div class="membrete">
+      <div class="izquierda">
+        <p class="empresa">GEOSTAR INGENIERÍA S.A.S.</p>
+      </div>
+      <div class="derecha">
+        <p><span class="etiqueta">N.I.T.:</span> 902035038-2</p>
+        <p><span class="etiqueta">Dirección:</span> Carrera 38 No. 59-20, Of. 304</p>
+        <p>Bogotá D.C., Colombia</p>
+        <p><span class="etiqueta">Teléfono:</span> +57 312 4033751</p>
+        <p><span class="etiqueta">Correo:</span> contacto@geostar.com.co</p>
+        <p><span class="etiqueta">Web:</span> https://geostar.com.co/</p>
+      </div>
+    </div>
+
+    <!-- TÍTULO -->
+    <div class="titulo-doc">
+      <h1>Certificado de Mantenimiento y Verificación</h1>
+      <p class="subtitulo">Equipos GNSS — receptores base y rover</p>
+      <p class="num"><strong>Certificado No. 55</strong> &nbsp;·&nbsp; Código de verificación: 27fr8b2p53</p>
+    </div>
+
+    <!-- 1. DATOS GENERALES -->
+    <h2 class="clausula">1. Datos generales</h2>
+    <p class="linea-dato"><span class="etiqueta">Cliente:</span> INGESIG ASESORES S.A.S.</p>
+    <p class="linea-dato"><span class="etiqueta">N.I.T. del cliente:</span> 901.406.525-7</p>
+    <p class="linea-dato"><span class="etiqueta">Ciudad:</span> Bogotá D.C.</p>
+    <p class="linea-dato"><span class="etiqueta">Teléfono:</span> 310280329</p>
+    <p class="linea-dato"><span class="etiqueta">Fecha de expedición:</span> 10 de septiembre de 2026</p>
+    <p class="linea-dato"><span class="etiqueta">Próxima revisión:</span> 10 de septiembre de 2027</p>
+
+    <!-- 2. EQUIPOS -->
+    <h2 class="clausula">2. Equipos objeto del certificado</h2>
+    <p>Se certifican los siguientes equipos, ambos de la misma marca y modelo, utilizados como conjunto receptor base y receptor rover:</p>
+    <table class="datos-sin-borde">
+      <tr><th>Instrumento:</th><td>GNSS</td></tr>
+      <tr><th>Marca / Modelo:</th><td>CHCNAV — i90</td></tr>
+      <tr><th>Receptor base — Serial:</th><td>4736525</td></tr>
+      <tr><th>Receptor rover — Serial:</th><td>4565564</td></tr>
+      <tr><th>Firmware / Versión:</th><td>8.1.0.5.20241108</td></tr>
+      <tr><th>Estado general:</th><td>Apto para operación</td></tr>
+    </table>
+
+    <!-- 3. ESPECIFICACIONES TÉCNICAS -->
+    <h2 class="clausula">3. Especificaciones técnicas GNSS</h2>
+
+    <h3 class="subclausula">3.1. Parámetros cinemáticos y de posicionamiento</h3>
+    <table>
+      <tbody>
+        <tr><th style="width:42%;">RTK — Cinemático en tiempo real</th><td>Horizontal: 8 mm + 1 ppm RMS<br>Vertical: 15 mm + 1 ppm RMS</td></tr>
+        <tr><th>PPK — Post-procesamiento cinemático</th><td>Horizontal: 8 mm + 1 ppm RMS<br>Vertical: 15 mm + 1 ppm RMS</td></tr>
+        <tr><th>PPP</th><td>Soporta B2b-PPP, E6B-HAS</td></tr>
+        <tr><th>Estática de alta precisión</th><td>Horizontal: 2.5 mm + 0.1 ppm RMS</td></tr>
+        <tr><th>Estática y estática rápida</th><td>Horizontal: 2.5 mm + 0.5 ppm RMS</td></tr>
+        <tr><th>Código diferencial</th><td>Aplica</td></tr>
+        <tr><th>Autónomo</th><td>Horizontal: 1.5 m RMS</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subclausula">3.2. Rendimiento del GNSS</h3>
+    <table>
+      <tbody>
+        <tr><th style="width:42%;">Tasa de posicionamiento</th><td>1 Hz, 5 Hz y 10 Hz</td></tr>
+        <tr><th>Tiempo para fijar a la primera vez</th><td>Tiempo de inicialización: &lt; 10 s<br>Fiabilidad de inicialización: &gt; 99.9%</td></tr>
+        <tr><th>Arranque en frío</th><td>&lt; 45 s</td></tr>
+        <tr><th>Arranque en caliente</th><td>&lt; 10 s</td></tr>
+        <tr><th>Reaparición de la señal</th><td>&lt; 1 s</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subclausula">3.3. Inclinación RTK — compensación</h3>
+    <table>
+      <tbody>
+        <tr><th style="width:42%;">Ángulo de inclinación</th><td>0° ~ 60°</td></tr>
+        <tr><th>Incertidumbre adicional del bastón</th><td>Horizontal típicamente menor</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 4. DIAGNÓSTICO -->
+    <h2 class="clausula">4. Diagnóstico y ajuste</h2>
+    <p>Sobre el conjunto de equipos se realizaron las siguientes actividades:</p>
+
+    <div class="actividades">
+      <div class="item">
+        <p><span class="titulo">4.1. Calibración de antena.</span> Por su naturaleza y arquitectura tecnológica, estos modelos no son sujetos de calibración en el sentido mecánico u óptico tradicional (como ocurre con estaciones totales, teodolitos o niveles). Estos equipos no poseen partes móviles, ejes o lentes que sufran desajustes físicos que requieran corrección en laboratorio. El desempeño y la precisión de estos equipos se determinan de acuerdo con las especificaciones y parámetros técnicos establecidos por el fabricante, considerando las características del centro de fase de las antenas GNSS, cuyos valores de calibración pueden estar referenciados a estándares y modelos publicados por organismos como el National Geodetic Survey (NGS) de NOAA. La idoneidad, precisión y estado óptimo de estos receptores se valida exclusivamente mediante inspecciones técnicas, pruebas de rastreo satelital, verificación de parámetros de fábrica y actualizaciones de firmware.</p>
+      </div>
+      <div class="item">
+        <p><span class="titulo">4.2. Actualización de firmware.</span></p>
+      </div>
+      <div class="item">
+        <p><span class="titulo">4.3. Verificación de conexiones internas y externas.</span></p>
+      </div>
+      <div class="item">
+        <p><span class="titulo">4.4. Volcado de memoria.</span></p>
+      </div>
+      <div class="item">
+        <p><span class="titulo">4.5. Ajuste de parámetros operativos.</span></p>
+      </div>
+    </div>
+
+    <!-- 5. COMPONENTES -->
+    <h2 class="clausula">5. Componentes verificados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:45%;">Componente</th>
+          <th>Estado / Observación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Firmware interno</td><td>90 GNSS A19318430901060002</td></tr>
+        <tr><td>Configuración de software</td><td>Aplica; verificada</td></tr>
+        <tr><td>Hardware</td><td>Aplica; sin daños</td></tr>
+        <tr><td>Conexión de baterías</td><td>Aplica; OK</td></tr>
+        <tr><td>Conexión de cables</td><td>Aplica; OK</td></tr>
+        <tr><td>Puertos de descarga</td><td>Aplica; probados</td></tr>
+        <tr><td>Revisión de antena</td><td>Aplica; sin daños</td></tr>
+        <tr><td>Registro de información</td><td>Aplica; archivos OK</td></tr>
+        <tr><td>Teclado de operación</td><td>Aplica; funcional</td></tr>
+        <tr><td>Pantalla gráfica</td><td>Aplica; funcional</td></tr>
+        <tr><td>Operación</td><td>Aplica; pruebas OK</td></tr>
+        <tr><td>Revisión receptor base (serial 4736525)</td><td>Aplica; OK</td></tr>
+        <tr><td>Revisión receptor rover (serial 4565564)</td><td>Aplica; OK</td></tr>
+        <tr><td>Programación de parámetros</td><td>Aplica; verificada</td></tr>
+        <tr><td>Entrada y salida de datos</td><td>Aplica; probada</td></tr>
+        <tr><td>Configuración básica</td><td>Aplica; verificada</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 6. HORIZONTAL -->
+    <h2 class="clausula">6. Test de verificación de posicionamiento horizontal</h2>
+    <p>Ensayo realizado sobre el conjunto receptor base (4736525) — receptor rover (4565564).</p>
+    <table>
+      <tbody>
+        <tr><th style="width:38%;">Coordenada patrón</th><td>N 04° 39' 1.42" &nbsp;·&nbsp; W 074° 04' 55.3"</td></tr>
+        <tr><th>Coordenada GPS</th><td>Lat: 4° 39' 1,152" N &nbsp;·&nbsp; Long: W 074° 04' 55.122"</td></tr>
+        <tr><th>Diferencia calculada</th><td>0,015 m</td></tr>
+        <tr><th>Tolerancia</th><td>Horizontal: 8 mm + 1 ppm RMS</td></tr>
+        <tr><th>Resultado</th><td><strong>CUMPLE</strong></td></tr>
+      </tbody>
+    </table>
+    <p>El conjunto de equipos cumple bajo los parámetros de tolerancia establecidos para la precisión de posicionamiento.</p>
+
+    <!-- 7. VERTICAL -->
+    <h2 class="clausula">7. Test de verificación de posicionamiento vertical</h2>
+    <p>Ensayo realizado sobre el conjunto receptor base (4736525) — receptor rover (4565564).</p>
+    <table>
+      <tbody>
+        <tr><th style="width:38%;">Patrón</th><td>2545.368 m</td></tr>
+        <tr><th>Lectura GPS</th><td>2545.372 m</td></tr>
+        <tr><th>Diferencia</th><td>0,004 m</td></tr>
+        <tr><th>Error estadístico</th><td>±0,018 m</td></tr>
+        <tr><th>Resultado</th><td><strong>CUMPLE</strong></td></tr>
+      </tbody>
+    </table>
+
+    <!-- 8. OTROS -->
+    <h2 class="clausula">8. Otros ajustes y diagnósticos</h2>
+    <p>Se registraron ajustes menores en parámetros RTK/PPK, verificación de puertos y comprobación de integridad de archivos. No se detectaron fallas de hardware que afecten la operación del conjunto de equipos.</p>
+
+    <!-- 9. CONCLUSIÓN -->
+    <h2 class="clausula">9. Conclusión</h2>
+    <p>Los equipos son aptos para posicionamiento GNSS, presentando condiciones adecuadas de operación y rastreo satelital. De acuerdo con las pruebas efectuadas, el conjunto receptor base (4736525) y receptor rover (4565564) cumple con los parámetros de tolerancia establecidos para la verificación de posicionamiento.</p>
+
+    <!-- FIRMA -->
+    <div class="firmas">
+      <div class="firma">
+        <div class="linea"></div>
+        <p class="nombre">Responsable técnico</p>
+        <p class="cargo">Firma del técnico</p>
+        <p class="dato">GEOSTAR INGENIERÍA S.A.S.</p>
+      </div>
+    </div>
+
+    <!-- PIE -->
+    <div class="pie-doc">
+      <p>Documento generado electrónicamente — Certificado No. 55</p>
+      <p>Código de verificación: 27fr8b2p53</p>
+      <p>GEOSTAR INGENIERÍA S.A.S. &nbsp;·&nbsp; N.I.T. 902035038-2 &nbsp;·&nbsp; Carrera 38 No. 59-20, Of. 304, Bogotá D.C. &nbsp;·&nbsp; +57 312 4033751</p>
+      <p>contacto@geostar.com.co &nbsp;·&nbsp; https://geostar.com.co/</p>
+    </div>
+
+    <!-- BLOQUE DE VERIFICACIÓN -->
+    <div class="verificacion">
+      <p>El presente Certificado fue generado el día: <strong>10/09/2026</strong></p>
+      <p>y puede ser verificado ingresando el código <strong>27fr8b2p53</strong></p>
+      <p>desde el sitio web: <strong>https://geostar.com.co/certificados/27fr8b2p53</strong></p>
+    </div>
+
+  </div>
+</body>
+</html>
