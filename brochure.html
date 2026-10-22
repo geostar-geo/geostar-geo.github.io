@@ -1,494 +1,510 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEOSTAR INGENIERÍA · Brochure Digital</title>
-    <!-- Google Fonts + Font Awesome + QR Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        .brochure {
-            max-width: 1200px;
-            width: 100%;
-            background: rgba(20,20,20,0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        /* Header del Brochure */
-        .brochure-header {
-            padding: 2.5rem;
-            background: linear-gradient(90deg, #000000 0%, #0a2e5a 100%);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .logo-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: #00a67e;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .title-area h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-            background: linear-gradient(135deg, #ffffff 0%, #00a67e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .title-area p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-        }
-        .badge {
-            margin-left: auto;
-            background: rgba(0,166,126,0.2);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(0,166,126,0.3);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Grid principal */
-        .brochure-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 2.5rem;
-        }
-        
-        /* Columna izquierda */
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #00a67e;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .service-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        .service-tag {
-            background: rgba(255,255,255,0.05);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 400;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s;
-            cursor: default;
-        }
-        .service-tag i {
-            margin-right: 0.5rem;
-            font-size: 0.8rem;
-        }
-        
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.03);
-            padding: 1.5rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #00a67e;
-            margin-bottom: 0.3rem;
-        }
-        .stat-label {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Columna derecha */
-        .right-column {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .video-placeholder {
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .video-placeholder video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .contact-info {
-            background: rgba(255,255,255,0.02);
-            padding: 1.8rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            background: rgba(0,166,126,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00a67e;
-        }
-        .contact-text h4 {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 0.2rem;
-        }
-        .contact-text p {
-            font-weight: 500;
-        }
-        
-        /* QR Section */
-        .qr-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .qr-title {
-            color: #00a67e;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-        #qrcode {
-            background: white;
-            padding: 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .qr-whatsapp-text {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-            text-align: center;
-        }
-        .qr-whatsapp-text i {
-            color: #25D366;
-            margin-right: 0.3rem;
-        }
-        
-        /* Footer */
-        .brochure-footer {
-            padding: 1.5rem 2.5rem;
-            background: rgba(0,0,0,0.3);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .social-links a:hover {
-            background: #00a67e;
-            color: #000;
-            transform: translateY(-2px);
-        }
-        .download-btn {
-            background: #00a67e;
-            color: #000;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-family: 'Poppins', sans-serif;
-        }
-        .download-btn:hover {
-            background: #008c68;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,166,126,0.3);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            body { padding: 1rem; }
-            .brochure-grid { grid-template-columns: 1fr; }
-            .brochure-header { flex-direction: column; text-align: center; }
-            .logo-area { flex-direction: column; }
-            .badge { margin: 0; }
-            .stats-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEOSTAR INGENIERÍA S.A.S. · Brochure corporativo</title>
+<meta name="description" content="Brochure corporativo de GEOSTAR INGENIERÍA S.A.S.: topografía, geomática, catastro, avalúos, consultoría e infraestructura.">
+<!--
+  GEOSTAR INGENIERÍA S.A.S. · NIT 902.035.038-2
+  Brochure corporativo · Formato carta (8,5 x 11 in) · 4 páginas
+  - Logo en la carpeta img/ del repositorio (img/geostar_logo.webp e img/geostar_emblema.webp); códigos QR embebidos;
+    fuentes (Google Fonts) e íconos (Font Awesome) vía CDN.
+  - Los datos marcados con <span class="pc"> están "por confirmar": complételos o elimínelos antes de imprimir.
+  - Para PDF: Chrome → Imprimir → Guardar como PDF · Tamaño Carta · Márgenes: Ninguno · Gráficos de fondo: activado.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* ============ Tokens (colores tomados del logo) ============ */
+  :root{
+    --ink:#14215A;      /* azul del logotipo */
+    --indigo:#2B2A7E;   /* capa intermedia */
+    --sky:#1388D4;      /* capa inferior */
+    --orange:#F7740C;   /* capa superior */
+    --amber:#F5960A;    /* líneas y nodos */
+    --text:#2E3552;
+    --muted:#5F6683;
+    --line:#DCE1EC;
+    --tint:#F2F4F9;
+    --paper:#FFFFFF;
+    --display:'Sora','Segoe UI',Arial,sans-serif;
+    --body:'IBM Plex Sans','Segoe UI',Arial,sans-serif;
+    --z:1;
+  }
+
+  /* ============ Base y página ============ */
+  @page{ size: letter; margin: 0; }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html{ background:#8E94A9; }
+  body{ font-family:var(--body); color:var(--text); font-size:10.2pt; line-height:1.5; padding:64px 0 24px; }
+  img{ display:block; max-width:100%; }
+  .nw{ white-space:nowrap; }
+
+  .page{
+    width:8.5in; height:11in; margin:0 auto 28px; background:var(--paper);
+    position:relative; overflow:hidden; display:flex; flex-direction:column;
+    box-shadow:0 12px 40px rgba(10,16,48,.35);
+  }
+  @media screen{ .page{ zoom:var(--z); } }
+
+  /* Encabezado y pie de páginas interiores */
+  .run-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:30px 56px 0; font-size:8.5pt; color:var(--muted);
+  }
+  .run-head .brand{ display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:700; color:var(--ink); font-size:9pt; letter-spacing:.02em; }
+  .run-head .brand i.emblem{ width:34px; height:30px; }
+  .run-foot{
+    margin-top:auto; display:flex; justify-content:space-between; align-items:center;
+    padding:14px 56px 26px; font-size:8pt; color:var(--muted); border-top:1px solid var(--line);
+  }
+  .run-foot b{ color:var(--ink); font-weight:600; }
+  .content{ padding:26px 56px 0; flex:1; display:flex; flex-direction:column; }
+
+  /* Logo: archivos en la carpeta img/ del repositorio */
+  .emblem{ display:inline-block; background:url(img/geostar_emblema.webp) center/contain no-repeat; }
+  .logo-full{ display:block; background:url(img/geostar_logo.webp) center/contain no-repeat; }
+
+  /* Títulos: la barra ámbar retoma la línea bajo el logotipo */
+  h2.sec{ font-family:var(--display); font-size:21pt; line-height:1.15; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+  h2.sec::after{ content:""; display:block; width:54px; height:4px; border-radius:2px; background:var(--amber); margin-top:10px; }
+  h3{ font-family:var(--display); color:var(--ink); font-weight:600; }
+  p.lead{ font-size:11pt; color:var(--text); }
+
+  /* Marca "por confirmar" */
+  .pc{
+    display:inline-block; vertical-align:1px; margin-left:6px; padding:0 7px;
+    font:600 7.2pt/1.7 var(--body); color:#9A3412; background:#FFF1E4;
+    border:1px dashed #E07A2E; border-radius:999px; white-space:nowrap;
+  }
+
+  /* ============ Portada ============ */
+  .cover{ background:var(--paper); }
+  .cover .topo{ position:absolute; inset:0 0 auto 0; height:600px; pointer-events:none; }
+  .cover .topo .contours path{ fill:none; stroke:var(--ink); stroke-opacity:.13; }
+  .cover .topo .traverse polyline{ fill:none; stroke:var(--amber); stroke-width:2.2; }
+  .cover .topo .traverse circle{ fill:#fff; stroke:var(--amber); stroke-width:2.4; }
+
+  .cover-head{ position:relative; display:flex; align-items:center; gap:26px; padding:46px 56px 0; }
+  .cover-head .logo-full{ width:196px; height:228px; flex:none; }
+  .cover-id{ border-left:3px solid var(--amber); padding-left:18px; }
+  .cover-id .name{ font-family:var(--display); font-weight:800; color:var(--ink); font-size:17pt; line-height:1.15; letter-spacing:.01em; }
+  .cover-id .meta{ margin-top:8px; font-size:9.2pt; color:var(--muted); line-height:1.55; }
+
+  .cover-title{ position:relative; padding:34px 56px 0; }
+  .cover-title .kicker{ font-family:var(--display); font-weight:600; color:var(--orange); font-size:10pt; letter-spacing:.04em; }
+  .cover-title h1{ margin-top:6px; font-family:var(--display); font-weight:800; color:var(--ink); font-size:33pt; line-height:1.06; letter-spacing:-.02em; max-width:600px; }
+  .cover-title p{ margin-top:14px; max-width:470px; font-size:11pt; color:var(--text); }
+
+  .hero{
+    position:relative; margin-top:30px; height:262px; background:linear-gradient(115deg,var(--ink) 0%,var(--indigo) 55%,var(--sky) 100%);
+    clip-path:polygon(0 14%, 100% 0, 100% 86%, 0 100%);
+  }
+  .hero img, .hero video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,33,90,.55), rgba(20,33,90,0) 60%); }
+  .hero .caption{ position:absolute; z-index:2; left:56px; bottom:44px; color:#fff; font-size:8.6pt; opacity:.92; }
+  .hero video{ display:none; }
+
+  .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; padding:24px 56px 0; }
+  .pillar{ padding-top:12px; border-top:5px solid var(--c); }
+  .pillar .ttl{ display:flex; align-items:center; gap:9px; font-family:var(--display); font-weight:700; color:var(--ink); font-size:11.5pt; }
+  .pillar .ttl i{ color:var(--c); font-size:12pt; width:16px; text-align:center; }
+  .pillar p{ margin-top:5px; font-size:9.2pt; color:var(--muted); line-height:1.45; }
+
+  .cover-foot{
+    margin-top:auto; background:var(--ink); color:#fff; padding:18px 56px 20px;
+    display:grid; grid-template-columns:1.05fr 1.2fr 1fr .95fr; gap:14px; font-size:8.8pt;
+  }
+  .cover-foot div{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+  .cover-foot i{ color:var(--amber); width:14px; text-align:center; }
+
+  /* ============ Quiénes somos ============ */
+  .about{ display:grid; grid-template-columns:1.35fr 1fr; gap:30px; margin-top:20px; }
+  .about p + p{ margin-top:10px; }
+  .about .exp{ display:flex; align-items:center; gap:10px; margin-top:14px; padding:12px 14px; background:var(--tint); border-radius:8px; }
+  .about .exp b{ font-family:var(--display); font-size:22pt; font-weight:800; color:var(--orange); line-height:1; }
+  .about .exp span{ font-size:9.2pt; color:var(--text); line-height:1.35; }
+  .ficha{ border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:8.8pt; align-self:start; }
+  .ficha h3{ font-size:10pt; background:var(--ink); color:#fff; padding:9px 14px; }
+  .ficha dl{ display:grid; grid-template-columns:96px 1fr; }
+  .ficha dt, .ficha dd{ padding:6px 12px; border-top:1px solid var(--line); line-height:1.35; }
+  .ficha dt{ color:var(--muted); background:var(--tint); }
+  .ficha dd{ color:var(--ink); font-weight:500; }
+
+  /* ============ Líneas de servicio (tres capas, como el logo) ============ */
+  .layers-intro{ margin-top:26px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
+  .layers-intro p{ max-width:330px; font-size:9pt; color:var(--muted); }
+  .layers{ margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+  .layer{ display:grid; grid-template-columns:128px 1fr; border-radius:10px; background:var(--tint); overflow:hidden; }
+  .layer .tag{ background:var(--c); color:#fff; padding:14px 14px; font-family:var(--display); font-weight:700; font-size:10pt; line-height:1.25; display:flex; flex-direction:column; justify-content:space-between; }
+  .layer .tag small{ font-family:var(--body); font-weight:400; font-size:7.8pt; opacity:.9; }
+  .layer .items{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:13px 16px; }
+  .svc h4{ display:flex; align-items:center; gap:7px; font-family:var(--display); font-size:9.3pt; font-weight:600; color:var(--ink); line-height:1.25; }
+  .svc h4 i{ color:var(--c); width:14px; text-align:center; flex:none; }
+  .svc p{ margin-top:4px; font-size:8.4pt; color:var(--muted); line-height:1.42; }
+
+  /* ============ Avalúos ============ */
+  .aval-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+  .aval{ display:flex; align-items:center; gap:11px; padding:9px 12px; border:1px solid var(--line); border-radius:8px; }
+  .aval i{ flex:none; width:32px; height:32px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:#fff; font-size:10.5pt; }
+  .aval span{ font-family:var(--display); font-weight:600; color:var(--ink); font-size:9.2pt; line-height:1.25; }
+  .norma{ margin-top:12px; display:flex; gap:10px; align-items:flex-start; font-size:8.8pt; color:var(--text); padding:10px 14px; border-left:4px solid var(--amber); background:#FFF8EC; border-radius:0 8px 8px 0; }
+  .norma i{ color:var(--orange); margin-top:3px; }
+
+  /* ============ Metodología (secuencia real de trabajo) ============ */
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:14px; counter-reset:st; }
+  .step{ position:relative; padding:0 14px 0 0; }
+  .step .n{ display:flex; align-items:center; gap:0; }
+  .step .n b{ flex:none; width:28px; height:28px; border-radius:50%; border:2.5px solid var(--amber); background:#fff; color:var(--ink); display:grid; place-items:center; font:700 9.5pt var(--display); }
+  .step .n::after{ content:""; flex:1; height:2.5px; background:var(--amber); margin-left:6px; }
+  .step:last-child .n::after{ background:transparent; }
+  .step h4{ margin-top:8px; font-family:var(--display); font-size:9.6pt; font-weight:700; color:var(--ink); }
+  .step p{ margin-top:3px; font-size:8.4pt; color:var(--muted); line-height:1.42; }
+
+  /* ============ Tecnología y entregables ============ */
+  .two{ display:grid; grid-template-columns:1.15fr 1fr; gap:28px; margin-top:20px; }
+  .tech{ margin-top:12px; }
+  .tech li{ list-style:none; display:grid; grid-template-columns:28px 1fr; gap:4px 10px; padding:9px 0; border-bottom:1px solid var(--line); }
+  .tech li:first-child{ border-top:1px solid var(--line); }
+  .tech i{ grid-row:span 2; color:var(--sky); font-size:13pt; margin-top:2px; text-align:center; }
+  .tech b{ font-family:var(--display); font-weight:600; color:var(--ink); font-size:9.3pt; }
+  .tech span{ font-size:8.6pt; color:var(--muted); line-height:1.4; }
+  .h-sub{ font-family:var(--display); font-size:13pt; font-weight:700; color:var(--ink); }
+  .h-sub::after{ content:""; display:block; width:36px; height:3px; border-radius:2px; background:var(--amber); margin-top:7px; }
+  .deliver{ margin-top:12px; padding:12px 16px; background:var(--tint); border-radius:10px; }
+  .deliver li{ list-style:none; display:flex; gap:9px; font-size:8.8pt; line-height:1.38; padding:3px 0; }
+  .deliver li i{ color:var(--orange); margin-top:3px; font-size:8.5pt; }
+  .deliver .note{ margin-top:8px; font-size:7.9pt; color:var(--muted); font-style:italic; }
+
+  /* ============ Contratación y contacto ============ */
+  .modal{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  .modal span{ font-size:8.4pt; padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--ink); background:#fff; }
+  .modal span.k{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .docs{ margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:6px 18px; font-size:8.8pt; }
+  .docs div{ display:flex; gap:8px; align-items:flex-start; }
+  .docs i{ color:var(--sky); margin-top:3px; }
+
+  .contact{
+    margin-top:30px; position:relative; background:var(--ink); color:#fff; border-radius:14px;
+    padding:30px 30px; display:grid; grid-template-columns:1fr auto; gap:22px; overflow:hidden;
+  }
+  .contact h2.sec{ color:#fff; }
+  .contact ul{ list-style:none; margin-top:16px; display:grid; gap:11px; font-size:9.8pt; }
+  .contact li{ display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; line-height:1.4; }
+  .contact li i{ color:var(--amber); margin-top:3px; text-align:center; }
+  .contact li small{ display:block; color:#B9C0DE; font-size:8pt; }
+  .qrs{ display:flex; gap:14px; align-self:center; }
+  .qr{ width:150px; background:#fff; border-radius:10px; padding:10px 10px 8px; text-align:center; color:var(--ink); }
+  .qr svg{ width:130px; height:130px; display:block; shape-rendering:crispEdges; }
+  .qr b{ display:block; margin-top:6px; font-family:var(--display); font-size:8.4pt; }
+  .qr small{ display:block; font-size:7.4pt; color:var(--muted); }
+
+  .legal{ margin-top:26px; display:flex; align-items:center; gap:18px; }
+  .legal .logo-full{ width:72px; height:84px; flex:none; }
+  .legal p{ font-size:8.4pt; color:var(--muted); line-height:1.5; }
+  .legal p b{ color:var(--ink); font-family:var(--display); font-size:9.6pt; }
+  .closing{ margin-top:auto; padding:0 0 22px; font-family:var(--display); font-weight:700; font-size:15pt; color:var(--ink); letter-spacing:-.005em; }
+  .closing::before{ content:""; display:block; width:54px; height:4px; border-radius:2px; background:var(--amber); margin-bottom:12px; }
+  .no-photo .caption{ display:none; }
+
+  /* ============ Barra de pantalla (no se imprime) ============ */
+  .toolbar{
+    position:fixed; top:0; left:0; right:0; z-index:10; display:flex; align-items:center; justify-content:center; gap:16px;
+    padding:10px 16px; background:var(--ink); color:#fff; font-size:13px; flex-wrap:wrap;
+  }
+  .toolbar button{ font:600 13px var(--body); background:var(--amber); color:var(--ink); border:0; border-radius:6px; padding:8px 14px; cursor:pointer; }
+  .toolbar button:focus-visible{ outline:3px solid #fff; outline-offset:2px; }
+  .toolbar .warn{ color:#FFD9B0; }
+
+  @media print{
+    html, body{ background:#fff; padding:0; }
+    .page{ margin:0; box-shadow:none; zoom:1; break-after:page; page-break-after:always; }
+    .page:last-of-type{ break-after:auto; page-break-after:auto; }
+    .no-print{ display:none !important; }
+    .hero video{ display:none !important; }
+  }
+  @media screen and (prefers-reduced-motion: no-preference){
+    .hero.has-video video{ display:block; }
+  }
+</style>
 </head>
 <body>
-    <div class="brochure">
-        <!-- HEADER -->
-        <div class="brochure-header">
-            <div class="logo-area">
-                <div class="logo-icon">
-                    <i class="fas fa-draw-polygon"></i>
-                </div>
-                <div class="title-area">
-                    <h1>GEOSTAR INGENIERÍA</h1>
-                    <p>S.A.S. · Precisión y cumplimiento normativo</p>
-                </div>
-            </div>
-            <div class="badge">
-                <i class="fas fa-star" style="color: #00a67e; margin-right: 0.5rem;"></i>
-                +15 AÑOS DE EXPERIENCIA
-            </div>
-        </div>
 
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="brochure-grid">
-            <!-- COLUMNA IZQUIERDA -->
-            <div class="left-column">
-                <!-- Sobre nosotros -->
-                <div>
-                    <div class="section-title">
-                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-                        QUIÉNES SOMOS
-                    </div>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
-                        Empresa especializada en soluciones técnicas de alto nivel en geomática, 
-                        catastro, infraestructura y tecnología. Con más de 15 años de experiencia 
-                        y equipos de última generación.
-                    </p>
-                </div>
+<div class="toolbar no-print">
+  <span id="pc-count" class="warn"></span>
+  <button type="button" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Guardar como PDF</button>
+</div>
 
-                <!-- Servicios -->
-                <div>
-                    <div class="section-title">
-                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-                        SERVICIOS ESPECIALIZADOS
-                    </div>
-                    <div class="service-tags">
-                        <span class="service-tag"><i class="fas fa-mountain"></i>Topografía</span>
-                        <span class="service-tag"><i class="fas fa-globe-americas"></i>Geomática</span>
-                        <span class="service-tag"><i class="fas fa-helicopter"></i>Drones RTK</span>
-                        <span class="service-tag"><i class="fas fa-draw-polygon"></i>Catastro</span>
-                        <span class="service-tag"><i class="fas fa-file-invoice-dollar"></i>Avalúos</span>
-                        <span class="service-tag"><i class="fas fa-hard-hat"></i>Consultoría</span>
-                        <span class="service-tag"><i class="fas fa-handshake"></i>APP</span>
-                        <span class="service-tag"><i class="fas fa-map"></i>SIG</span>
-                        <span class="service-tag"><i class="fas fa-cogs"></i>Equipos</span>
-                    </div>
-                </div>
+<!-- ======================= PÁGINA 1 · PORTADA ======================= -->
+<section class="page cover">
+  <svg class="topo" viewBox="0 0 816 600" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <g class="contours"><path d="M687.5 150.0C688.0 151.8 687.7 154.0 686.6 155.7C685.5 157.4 682.9 159.0 680.8 160.3C678.7 161.6 675.9 162.5 673.9 163.6C671.9 164.7 670.3 165.6 668.8 166.8C667.3 168.0 666.4 169.5 664.9 170.6C663.4 171.8 661.8 173.2 659.8 173.9C657.9 174.6 655.3 174.9 653.0 174.9C650.8 175.0 648.3 174.4 646.1 174.2C644.0 174.1 642.1 173.8 640.0 174.0C637.9 174.2 635.9 174.8 633.6 175.3C631.2 175.9 628.5 176.8 625.8 177.1C623.1 177.3 620.1 177.5 617.5 177.1C614.9 176.7 612.2 175.9 610.1 174.8C607.9 173.7 606.0 172.2 604.5 170.7C603.1 169.1 601.9 167.3 601.4 165.5C600.9 163.7 601.0 161.6 601.4 159.8C601.9 157.9 603.3 156.0 604.2 154.4C605.2 152.8 606.7 151.4 607.2 150.0C607.8 148.6 607.8 147.5 607.5 146.0C607.2 144.6 606.0 143.0 605.4 141.3C604.9 139.5 604.1 137.4 604.4 135.7C604.8 134.0 605.9 132.3 607.4 131.0C608.8 129.7 611.3 128.8 613.3 127.9C615.4 127.0 617.7 126.5 619.7 125.6C621.8 124.7 623.5 123.6 625.6 122.5C627.7 121.5 629.8 120.0 632.2 119.3C634.6 118.6 637.5 118.0 640.0 118.2C642.5 118.4 645.3 119.4 647.5 120.4C649.7 121.5 651.6 123.3 653.3 124.7C655.0 126.1 656.2 127.6 657.6 128.8C659.0 130.0 660.3 131.1 661.7 132.1C663.1 133.1 664.5 133.9 666.0 134.8C667.5 135.8 669.1 136.6 670.9 137.6C672.7 138.6 674.8 139.5 676.8 140.7C678.9 141.9 681.5 143.1 683.3 144.7C685.0 146.3 686.9 148.2 687.5 150.0Z" stroke-width="0.6"/>
+<path d="M735.5 150.0C736.6 153.7 735.7 158.0 733.4 161.4C731.0 164.9 725.8 168.0 721.4 170.6C717.1 173.2 711.4 174.9 707.4 177.0C703.4 179.2 700.2 181.0 697.2 183.4C694.2 185.7 692.5 188.6 689.5 191.0C686.5 193.4 683.4 196.0 679.5 197.5C675.5 198.9 670.6 199.5 666.0 199.7C661.5 199.9 656.7 198.9 652.3 198.7C648.0 198.4 644.2 198.0 640.0 198.5C635.8 198.9 631.7 200.2 627.0 201.2C622.3 202.2 616.9 203.9 611.5 204.4C606.2 204.8 600.2 205.0 595.0 204.1C589.8 203.3 584.6 201.6 580.3 199.4C576.0 197.3 572.1 194.4 569.2 191.3C566.2 188.2 563.9 184.6 562.9 181.0C561.8 177.3 562.1 173.2 563.1 169.5C564.1 165.7 567.0 161.9 569.0 158.7C571.0 155.5 574.0 152.8 575.0 150.0C576.1 147.2 576.1 145.0 575.3 142.1C574.6 139.2 571.8 135.9 570.6 132.5C569.5 129.0 567.8 124.7 568.4 121.3C569.0 117.8 571.3 114.3 574.3 111.7C577.3 109.1 582.2 107.4 586.4 105.6C590.5 103.8 595.1 102.7 599.2 100.9C603.3 99.1 606.9 96.9 611.2 94.9C615.4 92.9 619.7 90.2 624.5 88.8C629.3 87.5 634.9 86.5 640.0 87.0C645.1 87.4 650.5 89.3 654.9 91.4C659.3 93.5 663.0 96.9 666.4 99.6C669.8 102.3 672.4 105.2 675.3 107.6C678.1 110.0 680.7 112.0 683.5 114.0C686.3 116.0 689.0 117.8 692.1 119.6C695.2 121.5 698.2 123.2 701.8 125.2C705.5 127.1 709.7 129.0 713.9 131.3C718.1 133.7 723.4 136.2 727.0 139.3C730.6 142.4 734.5 146.3 735.5 150.0Z" stroke-width="0.6"/>
+<path d="M784.1 150.0C785.6 155.5 784.0 162.1 780.3 167.2C776.6 172.3 768.4 177.0 761.8 180.8C755.2 184.7 746.5 187.1 740.4 190.3C734.3 193.4 729.6 196.2 725.2 199.7C720.8 203.1 718.2 207.6 713.8 211.1C709.4 214.6 704.7 218.6 698.9 220.9C693.1 223.1 685.7 224.0 679.0 224.4C672.3 224.9 665.1 223.5 658.6 223.3C652.1 223.2 646.4 222.8 640.0 223.5C633.6 224.2 627.5 226.2 620.3 227.6C613.2 229.0 605.1 231.3 597.1 231.9C589.2 232.5 580.3 232.4 572.6 231.1C564.9 229.8 557.2 227.1 550.8 223.9C544.3 220.7 538.3 216.4 533.9 211.9C529.5 207.3 525.9 201.9 524.4 196.4C522.9 190.9 523.3 184.7 525.0 179.1C526.6 173.5 531.2 167.8 534.2 163.0C537.3 158.1 541.9 154.1 543.4 150.0C544.9 145.9 544.5 142.5 543.2 138.1C542.0 133.7 537.5 128.8 535.6 123.6C533.7 118.3 531.1 111.9 532.0 106.7C532.8 101.4 536.3 96.1 540.8 92.2C545.3 88.2 552.8 85.7 559.0 83.0C565.3 80.3 572.2 78.6 578.5 76.0C584.8 73.4 590.3 70.2 596.7 67.3C603.0 64.4 609.6 60.4 616.8 58.6C624.0 56.8 632.4 55.5 640.0 56.2C647.6 56.9 655.5 59.8 662.1 62.9C668.7 66.0 674.3 70.8 679.4 74.7C684.6 78.6 688.6 82.7 693.0 86.2C697.3 89.7 701.3 92.7 705.5 95.8C709.7 98.8 713.8 101.5 718.3 104.3C722.9 107.2 727.4 109.8 732.8 112.8C738.3 115.7 744.7 118.4 751.2 121.9C757.6 125.4 765.8 129.2 771.3 133.9C776.8 138.6 782.6 144.5 784.1 150.0Z" stroke-width="0.6"/>
+<path d="M833.1 150.0C835.0 157.4 832.6 166.1 827.4 173.0C822.2 179.8 810.9 185.9 801.9 190.9C792.8 196.0 781.2 199.2 773.0 203.4C764.8 207.5 758.7 211.2 752.8 215.8C746.9 220.4 743.5 226.2 737.7 230.9C732.0 235.6 725.7 241.0 718.1 244.0C710.5 247.0 700.8 248.4 691.9 249.1C683.0 249.8 673.6 248.3 664.9 248.3C656.3 248.3 648.6 248.0 640.0 249.1C631.4 250.1 623.0 252.8 613.5 254.6C603.9 256.3 593.1 259.0 582.6 259.6C572.1 260.2 560.5 259.8 550.3 257.9C540.1 256.0 530.0 252.5 521.4 248.2C512.8 243.9 504.7 238.4 498.8 232.3C492.9 226.3 487.9 219.1 486.0 211.8C484.0 204.5 484.8 196.1 487.1 188.7C489.4 181.2 495.8 173.6 500.0 167.2C504.2 160.7 510.2 155.5 512.1 150.0C514.0 144.5 513.3 140.1 511.3 134.2C509.3 128.3 503.0 121.7 500.3 114.7C497.6 107.6 494.0 98.9 495.1 91.8C496.2 84.8 500.9 77.7 506.9 72.4C513.0 67.1 523.0 63.7 531.4 60.1C539.9 56.5 549.2 54.3 557.6 50.8C566.1 47.4 573.5 43.2 582.1 39.5C590.7 35.8 599.6 30.9 609.2 28.6C618.8 26.4 630.0 25.0 640.0 26.1C650.0 27.1 660.5 30.9 669.2 34.9C677.9 38.9 685.4 45.0 692.4 50.0C699.3 55.0 704.9 60.2 710.8 64.8C716.7 69.3 722.1 73.3 727.7 77.3C733.4 81.4 738.7 85.1 744.7 89.0C750.7 92.8 756.6 96.4 763.9 100.3C771.3 104.2 780.0 107.7 788.7 112.4C797.4 117.1 808.7 122.2 816.1 128.4C823.5 134.7 831.2 142.6 833.1 150.0Z" stroke-width="1.1"/>
+<path d="M882.5 150.0C884.7 159.3 881.3 170.2 874.5 178.7C867.6 187.2 853.2 194.7 841.6 201.0C830.1 207.3 815.5 211.2 805.2 216.3C794.9 221.4 787.3 225.9 780.0 231.6C772.7 237.3 768.5 244.7 761.4 250.5C754.2 256.4 746.5 263.0 737.1 266.9C727.7 270.7 715.7 272.6 704.8 273.7C693.8 274.8 682.1 273.2 671.3 273.5C660.5 273.8 650.8 273.9 640.0 275.3C629.2 276.7 618.5 280.0 606.5 282.0C594.5 284.1 581.0 287.1 568.0 287.5C554.9 288.0 540.7 287.2 528.1 284.7C515.5 282.1 503.0 277.6 492.3 272.3C481.6 267.0 471.3 260.2 463.9 252.7C456.5 245.2 450.1 236.2 447.7 227.2C445.3 218.1 446.4 207.5 449.5 198.2C452.6 188.9 460.9 179.3 466.2 171.3C471.5 163.3 479.1 156.8 481.3 150.0C483.5 143.2 482.1 137.7 479.3 130.3C476.6 122.9 468.2 114.6 464.6 105.6C461.0 96.7 456.4 85.8 457.8 76.9C459.1 68.0 465.0 59.1 472.7 52.4C480.3 45.8 492.9 41.5 503.5 37.0C514.1 32.5 525.8 29.6 536.5 25.4C547.2 21.2 556.7 16.1 567.6 11.7C578.4 7.3 589.6 1.5 601.7 -1.1C613.7 -3.6 627.6 -4.9 640.0 -3.5C652.4 -2.1 665.3 2.6 676.2 7.5C687.0 12.3 696.4 19.6 705.2 25.5C713.9 31.5 721.2 37.7 728.7 43.2C736.2 48.7 743.1 53.7 750.2 58.7C757.3 63.8 763.8 68.6 771.2 73.5C778.7 78.3 785.9 82.9 795.1 87.8C804.3 92.7 815.5 97.0 826.5 102.8C837.5 108.7 852.0 115.0 861.3 122.9C870.6 130.7 880.3 140.7 882.5 150.0Z" stroke-width="0.6"/>
+<path d="M932.2 150.0C934.6 161.2 930.0 174.3 921.5 184.5C913.0 194.7 895.2 203.6 881.1 211.0C867.0 218.4 849.4 223.0 837.0 229.0C824.6 235.1 815.6 240.5 806.9 247.3C798.2 254.1 793.2 262.8 784.7 269.9C776.3 276.9 767.1 284.8 755.9 289.5C744.7 294.3 730.6 296.6 717.6 298.2C704.6 299.8 690.8 298.4 677.8 299.1C664.9 299.7 653.1 300.2 640.0 302.1C626.9 303.9 613.8 307.8 599.4 310.0C584.9 312.3 568.8 315.4 553.3 315.6C537.7 315.8 521.0 314.4 506.1 311.2C491.1 308.0 476.3 302.6 463.5 296.2C450.7 289.8 438.2 281.9 429.2 272.9C420.2 264.0 412.4 253.3 409.5 242.5C406.7 231.6 408.3 218.8 412.2 207.6C416.1 196.4 426.4 185.0 432.8 175.4C439.3 165.8 448.3 158.2 450.8 150.0C453.2 141.8 451.1 135.3 447.4 126.4C443.7 117.5 433.2 107.3 428.7 96.6C424.1 85.8 418.5 72.5 420.0 61.8C421.6 51.0 428.9 40.3 438.1 32.3C447.3 24.2 462.4 19.0 475.3 13.6C488.1 8.2 502.3 4.8 515.2 -0.2C528.2 -5.2 539.8 -11.1 553.0 -16.2C566.1 -21.2 579.7 -27.7 594.2 -30.4C608.7 -33.1 625.2 -34.3 640.0 -32.5C654.8 -30.7 670.0 -25.1 683.0 -19.4C696.0 -13.8 707.3 -5.6 717.9 1.2C728.6 8.0 737.6 15.0 746.8 21.5C756.0 27.9 764.4 33.8 772.9 39.9C781.5 46.0 789.1 52.0 798.0 57.9C806.9 63.8 815.4 69.3 826.5 75.2C837.6 81.1 851.2 86.2 864.6 93.2C878.0 100.2 895.7 107.8 907.0 117.3C918.2 126.8 929.8 138.8 932.2 150.0Z" stroke-width="0.6"/>
+<path d="M982.2 150.0C984.8 163.1 978.8 178.4 968.5 190.3C958.2 202.1 936.9 212.3 920.2 220.9C903.5 229.4 882.9 234.6 868.4 241.6C853.9 248.6 843.5 254.9 833.4 262.8C823.3 270.7 817.6 280.8 807.8 289.0C798.0 297.2 787.4 306.3 774.5 311.9C761.7 317.6 745.5 320.6 730.5 322.7C715.4 324.9 699.5 323.9 684.4 325.0C669.3 326.1 655.4 327.2 640.0 329.5C624.6 331.8 609.1 336.2 592.2 338.6C575.2 341.0 556.5 344.0 538.5 343.8C520.5 343.7 501.4 341.6 484.2 337.6C466.9 333.6 449.8 327.3 434.9 319.9C420.0 312.4 405.2 303.4 394.7 293.1C384.1 282.7 374.8 270.4 371.6 257.7C368.3 245.0 370.4 230.0 375.1 217.0C379.9 203.9 392.3 190.6 399.9 179.4C407.4 168.3 417.9 159.5 420.5 150.0C423.1 140.5 420.0 132.9 415.3 122.5C410.7 112.0 398.0 100.0 392.4 87.4C386.8 74.7 380.2 59.1 382.0 46.5C383.8 33.9 392.3 21.3 403.1 11.9C413.9 2.5 431.7 -3.7 446.8 -10.0C461.9 -16.3 478.4 -20.4 493.7 -26.1C509.0 -31.8 522.8 -38.5 538.4 -44.1C553.9 -49.6 569.9 -56.6 586.9 -59.4C603.8 -62.2 622.9 -63.1 640.0 -60.8C657.1 -58.6 674.6 -52.1 689.7 -45.8C704.8 -39.5 718.0 -30.5 730.6 -23.0C743.1 -15.4 754.1 -7.7 765.0 -0.4C775.9 6.9 786.0 13.8 795.9 20.9C805.9 28.0 814.6 35.2 824.9 42.2C835.3 49.1 845.0 55.6 858.0 62.5C871.0 69.4 887.1 75.3 903.0 83.5C918.8 91.7 939.8 100.6 953.0 111.6C966.2 122.7 979.6 136.9 982.2 150.0Z" stroke-width="0.6"/>
+<path d="M1032.3 150.0C1035.0 165.0 1027.6 182.5 1015.3 196.0C1003.1 209.4 978.3 221.0 958.9 230.7C939.6 240.4 916.0 246.2 899.4 254.1C882.9 262.0 871.1 269.1 859.6 278.1C848.2 287.0 841.7 298.5 830.6 307.9C819.5 317.2 807.5 327.6 793.0 334.1C778.4 340.7 760.3 344.4 743.3 347.2C726.3 350.1 708.3 349.6 691.1 351.3C673.9 353.0 657.7 354.8 640.0 357.6C622.3 360.3 604.2 365.2 584.8 367.6C565.4 370.1 544.0 372.8 523.6 372.2C503.2 371.5 481.9 368.6 462.4 363.8C442.9 358.9 423.6 351.7 406.6 343.3C389.6 334.8 372.5 324.8 360.4 313.1C348.2 301.3 337.5 287.3 333.8 272.9C330.1 258.4 332.8 241.2 338.4 226.3C344.0 211.4 358.6 196.1 367.3 183.4C375.9 170.7 387.8 160.8 390.4 150.0C393.1 139.2 388.9 130.5 383.2 118.5C377.4 106.5 362.3 92.7 355.7 78.1C349.1 63.5 341.5 45.5 343.5 31.0C345.5 16.6 355.5 2.2 367.9 -8.7C380.3 -19.5 400.6 -26.6 418.0 -33.9C435.3 -41.1 454.4 -45.8 472.0 -52.2C489.7 -58.5 505.8 -66.0 523.8 -71.9C541.7 -77.9 560.2 -85.2 579.6 -88.0C599.0 -90.7 620.6 -91.2 640.0 -88.5C659.4 -85.8 679.0 -78.6 696.2 -71.7C713.4 -64.8 728.7 -55.2 743.2 -47.0C757.7 -38.8 770.7 -30.7 783.4 -22.6C796.0 -14.5 807.8 -6.6 819.2 1.6C830.7 9.7 840.4 18.3 852.1 26.3C863.9 34.4 874.8 41.9 889.7 49.8C904.6 57.7 923.3 64.4 941.6 73.7C959.9 83.1 984.3 93.2 999.4 106.0C1014.6 118.7 1029.7 135.0 1032.3 150.0Z" stroke-width="1.1"/>
+<path d="M1082.6 150.0C1085.3 166.9 1076.2 186.6 1061.9 201.7C1047.7 216.8 1019.3 229.6 997.3 240.4C975.3 251.2 948.8 257.6 930.1 266.4C911.5 275.2 898.4 283.2 885.6 293.2C872.8 303.2 865.5 316.0 853.1 326.5C840.7 337.0 827.4 348.6 811.2 356.1C795.1 363.6 775.0 368.1 756.1 371.7C737.2 375.4 717.2 375.6 697.9 378.0C678.5 380.5 660.1 383.1 640.0 386.3C619.9 389.5 599.2 394.8 577.3 397.2C555.4 399.6 531.5 401.8 508.7 400.6C486.0 399.3 462.5 395.4 440.8 389.7C419.2 384.0 397.7 375.9 378.6 366.5C359.6 357.0 340.1 346.0 326.3 332.9C312.6 319.8 300.3 304.2 296.2 287.9C292.2 271.7 295.5 252.2 302.0 235.5C308.5 218.7 325.3 201.6 335.0 187.4C344.8 173.1 357.8 162.1 360.5 150.0C363.1 137.9 357.7 128.1 350.8 114.6C343.8 101.0 326.4 85.2 318.7 68.7C311.0 52.2 302.4 31.8 304.7 15.5C307.0 -0.9 318.4 -17.1 332.4 -29.4C346.4 -41.6 369.3 -49.7 388.9 -57.9C408.6 -66.1 430.1 -71.5 450.2 -78.5C470.2 -85.5 488.8 -93.6 509.1 -99.8C529.5 -106.1 550.7 -113.6 572.5 -116.2C594.3 -118.8 618.3 -118.7 640.0 -115.5C661.7 -112.4 683.4 -104.4 702.7 -97.0C722.0 -89.6 739.2 -79.7 755.7 -71.0C772.3 -62.3 787.4 -53.7 801.9 -44.9C816.4 -36.1 829.9 -27.2 842.8 -18.0C855.8 -8.8 866.4 1.2 879.5 10.3C892.7 19.5 904.8 28.1 921.7 37.0C938.5 45.9 959.8 53.3 980.6 63.9C1001.4 74.4 1029.2 85.9 1046.2 100.2C1063.2 114.6 1080.0 133.1 1082.6 150.0Z" stroke-width="0.6"/>
+<path d="M1133.0 150.0C1135.5 168.8 1124.6 190.7 1108.3 207.4C1092.0 224.0 1059.9 238.1 1035.3 250.0C1010.7 261.9 981.2 268.9 960.5 278.6C939.9 288.3 925.5 297.1 911.3 308.2C897.1 319.2 889.1 333.3 875.4 344.9C861.7 356.6 847.1 369.3 829.3 377.9C811.6 386.4 789.8 391.7 769.0 396.3C748.2 400.8 726.3 402.0 704.8 405.2C683.3 408.4 662.5 412.0 640.0 415.7C617.5 419.4 594.0 425.0 569.6 427.3C545.3 429.5 518.8 431.1 493.8 429.1C468.8 427.1 443.3 422.1 419.5 415.4C395.7 408.8 372.1 399.8 351.0 389.4C329.8 378.9 307.9 367.0 292.6 352.6C277.2 338.2 263.4 320.9 258.9 302.9C254.5 284.9 258.5 263.2 265.9 244.6C273.2 226.0 292.3 207.1 303.0 191.3C313.8 175.5 328.1 163.5 330.6 150.0C333.1 136.5 326.3 125.7 318.1 110.6C309.9 95.4 290.0 77.7 281.3 59.3C272.6 40.8 263.1 18.0 265.6 -0.2C268.2 -18.5 281.0 -36.6 296.6 -50.2C312.3 -63.9 337.7 -73.1 359.6 -82.2C381.5 -91.3 405.6 -97.4 428.1 -105.0C450.6 -112.6 471.7 -121.2 494.6 -127.7C517.4 -134.2 541.2 -141.6 565.4 -143.9C589.7 -146.3 616.1 -145.6 640.0 -141.9C663.9 -138.2 687.6 -129.7 709.0 -121.9C730.4 -114.0 749.6 -103.9 768.3 -94.9C786.9 -85.8 804.3 -77.0 820.7 -67.5C837.1 -57.9 852.3 -48.1 866.8 -37.8C881.2 -27.5 892.7 -16.1 907.2 -5.8C921.8 4.5 935.0 14.1 953.8 24.1C972.6 34.0 996.6 42.2 1019.9 53.9C1043.1 65.6 1074.4 78.4 1093.3 94.5C1112.1 110.5 1130.5 131.2 1133.0 150.0Z" stroke-width="0.6"/>
+<path d="M1183.3 150.0C1185.6 170.7 1172.8 194.8 1154.4 213.0C1136.0 231.3 1100.2 246.6 1072.9 259.5C1045.6 272.4 1013.3 280.1 990.6 290.7C967.9 301.3 952.3 311.0 936.8 323.0C921.2 335.1 912.3 350.5 897.4 363.2C882.5 375.9 866.5 389.8 847.2 399.4C828.0 409.0 804.4 415.3 781.9 420.9C759.3 426.4 735.4 428.6 711.8 432.8C688.1 437.0 665.0 441.6 640.0 445.8C615.0 449.9 588.8 455.8 561.9 457.8C535.0 459.8 506.1 460.5 478.9 457.6C451.6 454.8 424.2 448.5 398.3 440.9C372.4 433.3 346.8 423.5 323.6 412.0C300.4 400.5 276.1 387.8 259.1 372.1C242.1 356.4 226.7 337.5 221.9 317.8C217.0 298.0 221.8 274.1 230.1 253.7C238.3 233.3 259.6 212.5 271.3 195.2C283.1 177.9 298.3 164.8 300.6 150.0C302.9 135.2 294.6 123.2 285.1 106.5C275.6 89.8 253.3 70.1 243.5 49.7C233.7 29.3 223.4 4.2 226.2 -16.0C229.1 -36.2 243.3 -56.1 260.6 -71.2C277.9 -86.3 305.9 -96.6 330.1 -106.7C354.3 -116.8 380.9 -123.6 405.9 -131.8C430.9 -139.9 454.6 -148.9 480.0 -155.5C505.4 -162.1 531.8 -169.2 558.5 -171.2C585.2 -173.3 613.9 -171.8 640.0 -167.6C666.1 -163.4 691.7 -154.4 715.2 -146.2C738.6 -138.1 760.0 -128.1 780.7 -118.7C801.5 -109.4 821.3 -100.4 839.6 -90.3C858.0 -80.1 875.1 -69.2 891.0 -57.9C906.9 -46.5 919.4 -33.6 935.2 -22.2C951.1 -10.7 965.6 0.1 986.3 11.1C1007.0 22.1 1033.8 31.0 1059.5 43.9C1085.2 56.8 1119.9 71.0 1140.6 88.7C1161.2 106.3 1181.0 129.3 1183.3 150.0Z" stroke-width="0.6"/>
+<path d="M1233.5 150.0C1235.5 172.6 1220.6 198.8 1200.0 218.6C1179.5 238.4 1140.1 254.9 1110.1 268.9C1080.2 282.9 1045.2 291.2 1020.5 302.7C995.8 314.1 978.9 324.7 962.0 337.8C945.1 350.9 935.4 367.4 919.2 381.2C903.0 395.1 885.7 410.1 865.0 420.8C844.3 431.5 819.1 438.8 794.8 445.5C770.4 452.2 744.7 455.7 718.9 460.9C693.1 466.0 667.5 471.9 640.0 476.5C612.5 481.2 583.4 487.2 554.0 488.8C524.7 490.4 493.3 490.0 463.9 486.2C434.5 482.4 405.3 474.7 377.4 466.1C349.5 457.5 321.9 446.8 296.7 434.3C271.4 421.9 244.5 408.4 225.9 391.4C207.3 374.5 190.3 354.0 185.1 332.5C179.9 311.0 185.5 284.9 194.6 262.7C203.7 240.4 227.1 217.8 239.8 199.0C252.5 180.3 268.6 166.1 270.6 150.0C272.6 133.9 262.7 120.8 251.8 102.4C240.9 84.1 216.2 62.5 205.3 40.1C194.5 17.7 183.4 -9.8 186.6 -31.9C189.8 -54.0 205.5 -75.8 224.4 -92.3C243.4 -108.9 273.8 -120.3 300.3 -131.3C326.8 -142.4 356.0 -150.0 383.6 -158.7C411.1 -167.3 437.4 -176.7 465.5 -183.3C493.5 -189.8 522.6 -196.5 551.7 -198.1C580.8 -199.6 611.7 -197.2 640.0 -192.6C668.3 -187.9 695.7 -178.5 721.2 -170.1C746.8 -161.8 770.3 -152.0 793.2 -142.6C816.2 -133.1 838.4 -124.1 858.8 -113.4C879.2 -102.7 898.1 -90.7 915.6 -78.2C933.0 -65.8 946.3 -51.4 963.5 -38.7C980.8 -26.0 996.4 -14.1 1019.0 -2.1C1041.6 10.0 1071.2 19.7 1099.4 33.8C1127.6 48.0 1165.7 63.5 1188.1 82.8C1210.4 102.2 1231.5 127.4 1233.5 150.0Z" stroke-width="1.1"/></g>
+    <g class="traverse">
+      <polyline points="392,92 512,58 606,130 724,104 790,190"/>
+      <circle cx="392" cy="92" r="6"/><circle cx="512" cy="58" r="6"/><circle cx="606" cy="130" r="6"/><circle cx="724" cy="104" r="6"/><circle cx="790" cy="190" r="6"/>
+    </g>
+  </svg>
 
-                <!-- Estadísticas -->
-                <div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">+15</div>
-                            <div class="stat-label">Años de experiencia</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">GNSS</div>
-                            <div class="stat-label">Tecnología de punta</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">CPNT</div>
-                            <div class="stat-label">Licencia vigente</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">APP</div>
-                            <div class="stat-label">Contratación estatal</div>
-                        </div>
-                    </div>
-                </div>
+  <div class="cover-head">
+    <span class="logo-full" role="img" aria-label="Logo GEOSTAR"></span>
+    <div class="cover-id">
+      <div class="name">GEOSTAR<br>INGENIERÍA S.A.S.</div>
+      <div class="meta">NIT 902.035.038-2<br>Bogotá D.C., Colombia<br>Cobertura nacional</div>
+    </div>
+  </div>
 
-                <!-- Equipos destacados -->
-                <div>
-                    <div class="section-title">
-                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-                        TECNOLOGÍA
-                    </div>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
-                            <i class="fas fa-satellite"></i> GNSS RTK
-                        </span>
-                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
-                            <i class="fas fa-robot"></i> Estación total
-                        </span>
-                        <span style="background: rgba(0,166,126,0.1); padding: 0.5rem 1rem; border-radius: 8px;">
-                            <i class="fas fa-helicopter"></i> Dron RTK
-                        </span>
-                    </div>
-                </div>
-            </div>
+  <div class="cover-title">
+    <div class="kicker">Brochure corporativo</div>
+    <h1>Topografía, geomática, catastro y avalúos</h1>
+    <p>Soluciones técnicas de precisión para proyectos públicos y privados, con georreferenciación GNSS en el sistema de referencia <span class="nw">MAGNA-SIRGAS</span>.</p>
+  </div>
 
-            <!-- COLUMNA DERECHA -->
-            <div class="right-column">
-                <!-- Video -->
-                <div>
-                    <div class="section-title">
-                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-                        SOBREVUELO DEMO
-                    </div>
-                    <div class="video-placeholder">
-                        <video autoplay muted loop playsinline>
-                            <source src="videos/SobreVuelo.mp4" type="video/mp4">
-                            Tu navegador no soporta video.
-                        </video>
-                    </div>
-                </div>
+  <div class="hero" id="hero">
+    <img src="https://geostar.com.co/img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo" onerror="this.parentNode.classList.add('no-photo'); this.remove()">
+    <video muted loop playsinline preload="none" poster="https://geostar.com.co/img/SCT6_Fieldshot_1.JPG" aria-label="Sobrevuelo con drone">
+      <source src="https://geostar.com.co/videos/SobreVuelo.mp4" type="video/mp4">
+    </video>
+    <div class="caption">Levantamiento GNSS en campo</div>
+  </div>
 
-                <!-- Contacto con QR -->
-                <div>
-                    <div class="section-title">
-                        <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-                        CONTACTO DIRECTO
-                    </div>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="contact-text">
-                                <h4>TELÉFONO</h4>
-                                <p>+57 312 4033751</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div class="contact-text">
-                                <h4>CORREO</h4>
-                                <p>geostar.ingenieria@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="contact-text">
-                                <h4>OFICINA</h4>
-                                <p>Cra 38 #59-20 Of 304</p>
-                                <p style="font-size:0.8rem;">Bogotá D.C., Colombia</p>
-                            </div>
-                        </div>
-                        
-                        <!-- QR Code de WhatsApp -->
-                        <div class="qr-section">
-                            <div class="qr-title">
-                                <i class="fab fa-whatsapp"></i> ESCANEA Y CONTACTA
-                            </div>
-                            <div id="qrcode"></div>
-                            <div class="qr-whatsapp-text">
-                                <i class="fab fa-whatsapp"></i> +57 312 4033751
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="pillars">
+    <div class="pillar" style="--c:var(--orange)">
+      <div class="ttl"><i class="fa-solid fa-crosshairs"></i>Precisión</div>
+      <p>Georreferenciación GNSS RTK en el sistema de referencia <span class="nw">MAGNA-SIRGAS</span>.</p>
+    </div>
+    <div class="pillar" style="--c:var(--indigo)">
+      <div class="ttl"><i class="fa-solid fa-satellite"></i>Tecnología</div>
+      <p>Captura, procesamiento y modelación digital de la información del territorio.</p>
+    </div>
+    <div class="pillar" style="--c:var(--sky)">
+      <div class="ttl"><i class="fa-solid fa-scale-balanced"></i>Cumplimiento Normativo</div>
+      <p>Procedimientos conforme a la normatividad IGAC vigente.</p>
+    </div>
+  </div>
 
-        <!-- FOOTER -->
-        <div class="brochure-footer">
-            <div class="social-links">
-                <a href="https://wa.me/573124033751" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div>
-                <span style="color: rgba(255,255,255,0.5);">NIT: 902.035.038-2 · Ley 1258 de 2008</span>
-            </div>
-            <button class="download-btn" onclick="window.print()">
-                <i class="fas fa-download"></i> Guardar PDF
-            </button>
-        </div>
+  <div class="cover-foot">
+    <div><i class="fa-solid fa-globe"></i>www.geostar.com.co</div>
+    <div><i class="fa-solid fa-envelope"></i>contacto@geostar.com.co</div>
+    <div><i class="fa-brands fa-whatsapp"></i>+57 312 4033751</div>
+    <div><i class="fa-solid fa-id-card"></i>NIT 902.035.038-2</div>
+  </div>
+</section>
+
+<!-- ======================= PÁGINA 2 · EMPRESA Y SERVICIOS ======================= -->
+<section class="page">
+  <header class="run-head">
+    <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
+    <div>Empresa y servicios</div>
+  </header>
+
+  <div class="content">
+    <h2 class="sec">Quiénes somos</h2>
+    <div class="about">
+      <div>
+        <p class="lead">GEOSTAR INGENIERÍA S.A.S. es una sociedad por acciones simplificada con domicilio en Bogotá D.C., dedicada a la prestación de servicios profesionales, técnicos y especializados en ingeniería, geomática, topografía, geodesia, cartografía, catastro multipropósito, gestión predial, ordenamiento territorial, infraestructura y desarrollo tecnológico aplicado al territorio.</p>
+        <p>Nuestro equipo está integrado por ingenieros topográficos catastrales con matrícula profesional CPNT vigente y por avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.), con trayectoria en los sectores inmobiliario, valuatorio, cartográfico, predial y de tecnologías de la información.</p>
+        <div class="exp"><b>+15</b><span>años de experiencia del equipo profesional en proyectos de topografía, catastro, avalúos y gestión del territorio.</span></div>
+      </div>
+
+      <div class="ficha">
+        <h3>Ficha corporativa</h3>
+        <dl>
+          <dt>Razón social</dt><dd>GEOSTAR INGENIERÍA S.A.S.</dd>
+          <dt>Sigla</dt><dd>GEOSTAR</dd>
+          <dt>NIT</dt><dd>902.035.038-2</dd>
+          <dt>Tipo societario</dt><dd>Sociedad por Acciones Simplificada · Ley 1258 de 2008</dd>
+          <dt>Matrícula mercantil</dt><dd>04062132 · Cámara de Comercio de Bogotá</dd>
+          <dt>Actividad principal</dt><dd>CIIU 7112 · Actividades de ingeniería y otras actividades conexas de consultoría técnica</dd>
+          <dt>Domicilio</dt><dd>Bogotá D.C. · Cobertura nacional</dd>
+        </dl>
+      </div>
     </div>
 
-    <!-- Script para generar QR -->
-    <script>
-        // Generar QR de WhatsApp
-        var whatsappUrl = "https://wa.me/573124033751?text=Hola%2C%20vi%20su%20brochure%20digital%20de%20GEOSTAR%20INGENIER%C3%8DA%20y%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios.";
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: whatsappUrl,
-            width: 150,
-            height: 150,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-    </script>
+    <div class="layers-intro">
+      <h2 class="sec">Líneas de servicio</h2>
+      <p>Organizamos nuestros servicios en tres líneas que, como las capas de nuestro logo, se integran en cada proyecto: medición, información territorial e infraestructura.</p>
+    </div>
+
+    <div class="layers">
+      <div class="layer" style="--c:var(--orange)">
+        <div class="tag">Medición y captura<small>Campo y precisión</small></div>
+        <div class="items">
+          <div class="svc"><h4><i class="fa-solid fa-mountain-sun"></i>Topografía y levantamientos</h4><p>Levantamientos topográficos de alta precisión, planimetría, altimetría, replanteo de obras y control geométrico.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-earth-americas"></i>Geomática y geodesia</h4><p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados y georreferenciación <span class="nw">MAGNA-SIRGAS</span>.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-camera"></i>Drones RTK</h4><p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos e inspecciones técnicas.</p></div>
+        </div>
+      </div>
+
+      <div class="layer" style="--c:var(--indigo)">
+        <div class="tag">Territorio y predios<small>Información y valor</small></div>
+        <div class="items">
+          <div class="svc"><h4><i class="fa-solid fa-map-location-dot"></i>Catastro multipropósito</h4><p>Formación, actualización y conservación catastral. Barridos prediales e inventarios territoriales.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-house-chimney"></i>Avalúos y predios</h4><p>Avalúos comerciales y catastrales, adquisición predial, servidumbres y saneamiento inmobiliario.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-layer-group"></i>SIG y software</h4><p>Implementación de Sistemas de Información Geográfica y plataformas web geoespaciales.</p></div>
+        </div>
+      </div>
+
+      <div class="layer" style="--c:var(--sky)">
+        <div class="tag">Proyectos e infraestructura<small>Gestión y ejecución</small></div>
+        <div class="items">
+          <div class="svc"><h4><i class="fa-solid fa-clipboard-check"></i>Consultoría e interventoría</h4><p>Supervisión técnica, auditoría y gerencia integral. Estudios de suelos, geotecnia e hidrología.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-handshake"></i>APP y concesiones</h4><p>Estructuración, financiación y operación bajo APP, BOT, BOOT y contratos llave en mano.</p></div>
+          <div class="svc"><h4><i class="fa-solid fa-toolbox"></i>Equipos especializados</h4><p>Importación, venta, arriendo y mantenimiento de equipos topográficos y geodésicos.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 2 / 4</span></footer>
+</section>
+
+<!-- ======================= PÁGINA 3 · AVALÚOS Y TECNOLOGÍA ======================= -->
+<section class="page">
+  <header class="run-head">
+    <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
+    <div>Avalúos, tecnología y entregables</div>
+  </header>
+
+  <div class="content">
+    <h2 class="sec">Avalúos y gestión predial</h2>
+    <p class="lead" style="margin-top:12px">Elaboramos avalúos para personas naturales, empresas y entidades públicas, con soporte técnico y jurídico predial.</p>
+
+    <div class="aval-grid">
+      <div class="aval"><i class="fa-solid fa-tags"></i><span>Avalúos comerciales</span></div>
+      <div class="aval"><i class="fa-solid fa-map"></i><span>Avalúos catastrales y zonas homogéneas</span></div>
+      <div class="aval"><i class="fa-solid fa-building"></i><span>Avalúos corporativos</span></div>
+      <div class="aval"><i class="fa-solid fa-landmark"></i><span>Avalúos para entidades públicas</span></div>
+      <div class="aval"><i class="fa-solid fa-gavel"></i><span>Asesoría jurídica predial</span></div>
+      <div class="aval"><i class="fa-solid fa-chart-line"></i><span>Gestión y consultoría inmobiliaria</span></div>
+    </div>
+
+    <div class="norma"><i class="fa-solid fa-scale-balanced"></i>
+      <div>Avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.). Metodologías conforme a la Resolución IGAC 620 de 2008 y a la normatividad IGAC vigente. Alcance complementario: estudios de mercado inmobiliario, estudios técnicos para adquisición de predios, servidumbres y expropiaciones administrativas.</div>
+    </div>
+
+    <h3 class="h-sub" style="margin-top:20px">Metodología de levantamiento topográfico</h3>
+    <div class="steps">
+      <div class="step"><div class="n"><b>1</b></div><h4>Georreferenciación</h4><p>Equipo GNSS en metodología RTK, referido al sistema <span class="nw">MAGNA-SIRGAS</span> del IGAC.</p></div>
+      <div class="step"><div class="n"><b>2</b></div><h4>Planimetría</h4><p>Caracterización topográfica del área del proyecto por la comisión de campo.</p></div>
+      <div class="step"><div class="n"><b>3</b></div><h4>Altimetría</h4><p>Puntos de nivel según cambios de pendiente y geomorfología: drenajes, vías, accesos y terrazas.</p></div>
+      <div class="step"><div class="n"><b>4</b></div><h4>Procesamiento y entrega</h4><p>Cálculos, modelación digital del terreno y elaboración de los productos de entrega.</p></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="h-sub">Tecnología y equipos</div>
+        <ul class="tech">
+          <li><i class="fa-solid fa-satellite-dish"></i><b>Receptores GNSS de doble frecuencia (L1/L2)</b><span>Posicionamiento RTK · precisión ±5 mm + 1 ppm<span class="pc">por confirmar</span></span></li>
+          <li><i class="fa-solid fa-ruler-combined"></i><b>Estación total robótica<span class="pc">por confirmar</span></b><span>Medición sin prisma 1000 m</span></li>
+          <li><i class="fa-solid fa-camera"></i><b>Dron RTK<span class="pc">por confirmar</span></b><span>Fotogrametría de alta precisión</span></li>
+          <li><i class="fa-solid fa-laptop-code"></i><b>Software especializado</b><span>Procesamiento GNSS, CAD y modelación 3D</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="h-sub">Productos de entrega</div>
+        <ul class="deliver">
+          <li><i class="fa-solid fa-check"></i>Informe técnico de los trabajos realizados.</li>
+          <li><i class="fa-solid fa-check"></i>Cuadro de coordenadas de mojones de referencia o BM materializados en campo.</li>
+          <li><i class="fa-solid fa-check"></i>Cuadro de coordenadas con codificación o nomenclatura de los puntos levantados.</li>
+          <li><i class="fa-solid fa-check"></i>Planos de localización general georreferenciados.</li>
+          <li><i class="fa-solid fa-check"></i>Modelo de elevación 3D, curvas de nivel, perfiles topográficos y secciones transversales.</li>
+          <li><i class="fa-solid fa-check"></i>Registro fotográfico.</li>
+          <li><i class="fa-solid fa-check"></i>Archivos digitales editables en DWG, DXF y PDF.</li>
+          <li class="note">Productos de referencia para levantamientos topográficos. El alcance de cada proyecto se define en la propuesta técnica.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 3 / 4</span></footer>
+</section>
+
+<!-- ======================= PÁGINA 4 · CONTRATACIÓN Y CONTACTO ======================= -->
+<section class="page">
+  <header class="run-head">
+    <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
+    <div>Contratación y contacto</div>
+  </header>
+
+  <div class="content">
+    <h2 class="sec">Contratación pública y alianzas</h2>
+    <p class="lead" style="margin-top:14px">El objeto social de GEOSTAR INGENIERÍA S.A.S. comprende la participación en procesos de contratación pública y privada, y la integración de consorcios, uniones temporales, alianzas estratégicas y demás formas asociativas permitidas por la ley.</p>
+    <p style="margin-top:8px">Así mismo, contempla la estructuración, financiación, operación y mantenimiento de proyectos de infraestructura pública o privada bajo esquemas de concesión, asociación público-privada (APP), contratos EPC, llave en mano, BOT y BOOT.</p>
+
+    <div class="modal">
+      <span class="k">Licitación pública</span><span class="k">Concurso de méritos</span><span class="k">Selección abreviada</span><span class="k">Mínima cuantía</span>
+      <span>Consorcios</span><span>Uniones temporales</span><span>APP</span><span>EPC</span><span>Llave en mano</span><span>BOT</span><span>BOOT</span>
+    </div>
+
+    <div class="docs">
+      <div><i class="fa-solid fa-file-lines"></i>Registro Único Tributario (RUT)</div>
+      <div><i class="fa-solid fa-file-lines"></i>Certificado de existencia y representación legal</div>
+      <div><i class="fa-solid fa-file-lines"></i>Certificación bancaria</div>
+      <div><i class="fa-solid fa-file-lines"></i>Matrículas CPNT y certificados R.A.A. del equipo profesional</div>
+    </div>
+    <p style="margin-top:6px; font-size:8pt; color:var(--muted)">Documentos disponibles a solicitud para procesos de selección.</p>
+
+    <div class="contact">
+      <div>
+        <h2 class="sec">Contáctenos</h2>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i><span>Carrera 38 No. 59-20, Oficina 304<small>Bogotá D.C., Colombia · Cobertura nacional</small></span></li>
+          <li><i class="fa-brands fa-whatsapp"></i><span>+57 312 4033751<small>Celular y WhatsApp</small></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>contacto@geostar.com.co<small>geostar.ingenieria@gmail.com</small></span></li>
+          <li><i class="fa-solid fa-globe"></i><span>www.geostar.com.co</span></li>
+          <li><i class="fa-solid fa-clock"></i><span>Lunes a viernes, 8:00 a 18:00</span></li>
+        </ul>
+      </div>
+      <div class="qrs">
+        <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="qrcode" role="img" aria-label="Código QR: WhatsApp +57 312 4033751"><path class="qrline" stroke="#14215a" d="M0 0.5h7m7 0h1m3 0h7m-25 1h1m5 0h1m2 0h4m2 0h2m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h1m7 0h1m-17 1h1m1 0h5m2 0h1m1 0h3m1 0h2m1 0h5m-23 1h1m4 0h1m1 0h4m3 0h1m4 0h1m3 0h1m-24 1h3m1 0h1m1 0h1m3 0h2m2 0h3m1 0h4m1 0h2m-21 1h2m1 0h1m2 0h1m4 0h5m4 0h1m-23 1h1m3 0h1m2 0h1m2 0h2m1 0h2m1 0h3m1 0h3m-25 1h5m2 0h1m1 0h2m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-24 1h1m1 0h2m2 0h3m6 0h3m1 0h3m1 0h2m-25 1h1m1 0h2m3 0h2m1 0h1m1 0h1m3 0h1m2 0h2m3 0h1m-25 1h1m3 0h1m1 0h5m2 0h1m2 0h5m1 0h1m-15 1h5m1 0h3m3 0h2m-22 1h7m3 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m5 0h1m1 0h1m1 0h1m3 0h3m3 0h2m-22 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h6m1 0h1m-23 1h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m1 0h5m-25 1h1m1 0h3m1 0h1m1 0h1m4 0h1m7 0h2m1 0h1m-25 1h1m5 0h1m2 0h3m2 0h4m1 0h3m2 0h1m-25 1h7m1 0h1m4 0h1m3 0h8"/></svg><b>WhatsApp</b><small>Escríbanos</small></div>
+        <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="qrcode" role="img" aria-label="Código QR: geostar.com.co"><path class="qrline" stroke="#14215a" d="M0 0.5h7m1 0h1m5 0h1m3 0h7m-25 1h1m5 0h1m1 0h2m1 0h1m4 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h3m2 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m3 0h3m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m3 0h3m1 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m1 0h1m1 0h1m1 0h2m-17 1h1m2 0h6m1 0h2m4 0h2m2 0h1m1 0h3m-25 1h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h4m2 0h5m-20 1h1m1 0h3m4 0h1m1 0h1m2 0h2m1 0h1m2 0h1m-25 1h1m2 0h1m1 0h1m4 0h1m4 0h2m1 0h2m1 0h4m-25 1h2m3 0h2m1 0h3m4 0h1m2 0h2m4 0h1m-25 1h1m2 0h3m1 0h3m2 0h5m3 0h1m2 0h1m-24 1h2m1 0h1m1 0h3m2 0h1m4 0h1m1 0h1m2 0h5m-25 1h1m1 0h2m3 0h1m4 0h1m3 0h2m1 0h1m1 0h2m1 0h1m-25 1h1m2 0h1m2 0h1m2 0h5m1 0h6m1 0h2m-16 1h4m1 0h1m2 0h1m3 0h1m1 0h2m-24 1h7m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m1 0h1m2 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m1 0h5m2 0h6m2 0h2m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h3m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h5m6 0h5m-25 1h1m5 0h1m4 0h2m1 0h2m1 0h4m1 0h3m-25 1h7m1 0h2m1 0h4m1 0h1m4 0h1m2 0h1"/></svg><b>Sitio web</b><small>geostar.com.co</small></div>
+      </div>
+    </div>
+
+    <div class="legal">
+      <span class="logo-full" role="img" aria-label="Logo GEOSTAR"></span>
+      <p><b>GEOSTAR INGENIERÍA S.A.S.</b><br>
+        NIT 902.035.038-2 · Sociedad por Acciones Simplificada, Ley 1258 de 2008<br>
+        Matrícula mercantil 04062132, Cámara de Comercio de Bogotá<br>
+        Representante legal: Eyson Fernando Zambrano Pérez</p>
+    </div>
+
+    <p class="closing">Precisión · Tecnología · Cumplimiento Normativo</p>
+  </div>
+
+  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 4 / 4</span></footer>
+</section>
+
+<script>
+  // Ajusta el tamaño de las páginas a pantallas pequeñas (no afecta la impresión)
+  function fit(){ var z=Math.min(1,(window.innerWidth-16)/816); document.documentElement.style.setProperty('--z', z.toFixed(3)); }
+  fit(); window.addEventListener('resize', fit);
+
+  // Cuenta los datos "por confirmar"
+  var n=document.querySelectorAll('.pc').length, c=document.getElementById('pc-count');
+  c.textContent = n ? n+' dato(s) marcados «por confirmar»: complételos o elimínelos antes de imprimir.' : 'Brochure listo para imprimir.';
+
+  // Video de sobrevuelo solo en pantalla, si el archivo existe
+  var hero=document.getElementById('hero'), v=hero.querySelector('video');
+  if(v && window.matchMedia('screen').matches){
+    v.addEventListener('loadeddata', function(){ hero.classList.add('has-video'); v.play().catch(function(){}); });
+    v.preload='auto'; v.load();
+  }
+</script>
 </body>
 </html>
