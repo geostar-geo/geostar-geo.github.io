@@ -7,9 +7,8 @@
 <meta name="description" content="Brochure corporativo de GEOSTAR INGENIERÍA S.A.S.: topografía, geomática, catastro, avalúos, consultoría e infraestructura.">
 <!--
   GEOSTAR INGENIERÍA S.A.S. · NIT 902.035.038-2
-  Brochure corporativo · Formato carta (8,5 x 11 in) · 4 páginas
-  - Logo en la carpeta img/ del repositorio (img/geostar_logo.webp e img/geostar_emblema.webp); códigos QR embebidos;
-    fuentes (Google Fonts) e íconos (Font Awesome) vía CDN.
+  Brochure corporativo · Formato carta (8,5 x 11 in) · 3 páginas
+  - Logo en img/ del repositorio; códigos QR embebidos; fuentes (Google Fonts) e íconos (Font Awesome) vía CDN.
   - Los datos marcados con <span class="pc"> están "por confirmar": complételos o elimínelos antes de imprimir.
   - Para PDF: Chrome → Imprimir → Guardar como PDF · Tamaño Carta · Márgenes: Ninguno · Gráficos de fondo: activado.
 -->
@@ -63,13 +62,14 @@
   }
   .run-foot b{ color:var(--ink); font-weight:600; }
   .content{ padding:26px 56px 0; flex:1; display:flex; flex-direction:column; }
+  .content.spread{ justify-content:space-between; padding-bottom:26px; }
 
-  /* Logo: archivos en la carpeta img/ del repositorio */
+  /* Logo embebido (se define una sola vez) */
   .emblem{ display:inline-block; background:url(img/geostar_emblema.webp) center/contain no-repeat; }
   .logo-full{ display:block; background:url(img/geostar_logo.webp) center/contain no-repeat; }
 
   /* Títulos: la barra ámbar retoma la línea bajo el logotipo */
-  h2.sec{ font-family:var(--display); font-size:21pt; line-height:1.15; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+  h2.sec{ font-family:var(--display); font-size:20pt; line-height:1.15; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
   h2.sec::after{ content:""; display:block; width:54px; height:4px; border-radius:2px; background:var(--amber); margin-top:10px; }
   h3{ font-family:var(--display); color:var(--ink); font-weight:600; }
   p.lead{ font-size:11pt; color:var(--text); }
@@ -122,11 +122,17 @@
   .cover-foot i{ color:var(--amber); width:14px; text-align:center; }
 
   /* ============ Quiénes somos ============ */
-  .about{ display:grid; grid-template-columns:1.35fr 1fr; gap:30px; margin-top:20px; }
+  .about{ display:grid; grid-template-columns:1.6fr 1fr; gap:30px; margin-top:20px; }
+  .sectors{ align-self:start; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .sectors h3{ font-size:10pt; background:var(--ink); color:#fff; padding:9px 14px; }
+  .sectors ul{ list-style:none; }
+  .sectors li{ display:flex; align-items:center; gap:10px; padding:9px 14px; border-top:1px solid var(--line); font-size:9.2pt; color:var(--ink); font-weight:500; }
+  .sectors li:first-child{ border-top:0; }
+  .sectors li i{ color:var(--orange); width:16px; text-align:center; }
   .about p + p{ margin-top:10px; }
-  .about .exp{ display:flex; align-items:center; gap:10px; margin-top:14px; padding:12px 14px; background:var(--tint); border-radius:8px; }
-  .about .exp b{ font-family:var(--display); font-size:22pt; font-weight:800; color:var(--orange); line-height:1; }
-  .about .exp span{ font-size:9.2pt; color:var(--text); line-height:1.35; }
+  .exp{ display:flex; align-items:center; gap:12px; margin-top:12px; padding:12px 14px; background:var(--tint); border-radius:8px; }
+  .exp b{ font-family:var(--display); font-size:22pt; font-weight:800; color:var(--orange); line-height:1; }
+  .exp span{ font-size:9.2pt; color:var(--text); line-height:1.35; }
   .ficha{ border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:8.8pt; align-self:start; }
   .ficha h3{ font-size:10pt; background:var(--ink); color:#fff; padding:9px 14px; }
   .ficha dl{ display:grid; grid-template-columns:96px 1fr; }
@@ -135,7 +141,7 @@
   .ficha dd{ color:var(--ink); font-weight:500; }
 
   /* ============ Líneas de servicio (tres capas, como el logo) ============ */
-  .layers-intro{ margin-top:26px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
+  .layers-intro{ margin-top:24px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
   .layers-intro p{ max-width:330px; font-size:9pt; color:var(--muted); }
   .layers{ margin-top:14px; display:flex; flex-direction:column; gap:10px; }
   .layer{ display:grid; grid-template-columns:128px 1fr; border-radius:10px; background:var(--tint); overflow:hidden; }
@@ -148,30 +154,37 @@
 
   /* ============ Avalúos ============ */
   .aval-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
-  .aval{ display:flex; align-items:center; gap:11px; padding:9px 12px; border:1px solid var(--line); border-radius:8px; }
+  .aval{ display:flex; align-items:center; gap:11px; padding:6px 12px; border:1px solid var(--line); border-radius:8px; }
   .aval i{ flex:none; width:32px; height:32px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:#fff; font-size:10.5pt; }
   .aval span{ font-family:var(--display); font-weight:600; color:var(--ink); font-size:9.2pt; line-height:1.25; }
   .norma{ margin-top:12px; display:flex; gap:10px; align-items:flex-start; font-size:8.8pt; color:var(--text); padding:10px 14px; border-left:4px solid var(--amber); background:#FFF8EC; border-radius:0 8px 8px 0; }
   .norma i{ color:var(--orange); margin-top:3px; }
 
   /* ============ Metodología (secuencia real de trabajo) ============ */
-  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:14px; counter-reset:st; }
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:12px; counter-reset:st; }
   .step{ position:relative; padding:0 14px 0 0; }
-  .step .n{ display:flex; align-items:center; gap:0; }
+  .step{ display:grid; grid-template-columns:28px 1fr; column-gap:9px; align-content:start; }
+  .step .n{ display:flex; align-items:center; gap:0; grid-row:1; }
   .step .n b{ flex:none; width:28px; height:28px; border-radius:50%; border:2.5px solid var(--amber); background:#fff; color:var(--ink); display:grid; place-items:center; font:700 9.5pt var(--display); }
-  .step .n::after{ content:""; flex:1; height:2.5px; background:var(--amber); margin-left:6px; }
+  .step .n::after{ content:none; }
   .step:last-child .n::after{ background:transparent; }
-  .step h4{ margin-top:8px; font-family:var(--display); font-size:9.6pt; font-weight:700; color:var(--ink); }
-  .step p{ margin-top:3px; font-size:8.4pt; color:var(--muted); line-height:1.42; }
+  .step h4{ margin-top:0; align-self:center; grid-column:2; grid-row:1; font-family:var(--display); font-size:9.6pt; font-weight:700; color:var(--ink); }
+  .step p{ grid-column:1 / -1; margin-top:6px; font-size:8.4pt; color:var(--muted); line-height:1.42; }
 
   /* ============ Tecnología y entregables ============ */
-  .two{ display:grid; grid-template-columns:1.15fr 1fr; gap:28px; margin-top:20px; }
+  .two{ display:grid; grid-template-columns:1.4fr 1fr; gap:26px; margin-top:16px; }
   .tech{ margin-top:12px; }
-  .tech li{ list-style:none; display:grid; grid-template-columns:28px 1fr; gap:4px 10px; padding:9px 0; border-bottom:1px solid var(--line); }
+  .tech li{ list-style:none; display:grid; grid-template-columns:28px 1fr; gap:3px 10px; padding:5px 0; border-bottom:1px solid var(--line); }
   .tech li:first-child{ border-top:1px solid var(--line); }
   .tech i{ grid-row:span 2; color:var(--sky); font-size:13pt; margin-top:2px; text-align:center; }
   .tech b{ font-family:var(--display); font-weight:600; color:var(--ink); font-size:9.3pt; }
   .tech span{ font-size:8.6pt; color:var(--muted); line-height:1.4; }
+  .tech > li > span{ font-size:8.3pt; }
+  .tech .pt{ display:grid; grid-template-columns:1.7fr 1fr 1fr; gap:1px 6px; margin:4px 0 3px; font-size:8.2pt; }
+  .tech .pt b{ font-family:var(--body); font-weight:600; color:var(--ink); font-size:8pt; white-space:nowrap; }
+  .tech .pt i{ grid-row:auto; margin:0; font-style:normal; white-space:nowrap; font-size:8.2pt; color:var(--text); text-align:left; }
+  .tech .pt i:nth-child(-n+3){ color:var(--muted); font-size:7.6pt; }
+  .tech span em{ font-size:7.6pt; }
   .h-sub{ font-family:var(--display); font-size:13pt; font-weight:700; color:var(--ink); }
   .h-sub::after{ content:""; display:block; width:36px; height:3px; border-radius:2px; background:var(--amber); margin-top:7px; }
   .deliver{ margin-top:12px; padding:12px 16px; background:var(--tint); border-radius:10px; }
@@ -188,28 +201,69 @@
   .docs i{ color:var(--sky); margin-top:3px; }
 
   .contact{
-    margin-top:30px; position:relative; background:var(--ink); color:#fff; border-radius:14px;
-    padding:30px 30px; display:grid; grid-template-columns:1fr auto; gap:22px; overflow:hidden;
+    margin-top:8px; position:relative; background:var(--ink); color:#fff; border-radius:14px;
+    padding:24px 28px; display:grid; grid-template-columns:1fr auto; gap:22px; overflow:hidden;
   }
   .contact h2.sec{ color:#fff; }
-  .contact ul{ list-style:none; margin-top:16px; display:grid; gap:11px; font-size:9.8pt; }
+  .contact ul{ list-style:none; margin-top:12px; display:grid; gap:8px; font-size:10.6pt; }
   .contact li{ display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; line-height:1.4; }
   .contact li i{ color:var(--amber); margin-top:3px; text-align:center; }
   .contact li small{ display:block; color:#B9C0DE; font-size:8pt; }
   .qrs{ display:flex; gap:14px; align-self:center; }
-  .qr{ width:150px; background:#fff; border-radius:10px; padding:10px 10px 8px; text-align:center; color:var(--ink); }
-  .qr svg{ width:130px; height:130px; display:block; shape-rendering:crispEdges; }
+  .qr{ width:136px; background:#fff; border-radius:10px; padding:10px 10px 8px; text-align:center; color:var(--ink); }
+  .qr svg{ width:114px; height:114px; display:block; shape-rendering:crispEdges; }
   .qr b{ display:block; margin-top:6px; font-family:var(--display); font-size:8.4pt; }
   .qr small{ display:block; font-size:7.4pt; color:var(--muted); }
 
-  .legal{ margin-top:26px; display:flex; align-items:center; gap:18px; }
-  .legal .logo-full{ width:72px; height:84px; flex:none; }
-  .legal p{ font-size:8.4pt; color:var(--muted); line-height:1.5; }
-  .legal p b{ color:var(--ink); font-family:var(--display); font-size:9.6pt; }
-  .closing{ margin-top:auto; padding:0 0 22px; font-family:var(--display); font-weight:700; font-size:15pt; color:var(--ink); letter-spacing:-.005em; }
+  .legal{ margin:auto 0; display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px; }
+  .legal .logo-full{ width:190px; height:222px; flex:none; }
+  .legal p{ font-size:10pt; color:var(--muted); line-height:1.5; }
+  .legal p b{ color:var(--ink); font-family:var(--display); font-size:15pt; letter-spacing:.01em; }
+  .closing{ margin-top:0; padding:0 0 22px; font-family:var(--display); font-weight:700; font-size:15pt; color:var(--ink); letter-spacing:-.005em; }
   .closing::before{ content:""; display:block; width:54px; height:4px; border-radius:2px; background:var(--amber); margin-bottom:12px; }
   .no-photo .caption{ display:none; }
 
+  /* ============ Líneas principales: Topografía y Avalúos ============ */
+  .line{ margin-top:26px; display:grid; grid-template-columns:auto 1fr; gap:6px 26px; align-items:end; }
+  .line h2.sec::after{ background:var(--c); }
+  .line p{ font-size:9pt; color:var(--muted); max-width:340px; justify-self:end; }
+  .tsvc{ margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .tsvc .svc{ padding:10px 14px 11px; background:var(--tint); border-top:4px solid var(--c); border-radius:0 0 10px 10px; }
+  .more{ margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px 12px; }
+  .more .svc{ padding:10px 12px; border:1px solid var(--line); border-radius:10px; --c:var(--indigo); }
+  .more .svc p{ font-size:8.1pt; line-height:1.38; }
+  .cta{ display:flex; flex-direction:column; justify-content:center; gap:2px; padding:10px 14px; border-radius:10px; background:var(--orange); color:#fff; }
+  .cta b{ font-family:var(--display); font-size:11pt; }
+  .cta span{ font-size:8.4pt; opacity:.95; }
+  .cta .num{ margin-top:5px; font-weight:600; font-size:9.6pt; opacity:1; }
+  .cta .num i{ margin-right:6px; }
+  .legal.big{ flex-direction:column; text-align:center; gap:14px; }
+  .legal.big .logo-full{ width:190px; height:222px; }
+  .legal.big p{ font-size:10pt; } .legal.big p b{ font-size:15pt; }
+  .legal{ margin:0; flex-direction:row; text-align:left; gap:16px; }
+  .legal .logo-full{ width:104px; height:121px; }
+  .legal p{ font-size:8.8pt; } .legal p b{ font-size:11pt; }
+
+  /* ============ Versión de 3 páginas ============ */
+  .about1{ margin-top:12px; }
+  .about1 p + p{ margin-top:8px; }
+  .chips{ margin-top:10px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  .chips b{ font-family:var(--display); font-size:9.4pt; color:var(--ink); margin-right:6px; }
+  .chips span{ font-size:8.4pt; padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--ink); background:#fff; }
+  .chips span i{ color:var(--orange); margin-right:6px; }
+  .tec2{ display:grid; grid-template-columns:1.22fr 1fr; gap:22px; align-items:start; }
+  .closing.small{ margin:0; padding:0; font-size:11pt; }
+  .closing.small::before{ width:40px; height:3px; margin-bottom:8px; }
+  .equip{ margin-top:10px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .eq{ padding:9px 14px 10px; border-top:3px solid var(--sky); background:var(--tint); border-radius:0 0 10px 10px; }
+  .eq i{ color:var(--sky); font-size:13pt; display:block; margin-bottom:5px; }
+  .eq b{ display:block; font-family:var(--display); font-weight:600; font-size:9.6pt; color:var(--ink); line-height:1.25; }
+  .eq span{ display:block; margin-top:4px; font-size:8.5pt; color:var(--muted); line-height:1.4; }
+  .mv{ margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .mv-card{ padding:11px 14px 12px; border-left:4px solid var(--c); background:var(--tint); border-radius:0 10px 10px 0; }
+  .mv-card h3{ display:flex; align-items:center; gap:8px; font-size:11pt; }
+  .mv-card h3 i{ color:var(--c); }
+  .mv-card p{ margin-top:4px; font-size:9pt; color:var(--text); line-height:1.45; }
   /* ============ Barra de pantalla (no se imprime) ============ */
   .toolbar{
     position:fixed; top:0; left:0; right:0; z-index:10; display:flex; align-items:center; justify-content:center; gap:16px;
@@ -269,8 +323,8 @@
 
   <div class="cover-title">
     <div class="kicker">Brochure corporativo</div>
-    <h1>Topografía, geomática, catastro y avalúos</h1>
-    <p>Soluciones técnicas de precisión para proyectos públicos y privados, con georreferenciación GNSS en el sistema de referencia <span class="nw">MAGNA-SIRGAS</span>.</p>
+    <h1>Topografía y avalúos</h1>
+    <p>Soluciones técnicas de precisión para proyectos públicos y privados: topografía y geomática, avalúos y gestión predial, catastro, consultoría e infraestructura, con georreferenciación GNSS en el sistema de referencia <span class="nw">MAGNA-SIRGAS</span>.</p>
   </div>
 
   <div class="hero" id="hero">
@@ -304,86 +358,74 @@
   </div>
 </section>
 
-<!-- ======================= PÁGINA 2 · EMPRESA Y SERVICIOS ======================= -->
+<!-- ======================= PÁGINA 2 · EMPRESA Y TOPOGRAFÍA ======================= -->
 <section class="page">
   <header class="run-head">
     <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
-    <div>Empresa y servicios</div>
+    <div>Empresa y topografía</div>
   </header>
-
-  <div class="content">
-    <h2 class="sec">Quiénes somos</h2>
-    <div class="about">
-      <div>
-        <p class="lead">GEOSTAR INGENIERÍA S.A.S. es una sociedad por acciones simplificada con domicilio en Bogotá D.C., dedicada a la prestación de servicios profesionales, técnicos y especializados en ingeniería, geomática, topografía, geodesia, cartografía, catastro multipropósito, gestión predial, ordenamiento territorial, infraestructura y desarrollo tecnológico aplicado al territorio.</p>
-        <p>Nuestro equipo está integrado por ingenieros topográficos catastrales con matrícula profesional CPNT vigente y por avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.), con trayectoria en los sectores inmobiliario, valuatorio, cartográfico, predial y de tecnologías de la información.</p>
-        <div class="exp"><b>+15</b><span>años de experiencia del equipo profesional en proyectos de topografía, catastro, avalúos y gestión del territorio.</span></div>
+  <div class="content spread">
+    <div class="grp">
+      <h2 class="sec">Quiénes somos</h2>
+      <div class="about1">
+        <p class="lead">GEOSTAR INGENIERÍA S.A.S. atiende, desde Bogotá D.C., proyectos públicos y privados en todo el territorio nacional con soluciones técnicas en geomática, catastro, infraestructura y tecnología.</p>
+        <p>Nuestro equipo reúne ingenieros topográficos catastrales con matrícula profesional CPNT vigente y avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.). Con trayectoria en los sectores inmobiliario, valuatorio, cartográfico, predial y de tecnologías de la información, trabajamos con tecnología GNSS RTK, georreferenciación en MAGNA-SIRGAS y procedimientos conforme a la normatividad IGAC vigente.</p>
       </div>
-
-      <div class="ficha">
-        <h3>Ficha corporativa</h3>
-        <dl>
-          <dt>Razón social</dt><dd>GEOSTAR INGENIERÍA S.A.S.</dd>
-          <dt>Sigla</dt><dd>GEOSTAR</dd>
-          <dt>NIT</dt><dd>902.035.038-2</dd>
-          <dt>Tipo societario</dt><dd>Sociedad por Acciones Simplificada · Ley 1258 de 2008</dd>
-          <dt>Matrícula mercantil</dt><dd>04062132 · Cámara de Comercio de Bogotá</dd>
-          <dt>Actividad principal</dt><dd>CIIU 7112 · Actividades de ingeniería y otras actividades conexas de consultoría técnica</dd>
-          <dt>Domicilio</dt><dd>Bogotá D.C. · Cobertura nacional</dd>
-        </dl>
+      <div class="mv">
+        <div class="mv-card" style="--c:var(--orange)"><h3><i class="fa-solid fa-bullseye"></i>Misión</h3><p>Ofrecer soluciones técnicas de alto nivel en geomática, catastro, infraestructura y tecnología, con precisión, tecnología y cumplimiento normativo.</p></div>
+        <div class="mv-card" style="--c:var(--sky)"><h3><i class="fa-solid fa-binoculars"></i>Visión</h3><p>Ser una empresa de ingeniería reconocida en Colombia por la precisión, la confiabilidad y el rigor normativo de sus soluciones en geomática, catastro e infraestructura.</p></div>
       </div>
+      <div class="exp"><b>+15</b><span>años de experiencia del equipo profesional en proyectos de topografía, catastro, avalúos y gestión del territorio.</span></div>
     </div>
 
-    <div class="layers-intro">
-      <h2 class="sec">Líneas de servicio</h2>
-      <p>Organizamos nuestros servicios en tres líneas que, como las capas de nuestro logo, se integran en cada proyecto: medición, información territorial e infraestructura.</p>
+    <div class="grp">
+      <div class="line" style="--c:var(--orange); margin-top:0">
+        <h2 class="sec">Topografía</h2>
+        <p>Levantamientos y control geométrico con tecnología GNSS RTK, referidos al sistema MAGNA-SIRGAS, para proyectos de ingeniería, catastro e infraestructura.</p>
+      </div>
+      <div class="tsvc" style="--c:var(--orange)">
+      <div class="svc"><h4><i class="fa-solid fa-mountain-sun"></i>Topografía y levantamientos</h4><p>Levantamientos topográficos de alta precisión, planimetría, altimetría, replanteo de obras y control geométrico.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-earth-americas"></i>Geomática y geodesia</h4><p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados y georreferenciación MAGNA-SIRGAS.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-camera"></i>Drones</h4><p>Fotogrametría, modelos digitales del terreno, nubes de puntos e inspecciones técnicas.</p></div>
+    </div>
     </div>
 
-    <div class="layers">
-      <div class="layer" style="--c:var(--orange)">
-        <div class="tag">Medición y captura<small>Campo y precisión</small></div>
-        <div class="items">
-          <div class="svc"><h4><i class="fa-solid fa-mountain-sun"></i>Topografía y levantamientos</h4><p>Levantamientos topográficos de alta precisión, planimetría, altimetría, replanteo de obras y control geométrico.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-earth-americas"></i>Geomática y geodesia</h4><p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados y georreferenciación <span class="nw">MAGNA-SIRGAS</span>.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-camera"></i>Drones RTK</h4><p>Fotogrametría de alta precisión, modelos digitales del terreno, nubes de puntos e inspecciones técnicas.</p></div>
-        </div>
-      </div>
+    <div class="grp">
+      <h3 class="h-sub">Metodología de levantamiento</h3>
+      <div class="steps">
+      <div class="step"><div class="n"><b>1</b></div><h4>Georreferenciación</h4><p>Equipo GNSS en metodología RTK, referido al sistema <span class="nw">MAGNA-SIRGAS</span> del IGAC.</p></div>
+      <div class="step"><div class="n"><b>2</b></div><h4>Planimetría</h4><p>Caracterización topográfica del área del proyecto por la comisión de campo.</p></div>
+      <div class="step"><div class="n"><b>3</b></div><h4>Altimetría</h4><p>Puntos de nivel según cambios de pendiente y geomorfología: drenajes, vías, accesos y terrazas.</p></div>
+      <div class="step"><div class="n"><b>4</b></div><h4>Procesamiento y entrega</h4><p>Cálculos, modelación digital del terreno y elaboración de los productos de entrega.</p></div>
+    </div>
+    </div>
 
-      <div class="layer" style="--c:var(--indigo)">
-        <div class="tag">Territorio y predios<small>Información y valor</small></div>
-        <div class="items">
-          <div class="svc"><h4><i class="fa-solid fa-map-location-dot"></i>Catastro multipropósito</h4><p>Formación, actualización y conservación catastral. Barridos prediales e inventarios territoriales.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-house-chimney"></i>Avalúos y predios</h4><p>Avalúos comerciales y catastrales, adquisición predial, servidumbres y saneamiento inmobiliario.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-layer-group"></i>SIG y software</h4><p>Implementación de Sistemas de Información Geográfica y plataformas web geoespaciales.</p></div>
-        </div>
-      </div>
-
-      <div class="layer" style="--c:var(--sky)">
-        <div class="tag">Proyectos e infraestructura<small>Gestión y ejecución</small></div>
-        <div class="items">
-          <div class="svc"><h4><i class="fa-solid fa-clipboard-check"></i>Consultoría e interventoría</h4><p>Supervisión técnica, auditoría y gerencia integral. Estudios de suelos, geotecnia e hidrología.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-handshake"></i>APP y concesiones</h4><p>Estructuración, financiación y operación bajo APP, BOT, BOOT y contratos llave en mano.</p></div>
-          <div class="svc"><h4><i class="fa-solid fa-toolbox"></i>Equipos especializados</h4><p>Importación, venta, arriendo y mantenimiento de equipos topográficos y geodésicos.</p></div>
-        </div>
+    <div class="grp">
+      <h3 class="h-sub">Tecnología y equipos</h3>
+      <div class="equip">
+        <div class="eq"><i class="fa-solid fa-satellite-dish"></i><b>Receptores GNSS</b><span>Posicionamiento RTK y estático.</span></div>
+        <div class="eq"><i class="fa-solid fa-ruler-combined"></i><b>Estación total</b><span>Medición de ángulos y distancias.</span></div>
+        <div class="eq"><i class="fa-solid fa-camera"></i><b>Dron</b><span>Captura aérea de imágenes del terreno.</span></div>
+        <div class="eq"><i class="fa-solid fa-laptop-code"></i><b>Software especializado</b><span>Procesamiento GNSS, CAD y modelación 3D.</span></div>
       </div>
     </div>
   </div>
-
-  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 2 / 4</span></footer>
+  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 2 / 3</span></footer>
 </section>
 
-<!-- ======================= PÁGINA 3 · AVALÚOS Y TECNOLOGÍA ======================= -->
+<!-- ======================= PÁGINA 3 · AVALÚOS Y CONTACTO ======================= -->
 <section class="page">
   <header class="run-head">
     <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
-    <div>Avalúos, tecnología y entregables</div>
+    <div>Avalúos y contacto</div>
   </header>
-
-  <div class="content">
-    <h2 class="sec">Avalúos y gestión predial</h2>
-    <p class="lead" style="margin-top:12px">Elaboramos avalúos para personas naturales, empresas y entidades públicas, con soporte técnico y jurídico predial.</p>
-
-    <div class="aval-grid">
+  <div class="content spread">
+    <div class="grp">
+      <div class="line" style="--c:var(--sky); margin-top:0">
+        <h2 class="sec">Avalúos y gestión predial</h2>
+        <p>Elaboramos avalúos para personas naturales, empresas y entidades públicas, con soporte técnico y jurídico predial.</p>
+      </div>
+      <div class="aval-grid">
       <div class="aval"><i class="fa-solid fa-tags"></i><span>Avalúos comerciales</span></div>
       <div class="aval"><i class="fa-solid fa-map"></i><span>Avalúos catastrales y zonas homogéneas</span></div>
       <div class="aval"><i class="fa-solid fa-building"></i><span>Avalúos corporativos</span></div>
@@ -391,79 +433,29 @@
       <div class="aval"><i class="fa-solid fa-gavel"></i><span>Asesoría jurídica predial</span></div>
       <div class="aval"><i class="fa-solid fa-chart-line"></i><span>Gestión y consultoría inmobiliaria</span></div>
     </div>
-
-    <div class="norma"><i class="fa-solid fa-scale-balanced"></i>
-      <div>Avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.). Metodologías conforme a la Resolución IGAC 620 de 2008 y a la normatividad IGAC vigente. Alcance complementario: estudios de mercado inmobiliario, estudios técnicos para adquisición de predios, servidumbres y expropiaciones administrativas.</div>
+      <div class="norma"><i class="fa-solid fa-scale-balanced"></i>
+      <div>Avaluadores inscritos en el Registro Abierto de Avaluadores (R.A.A.). Metodologías conforme a la Resolución IGAC 941 de 2026 y a la normatividad IGAC vigente. Alcance complementario: estudios de mercado inmobiliario, estudios técnicos para adquisición de predios, servidumbres y expropiaciones administrativas.</div>
+    </div>
     </div>
 
-    <h3 class="h-sub" style="margin-top:20px">Metodología de levantamiento topográfico</h3>
-    <div class="steps">
-      <div class="step"><div class="n"><b>1</b></div><h4>Georreferenciación</h4><p>Equipo GNSS en metodología RTK, referido al sistema <span class="nw">MAGNA-SIRGAS</span> del IGAC.</p></div>
-      <div class="step"><div class="n"><b>2</b></div><h4>Planimetría</h4><p>Caracterización topográfica del área del proyecto por la comisión de campo.</p></div>
-      <div class="step"><div class="n"><b>3</b></div><h4>Altimetría</h4><p>Puntos de nivel según cambios de pendiente y geomorfología: drenajes, vías, accesos y terrazas.</p></div>
-      <div class="step"><div class="n"><b>4</b></div><h4>Procesamiento y entrega</h4><p>Cálculos, modelación digital del terreno y elaboración de los productos de entrega.</p></div>
+    <div class="grp">
+      <div class="h-sub">Otras líneas de servicio</div>
+      <div class="more">
+      <div class="svc"><h4><i class="fa-solid fa-map-location-dot"></i>Catastro multipropósito</h4><p>Formación, actualización y conservación catastral. Barridos prediales e inventarios territoriales.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-clipboard-check"></i>Consultoría e interventoría</h4><p>Supervisión técnica, auditoría y gerencia integral. Estudios de suelos, geotecnia e hidrología.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-layer-group"></i>SIG y software</h4><p>Implementación de Sistemas de Información Geográfica y plataformas web geoespaciales.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-handshake"></i>APP y concesiones</h4><p>Estructuración, financiación y operación bajo APP, BOT, BOOT y contratos llave en mano.</p></div>
+      <div class="svc"><h4><i class="fa-solid fa-toolbox"></i>Equipos especializados</h4><p>Importación, venta, arriendo y mantenimiento de equipos topográficos y geodésicos.</p></div>
+      <div class="cta"><b>Cotice su proyecto</b><span>Escríbanos por WhatsApp</span><span class="num"><i class="fa-brands fa-whatsapp"></i>+57 312 4033751</span></div>
+    </div>
     </div>
 
-    <div class="two">
-      <div>
-        <div class="h-sub">Tecnología y equipos</div>
-        <ul class="tech">
-          <li><i class="fa-solid fa-satellite-dish"></i><b>Receptores GNSS de doble frecuencia (L1/L2)</b><span>Posicionamiento RTK · precisión ±5 mm + 1 ppm<span class="pc">por confirmar</span></span></li>
-          <li><i class="fa-solid fa-ruler-combined"></i><b>Estación total robótica<span class="pc">por confirmar</span></b><span>Medición sin prisma 1000 m</span></li>
-          <li><i class="fa-solid fa-camera"></i><b>Dron RTK<span class="pc">por confirmar</span></b><span>Fotogrametría de alta precisión</span></li>
-          <li><i class="fa-solid fa-laptop-code"></i><b>Software especializado</b><span>Procesamiento GNSS, CAD y modelación 3D</span></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="h-sub">Productos de entrega</div>
-        <ul class="deliver">
-          <li><i class="fa-solid fa-check"></i>Informe técnico de los trabajos realizados.</li>
-          <li><i class="fa-solid fa-check"></i>Cuadro de coordenadas de mojones de referencia o BM materializados en campo.</li>
-          <li><i class="fa-solid fa-check"></i>Cuadro de coordenadas con codificación o nomenclatura de los puntos levantados.</li>
-          <li><i class="fa-solid fa-check"></i>Planos de localización general georreferenciados.</li>
-          <li><i class="fa-solid fa-check"></i>Modelo de elevación 3D, curvas de nivel, perfiles topográficos y secciones transversales.</li>
-          <li><i class="fa-solid fa-check"></i>Registro fotográfico.</li>
-          <li><i class="fa-solid fa-check"></i>Archivos digitales editables en DWG, DXF y PDF.</li>
-          <li class="note">Productos de referencia para levantamientos topográficos. El alcance de cada proyecto se define en la propuesta técnica.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 3 / 4</span></footer>
-</section>
-
-<!-- ======================= PÁGINA 4 · CONTRATACIÓN Y CONTACTO ======================= -->
-<section class="page">
-  <header class="run-head">
-    <div class="brand"><i class="emblem"></i>GEOSTAR INGENIERÍA S.A.S.</div>
-    <div>Contratación y contacto</div>
-  </header>
-
-  <div class="content">
-    <h2 class="sec">Contratación pública y alianzas</h2>
-    <p class="lead" style="margin-top:14px">El objeto social de GEOSTAR INGENIERÍA S.A.S. comprende la participación en procesos de contratación pública y privada, y la integración de consorcios, uniones temporales, alianzas estratégicas y demás formas asociativas permitidas por la ley.</p>
-    <p style="margin-top:8px">Así mismo, contempla la estructuración, financiación, operación y mantenimiento de proyectos de infraestructura pública o privada bajo esquemas de concesión, asociación público-privada (APP), contratos EPC, llave en mano, BOT y BOOT.</p>
-
-    <div class="modal">
-      <span class="k">Licitación pública</span><span class="k">Concurso de méritos</span><span class="k">Selección abreviada</span><span class="k">Mínima cuantía</span>
-      <span>Consorcios</span><span>Uniones temporales</span><span>APP</span><span>EPC</span><span>Llave en mano</span><span>BOT</span><span>BOOT</span>
-    </div>
-
-    <div class="docs">
-      <div><i class="fa-solid fa-file-lines"></i>Registro Único Tributario (RUT)</div>
-      <div><i class="fa-solid fa-file-lines"></i>Certificado de existencia y representación legal</div>
-      <div><i class="fa-solid fa-file-lines"></i>Certificación bancaria</div>
-      <div><i class="fa-solid fa-file-lines"></i>Matrículas CPNT y certificados R.A.A. del equipo profesional</div>
-    </div>
-    <p style="margin-top:6px; font-size:8pt; color:var(--muted)">Documentos disponibles a solicitud para procesos de selección.</p>
-
-    <div class="contact">
+    <div class="grp">
+      <div class="contact">
       <div>
         <h2 class="sec">Contáctenos</h2>
         <ul>
-          <li><i class="fa-solid fa-location-dot"></i><span>Carrera 38 No. 59-20, Oficina 304<small>Bogotá D.C., Colombia · Cobertura nacional</small></span></li>
+          <li><i class="fa-solid fa-location-dot"></i><span class="nw">Carrera 38 No. 59-20, Oficina 304<small>Bogotá D.C., Colombia · Cobertura nacional</small></span></li>
           <li><i class="fa-brands fa-whatsapp"></i><span>+57 312 4033751<small>Celular y WhatsApp</small></span></li>
           <li><i class="fa-solid fa-envelope"></i><span>contacto@geostar.com.co<small>geostar.ingenieria@gmail.com</small></span></li>
           <li><i class="fa-solid fa-globe"></i><span>www.geostar.com.co</span></li>
@@ -475,19 +467,10 @@
         <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="qrcode" role="img" aria-label="Código QR: geostar.com.co"><path class="qrline" stroke="#14215a" d="M0 0.5h7m1 0h1m5 0h1m3 0h7m-25 1h1m5 0h1m1 0h2m1 0h1m4 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h3m2 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m3 0h3m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m3 0h3m1 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m1 0h1m1 0h1m1 0h2m-17 1h1m2 0h6m1 0h2m4 0h2m2 0h1m1 0h3m-25 1h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h4m2 0h5m-20 1h1m1 0h3m4 0h1m1 0h1m2 0h2m1 0h1m2 0h1m-25 1h1m2 0h1m1 0h1m4 0h1m4 0h2m1 0h2m1 0h4m-25 1h2m3 0h2m1 0h3m4 0h1m2 0h2m4 0h1m-25 1h1m2 0h3m1 0h3m2 0h5m3 0h1m2 0h1m-24 1h2m1 0h1m1 0h3m2 0h1m4 0h1m1 0h1m2 0h5m-25 1h1m1 0h2m3 0h1m4 0h1m3 0h2m1 0h1m1 0h2m1 0h1m-25 1h1m2 0h1m2 0h1m2 0h5m1 0h6m1 0h2m-16 1h4m1 0h1m2 0h1m3 0h1m1 0h2m-24 1h7m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m1 0h1m2 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m1 0h5m2 0h6m2 0h2m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h3m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h5m6 0h5m-25 1h1m5 0h1m4 0h2m1 0h2m1 0h4m1 0h3m-25 1h7m1 0h2m1 0h4m1 0h1m4 0h1m2 0h1"/></svg><b>Sitio web</b><small>geostar.com.co</small></div>
       </div>
     </div>
-
-    <div class="legal">
-      <span class="logo-full" role="img" aria-label="Logo GEOSTAR"></span>
-      <p><b>GEOSTAR INGENIERÍA S.A.S.</b><br>
-        NIT 902.035.038-2 · Sociedad por Acciones Simplificada, Ley 1258 de 2008<br>
-        Matrícula mercantil 04062132, Cámara de Comercio de Bogotá<br>
-        Representante legal: Eyson Fernando Zambrano Pérez</p>
     </div>
-
-    <p class="closing">Precisión · Tecnología · Cumplimiento Normativo</p>
+    <p class="closing small">Precisión · Tecnología · Cumplimiento Normativo</p>
   </div>
-
-  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 4 / 4</span></footer>
+  <footer class="run-foot"><span><b>GEOSTAR INGENIERÍA S.A.S.</b> · NIT 902.035.038-2</span><span>www.geostar.com.co · 3 / 3</span></footer>
 </section>
 
 <script>
