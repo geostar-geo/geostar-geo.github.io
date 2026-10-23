@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://geostar.com.co/">
     <meta property="og:image" content="https://geostar.com.co/img/SCT6_Fieldshot_1.JPG">
     <link rel="icon" type="image/png" href="img/geostar_logo.png">
-    <title>GEOSTAR INGENIERÍA · Topografía, Avalúos, Geomática, Ingeniería, Catastro</title>
+    <title>GEOSTAR INGENIERÍA · Topografía y avalúos</title>
     <!-- Google Fonts: Poppins + Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,6 +105,15 @@
             opacity: 0.8;
             letter-spacing: 1px;
         }
+        nav a.nav-cta {
+            opacity: 1;
+            color: #000;
+            background: #fff;
+            padding: 0.45rem 1.1rem;
+        }
+        nav a.nav-cta:hover {
+            background: #F5960A;
+        }
         nav a:hover {
             opacity: 1;
         }
@@ -112,7 +121,7 @@
         /* ===== HERO PANORÁMICO ===== */
         .hero {
             position: relative;
-            padding: 3.5rem 0 0;
+            padding: 1.4rem 0 0;
             color: white;
             overflow: hidden;
         }
@@ -146,7 +155,7 @@
         /* Botones sobre la franja de video */
         .hero-stage {
             position: relative;
-            margin-top: 1.6rem;
+            margin-top: 0.6rem;
         }
         .hero-stage .hero-buttons {
             position: absolute;
@@ -196,9 +205,9 @@
         }
         .hero-traverse {
             position: absolute;
-            top: 16px;
+            top: 8px;
             right: 3%;
-            width: min(34vw, 500px);
+            width: min(30vw, 440px);
             height: auto;
             z-index: 2;
             pointer-events: none;
@@ -227,15 +236,15 @@
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: clamp(2.6rem, 8.5vh, 4.5rem);
+            font-size: clamp(2.4rem, 7vh, 3.8rem);
             font-weight: 600;
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
+            margin-bottom: 0.8rem;
+            line-height: 1.08;
             max-width: 900px;
             letter-spacing: -1px;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             margin-bottom: 0;
             max-width: 680px;
             font-weight: 300;
@@ -781,6 +790,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#contacto">Contacto</a>
                 <a href="brochure.html" target="_blank" rel="noopener">Brochure</a>
+                <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20sitio%20web%20de%20GEOSTAR%20INGENIERÍA%20y%20quiero%20solicitar%20una%20cotización%20para%20un%20proyecto." target="_blank" rel="noopener" class="nav-cta">Cotizar proyecto</a>
             </nav>
         </div>
     </header>
@@ -807,16 +817,11 @@
                 <circle cx="392" cy="92" r="6"/><circle cx="512" cy="58" r="6"/><circle cx="606" cy="130" r="6"/><circle cx="724" cy="104" r="6"/><circle cx="790" cy="190" r="6"/>
             </svg>
             <div class="hero-content">
-                <h1>Topografía, avalúos,<br>geomática, ingeniería,<br>catastro</h1>
+                <h1>Topografía y avalúos</h1>
                 <p>Soluciones técnicas de precisión para proyectos públicos y privados. Tecnología GNSS, fotogrametría con drones, avalúos conforme a la normatividad IGAC, consultoría especializada y desarrollo SIG.</p>
             </div>
             <!-- 🎥 VIDEO EN FRANJA (estilo brochure) con los botones encima -->
             <div class="hero-stage">
-                <div class="hero-buttons">
-                    <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20sitio%20web%20de%20GEOSTAR%20INGENIERÍA%20y%20quiero%20solicitar%20una%20cotización%20para%20un%20proyecto%20de%20topografía%2C%20catastro%20o%20levantamiento%20con%20drone." class="btn btn-primary" target="_blank" rel="noopener">Cotizar proyecto</a>
-                    <a href="#sobre" class="btn">Conócenos</a>
-                    <a href="brochure.html" target="_blank" rel="noopener" class="btn"><i class="fas fa-file-pdf"></i> Ver brochure</a>
-                </div>
                 <div class="hero-band">
                     <video autoplay muted loop playsinline preload="metadata" poster="img/SCT6_Fieldshot_1.JPG" aria-label="Sobrevuelo con drone">
                         <source src="videos/SobreVuelo.mp4" type="video/mp4">
