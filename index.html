@@ -395,10 +395,24 @@
             box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
         }
         .equipment-item i {
-            font-size: 2.2rem;
-            color: white;
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            font-size: 1.6rem;
+            color: #F5960A;
             margin-bottom: 1.2rem;
-            opacity: 0.8;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(247,116,12,0.22), rgba(245,150,10,0.06));
+            border: 1px solid rgba(247,116,12,0.35);
+            transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
+        }
+        .equipment-item:hover i {
+            background: #F7740C;
+            border-color: #F7740C;
+            color: #ffffff;
+            transform: translateY(-2px);
         }
         .equipment-item h4 {
             font-size: 1.1rem;
@@ -945,17 +959,17 @@
                 
                 <div class="equipment-grid">
                     <div class="equipment-item">
-                        <i class="fas fa-satellite"></i>
+                        <i class="fas fa-satellite-dish"></i>
                         <h4>Receptores GNSS</h4>
                         <p>Posicionamiento RTK y estático</p>
                     </div>
                     <div class="equipment-item">
-                        <i class="fas fa-ruler-combined"></i>
+                        <i class="fas fa-location-crosshairs"></i>
                         <h4>Estación total</h4>
                         <p>Medición de ángulos y distancias</p>
                     </div>
                     <div class="equipment-item">
-                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-helicopter"></i>
                         <h4>Dron</h4>
                         <p>Captura aérea de imágenes del terreno</p>
                     </div>
