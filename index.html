@@ -112,7 +112,7 @@
         /* ===== HERO PANORÁMICO ===== */
         .hero {
             position: relative;
-            padding: 7rem 0 0;
+            padding: 3.5rem 0 0;
             color: white;
             overflow: hidden;
         }
@@ -120,8 +120,7 @@
         .hero-band {
             position: relative;
             z-index: 3;
-            margin-top: 3.5rem;
-            height: clamp(230px, 32vw, 480px);
+            height: clamp(240px, 30vw, 440px);
             background: linear-gradient(115deg, #14215A 0%, #2B2A7E 55%, #1388D4 100%);
             clip-path: polygon(0 14%, 100% 0, 100% 86%, 0 100%);
         }
@@ -142,7 +141,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(20,33,90,0.55) 0%, rgba(20,33,90,0) 60%);
+            background: linear-gradient(90deg, rgba(11,18,54,0.72) 0%, rgba(11,18,54,0.38) 45%, rgba(11,18,54,0) 72%);
+        }
+        /* Botones sobre la franja de video */
+        .hero-stage {
+            position: relative;
+            margin-top: 1.6rem;
+        }
+        .hero-stage .hero-buttons {
+            position: absolute;
+            z-index: 5;
+            left: calc((100% - min(92%, 1400px)) / 2);
+            top: 30%;
+        }
+        .hero-stage .btn:not(.btn-primary) {
+            background: rgba(0,0,0,0.35);
+            border-color: rgba(255,255,255,0.75);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+        .hero-stage .btn:not(.btn-primary):hover {
+            background: white;
+            color: black;
+        }
+        @media (max-width: 991px) {
+            /* En tableta y celular: franja primero, luego la leyenda y los botones */
+            .hero-stage {
+                display: flex;
+                flex-direction: column;
+            }
+            .hero-stage .hero-band { order: 1; }
+            .hero-stage .video-caption { order: 2; }
+            .hero-stage .hero-buttons {
+                order: 3;
+                position: static;
+                width: 92%;
+                margin: 2rem auto 0;
+            }
         }
         /* Curvas de nivel y poligonal (estilo brochure) */
         .hero-topo {
@@ -162,8 +197,8 @@
         .hero-traverse {
             position: absolute;
             top: 16px;
-            right: 4%;
-            width: min(40vw, 560px);
+            right: 3%;
+            width: min(34vw, 500px);
             height: auto;
             z-index: 2;
             pointer-events: none;
@@ -192,7 +227,7 @@
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.6rem, 8.5vh, 4.5rem);
             font-weight: 600;
             margin-bottom: 1.2rem;
             line-height: 1.1;
@@ -201,8 +236,8 @@
         }
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 0;
+            max-width: 680px;
             font-weight: 300;
             opacity: 0.9;
         }
@@ -642,9 +677,6 @@
             .hero {
                 padding-top: 4rem;
             }
-            .hero-band {
-                margin-top: 3rem;
-            }
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -777,21 +809,23 @@
             <div class="hero-content">
                 <h1>Topografía, avalúos,<br>geomática, ingeniería,<br>catastro</h1>
                 <p>Soluciones técnicas de precisión para proyectos públicos y privados. Tecnología GNSS, fotogrametría con drones, avalúos conforme a la normatividad IGAC, consultoría especializada y desarrollo SIG.</p>
+            </div>
+            <!-- 🎥 VIDEO EN FRANJA (estilo brochure) con los botones encima -->
+            <div class="hero-stage">
                 <div class="hero-buttons">
                     <a href="https://wa.me/573124033751?text=Hola%2C%20vi%20su%20sitio%20web%20de%20GEOSTAR%20INGENIERÍA%20y%20quiero%20solicitar%20una%20cotización%20para%20un%20proyecto%20de%20topografía%2C%20catastro%20o%20levantamiento%20con%20drone." class="btn btn-primary" target="_blank" rel="noopener">Cotizar proyecto</a>
                     <a href="#sobre" class="btn">Conócenos</a>
                     <a href="brochure.html" target="_blank" rel="noopener" class="btn"><i class="fas fa-file-pdf"></i> Ver brochure</a>
                 </div>
-            </div>
-            <!-- 🎥 VIDEO EN FRANJA (estilo brochure) -->
-            <div class="hero-band">
-                <video autoplay muted loop playsinline preload="metadata" poster="img/SCT6_Fieldshot_1.JPG" aria-label="Sobrevuelo con drone">
-                    <source src="videos/SobreVuelo.mp4" type="video/mp4">
-                    Su navegador no soporta la reproducción de video.
-                </video>
-            </div>
-            <div class="video-caption">
-                Sobrevuelo con drone · Ejemplo de levantamiento aéreo para proyectos topográficos.
+                <div class="hero-band">
+                    <video autoplay muted loop playsinline preload="metadata" poster="img/SCT6_Fieldshot_1.JPG" aria-label="Sobrevuelo con drone">
+                        <source src="videos/SobreVuelo.mp4" type="video/mp4">
+                        Su navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="video-caption">
+                    Sobrevuelo con drone · Ejemplo de levantamiento aéreo para proyectos topográficos.
+                </div>
             </div>
         </section>
 
