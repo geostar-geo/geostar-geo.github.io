@@ -332,16 +332,28 @@
             z-index: 2;
         }
         .service-icon {
+            width: 60px;
+            height: 60px;
             margin-bottom: 1.5rem;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(247,116,12,0.22), rgba(245,150,10,0.06));
+            border: 1px solid rgba(247,116,12,0.35);
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
         }
         .service-icon i {
-            font-size: 2.2rem;
-            color: white;
-            opacity: 0.9;
-            transition: opacity 0.2s;
+            font-size: 1.6rem;
+            color: #F5960A;
+            transition: color 0.25s;
+        }
+        .service-card:hover .service-icon {
+            background: #F7740C;
+            border-color: #F7740C;
+            transform: translateY(-2px);
         }
         .service-card:hover .service-icon i {
-            opacity: 1;
+            color: #ffffff;
         }
         .service-card h3 {
             font-size: 1.2rem;
@@ -844,7 +856,7 @@
                     <!-- Topografía y levantamientos -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-mountain"></i>
+                            <i class="fas fa-compass-drafting"></i>
                         </div>
                         <h3>Topografía y levantamientos</h3>
                         <p>Levantamientos topográficos de alta precisión, planimetría, altimetría, replanteo de obras y control geométrico.</p>
@@ -853,7 +865,7 @@
                     <!-- Geomática y geodesia -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-globe-americas"></i>
+                            <i class="fas fa-earth-americas"></i>
                         </div>
                         <h3>Geomática y geodesia</h3>
                         <p>Redes geodésicas, nivelaciones de precisión, ajuste por mínimos cuadrados y georreferenciación MAGNA-SIRGAS.</p>
@@ -862,7 +874,7 @@
                     <!-- Drones -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-camera"></i>
+                            <i class="fas fa-helicopter"></i>
                         </div>
                         <h3>Drones</h3>
                         <p>Fotogrametría, modelos digitales del terreno, nubes de puntos e inspecciones técnicas.</p>
@@ -871,7 +883,7 @@
                     <!-- Catastro multipropósito -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-draw-polygon"></i>
+                            <i class="fas fa-map-location-dot"></i>
                         </div>
                         <h3>Catastro multipropósito</h3>
                         <p>Formación, actualización y conservación catastral. Barridos prediales e inventarios territoriales.</p>
@@ -880,7 +892,7 @@
                     <!-- Avalúos -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-file-invoice-dollar"></i>
+                            <i class="fas fa-house-circle-check"></i>
                         </div>
                         <h3>Avalúos</h3>
                         <p>Avalúos comerciales, catastrales y corporativos para personas naturales, empresas y entidades públicas, conforme a la Resolución IGAC 941 de 2026.</p>
@@ -889,7 +901,7 @@
                     <!-- Consultoría e interventoría -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-hard-hat"></i>
+                            <i class="fas fa-clipboard-check"></i>
                         </div>
                         <h3>Consultoría e interventoría</h3>
                         <p>Supervisión técnica, auditoría y gerencia integral. Estudios de suelos, geotecnia e hidrología.</p>
@@ -898,7 +910,7 @@
                     <!-- Gestión predial -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-scale-balanced"></i>
+                            <i class="fas fa-file-signature"></i>
                         </div>
                         <h3>Gestión predial</h3>
                         <p>Asesoría jurídica predial, estudios técnicos para adquisición de predios, servidumbres y expropiaciones administrativas.</p>
@@ -907,7 +919,7 @@
                     <!-- SIG y software -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-map"></i>
+                            <i class="fas fa-layer-group"></i>
                         </div>
                         <h3>SIG y software</h3>
                         <p>Implementación de Sistemas de Información Geográfica y plataformas web geoespaciales.</p>
@@ -916,7 +928,7 @@
                     <!-- Equipos especializados -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-toolbox"></i>
                         </div>
                         <h3>Equipos especializados</h3>
                         <p>Importación, venta, arriendo y mantenimiento de equipos topográficos y geodésicos.</p>
