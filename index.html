@@ -481,6 +481,79 @@
             object-fit: cover;
             border-radius: 12px;
         }
+        /* Galería de fotografías */
+        .gallery {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        .gallery-slide {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+        .gallery-slide.active {
+            opacity: 1;
+        }
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+        }
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            cursor: pointer;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            transition: background 0.2s;
+        }
+        .gallery-btn:hover {
+            background: #F7740C;
+            border-color: #F7740C;
+        }
+        .gallery-prev { left: 12px; }
+        .gallery-next { right: 12px; }
+        .gallery-dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 12px;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .gallery-dots button {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.8);
+            background: transparent;
+            cursor: pointer;
+        }
+        .gallery-dots button.active {
+            background: #F5960A;
+            border-color: #F5960A;
+        }
+        .gallery.single .gallery-btn,
+        .gallery.single .gallery-dots {
+            display: none;
+        }
         
         /* ===== ALIANZAS ===== */
         .alliances {
@@ -1004,7 +1077,17 @@
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo" loading="lazy">
+                        <!-- Galería: agregue o quite fotografías copiando un bloque <figure>.
+                             Las imágenes que no existan en img/ se omiten automáticamente. -->
+                        <div class="gallery" id="gallery" role="region" aria-roledescription="carrusel" aria-label="Fotografías de proyectos">
+                            <figure class="gallery-slide active"><img src="img/SCT6_Fieldshot_1.JPG" alt="Levantamiento GNSS en campo" loading="lazy"></figure>
+                            <figure class="gallery-slide"><img src="img/foto-2.jpg" alt="Trabajo de campo GEOSTAR" loading="lazy"></figure>
+                            <figure class="gallery-slide"><img src="img/foto-3.jpg" alt="Trabajo de campo GEOSTAR" loading="lazy"></figure>
+                            <figure class="gallery-slide"><img src="img/foto-4.jpg" alt="Trabajo de campo GEOSTAR" loading="lazy"></figure>
+                            <button class="gallery-btn gallery-prev" type="button" aria-label="Foto anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="gallery-btn gallery-next" type="button" aria-label="Foto siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                            <div class="gallery-dots"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1090,5 +1173,62 @@
             </div>
         </div>
     </footer>
+    <script>
+    (function () {
+        var g = document.getElementById('gallery');
+        if (!g) return;
+        var dots = g.querySelector('.gallery-dots');
+        var slides = [], idx = 0, timer = null;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function show(n) {
+            if (!slides.length) return;
+            idx = (n + slides.length) % slides.length;
+            slides.forEach(function (s, i) { s.classList.toggle('active', i === idx); });
+            [].forEach.call(dots.children, function (d, i) { d.classList.toggle('active', i === idx); });
+        }
+        function play() { stop(); if (!reduce && slides.length > 1) timer = setInterval(function () { show(idx + 1); }, 5000); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+        function build() {
+            slides = [].filter.call(g.querySelectorAll('.gallery-slide'), function (s) { return s.isConnected; });
+            dots.innerHTML = '';
+            slides.forEach(function (s, i) {
+                var b = document.createElement('button');
+                b.type = 'button'; b.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+                b.addEventListener('click', function () { show(i); play(); });
+                dots.appendChild(b);
+            });
+            g.classList.toggle('single', slides.length < 2);
+            show(Math.min(idx, slides.length - 1));
+            play();
+        }
+
+        // Omite las fotografías que no existan en el repositorio
+        g.querySelectorAll('.gallery-slide img').forEach(function (img) {
+            img.addEventListener('error', function () {
+                var s = img.closest('.gallery-slide'); if (s) s.remove(); build();
+            });
+        });
+
+        g.querySelector('.gallery-prev').addEventListener('click', function () { show(idx - 1); play(); });
+        g.querySelector('.gallery-next').addEventListener('click', function () { show(idx + 1); play(); });
+        g.addEventListener('mouseenter', stop);
+        g.addEventListener('mouseleave', play);
+        g.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') { show(idx - 1); play(); }
+            if (e.key === 'ArrowRight') { show(idx + 1); play(); }
+        });
+        var x0 = null;
+        g.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+        g.addEventListener('touchend', function (e) {
+            if (x0 === null) return;
+            var dx = e.changedTouches[0].clientX - x0;
+            if (Math.abs(dx) > 40) { show(idx + (dx < 0 ? 1 : -1)); play(); }
+            x0 = null;
+        });
+        build();
+    })();
+    </script>
 </body>
 </html>
